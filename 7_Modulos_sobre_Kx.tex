@@ -1,0 +1,36 @@
+\subsubsection{\(K[x]\)-módulos con \(K\) cuerpo}
+
+Tenemos \(K[x]\)-módulo \(M\). O sea, \(M\) es un grupo aditivo
+y \(\rho: K[x]\longrightarrow\End(M)\) es un homomorfismo de anillos.
+
+\(K\) se puede ver como subanillo de \(K[x]\), aplicando la
+restricción de escalares aplicada a la aplicación inclusión,
+\(M\) es un \(K\)-espacio vectorial.
+
+Veamos que ocurre con la indeterminada. \(\rho(x)\in\End(M)\).
+
+Veamos que es un endomorfismo de espacio vectoriales:
+\[
+  \rho(x)(km)=x\cdot (km)=x\cdot(k\cdot m)=(xk)\cdot m=
+  =kx\cdot m=k(xm)=k\rho(x)(m)
+\]
+
+Así que \(\rho(x)\) es \(K\)-lineal.
+
+Si \(p=\sum_i p_i x^i\in K[x]\), tenemos que
+\[
+  pm=\rho(p)(m)=\sum_i p_i {\rho(x)}^i(m)
+\]
+
+\begin{prop}
+  Si tengo un \(K\)-espacio vectorial \(V\) y una aplicación
+  lineal \(T:V\longrightarrow V\), podemos definir para \(p\in K[x]\)
+  y \(v\in V\) el operador
+  \[
+    pv:=p(T)(v)=\sum_i p_i T^i(v)
+  \]
+  resulta que \(V\) es un \(K[x]\)-módulo.
+\end{prop}
+
+Ejemplo, \(\Cont^\infty(\R)\) con \(T=\frac{d}{dt}\)
+es un \(\R[x]\)-módulo.

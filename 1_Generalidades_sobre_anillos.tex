@@ -1,0 +1,53 @@
+\section{Introducción}
+\subsection{Generalidades sobre anillos}
+\begin{df}[Anillo]
+  Sea \(A\) un conjunto en el que existen dos operaciones
+  \(+,\cdot:A\times A\longrightarrow A\) tales que:
+  \begin{enumerate}
+    \item \((A, +,0)\) es un grupo aditivo (conmutativo):
+      \begin{itemize}
+        \item \((a+b)+c=a+(b+c)\) para todos \(a,b,c\in A\).
+        \item \(a+b=b+a\) para todos \(a,b\in A\).
+        \item \(a+0=a\) para todo \(a\in A\).
+        \item Para todo \(a\in A\) existe un \(-a\in A\)
+          tal que \(-a+a=0\).
+      \end{itemize}
+    \item \((A, \cdot, 1)\) es un monoide:
+      \begin{itemize}
+        \item \((ab)c=a(bc)\) para todos \(a,b,c\in A\).
+        \item \(a\cdot 1=1\cdot a=a\) para todo \(a\in A\).
+      \end{itemize}
+    \item Se cumplen las siguientes propiedades distributivas:
+      \begin{itemize}
+        \item \((a+b)c=ac+bc\) para todos \(a,b,c\in A\).
+        \item \(a(b+c)=ab+ac\) para todos \(a,b,c\in A\).
+      \end{itemize}
+     \end{enumerate}
+  \end{df}
+
+  \begin{df}[Idelaes]
+    Sea \(A\) un anillo. \(I\subset A\) se dice ideal si cumple las
+    siguientes propiedades:
+    \begin{itemize}
+      \item \(I\) es un subgrupo aditivo de \(A\) (es decir,
+        \(I\) es un conjunto no vacío que cumple
+        \(b-a\in I\) para todo \(a, b\in I\)).
+      \item \(ax, xa\in I\) para todo \(a\in I\) y \(x \in A\).
+    \end{itemize}
+  \end{df}
+
+  \begin{teo}[Teorema de Isomorfía]
+    Sea \(f:A\longrightarrow B\) un homomorfismo de anillos. Entonces:
+    \begin{itemize}
+      \item \(\ker f\) es un ideal de \(A\),
+      \item \(\Im f\) es un subanillo de \(B\),
+      \item Si \(I\subset \ker f\) es un ideal de \(A\), entonces
+        existe un único homomorfismo de anillos tal que
+        \(\tilde{f}:A/I\longrightarrow B\) tal que \(\tilde{f}(a+I)=f(a)\).
+      \item El homomorfismo anterior es inyectivo si y solo si
+        \(I=\ker f\).
+      \item El homomorfismo anterior es sobreyectivo si y solo si lo era
+        \(f\).
+    \end{itemize}
+  \end{teo}
+

@@ -1,0 +1,72 @@
+\begin{df}
+  \[
+    \Ring(R,S)=\{\phi:R\longrightarrow S, \phi \textrm{ es homomorfismo
+    de anillos}\}
+  \]
+\end{df}
+
+
+\begin{prop}
+  Dados un grupo aditivo \(M\) y un anillo \(A\), se tiene una
+  correspondencia biyectiva entre:
+  \begin{enumerate}
+    \item Homomorfismos de anillos \(\rho:A\longrightarrow\End(M)\)
+    \item Las aplicaciones \(A\times M\longrightarrow M\)
+      que satisfacen:
+      \begin{itemize}
+        \item \((a+a')m=am+a'm\)
+        \item \(a(m+m')=am+am'\)
+        \item \((aa')m=a(a'm)\)
+        \item \(1\cdot m=m\)
+      \end{itemize}
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  Tomamos la biyección \(\psi^{-1}:\Map(A,\Map(M,M))\longrightarrow
+  \Map(A\times M,M)\).
+  Tomamos \(\rho\in\Ring(A,\End(M))\), su imagen por la biyección,
+  \(\psi^{-1}(\rho)\)
+  son las aplicaciones que satisfacen justo las propiedades
+  anteriores.
+
+  Llamamos a \(\psi^{-1}(\rho)(a,m)=a\cdot m\). Tenemos que
+  \(\psi^{-1}(\rho)(a,m)=\rho(a)(m)\). Entonces
+  \(a\cdot m=\rho(a)(m)\).
+
+  Comprobamos la tercera propiedad como ejemplo:
+
+  Dados \(a, a'\in A\) y \(m\in M\):
+  \[
+    (aa')m=\rho(aa')(m)=(\rho(a)\circ\rho(a'))(m)
+    =\rho(a)(\rho(a')(m))=\rho(a)(a'm)=a(a'm)
+  \]
+
+  De forma análoga se demuestran el resto de propiedades.
+
+  Esta correspondencia responde a la fórmula \(am=\rho(a)(m)\).
+\end{proof}
+
+Un \(A\)-módulo lo veré de cualquiera de las maneras anteriores, que
+ya hemos visto que son equivalentes, según su conveniencia.
+
+Ejemplo, si \(K\) es un cuerpo, un \(K\)-módulo es esencialmente
+un \(K\) espacio vectorial.
+
+Otro ejemplo, el \(A\)-módulo regular. \(A\) es un \(A\)-módulo, vía
+\(\lambda:A\longrightarrow(A)\) que lleva cada
+\(a\) a \(\lambda(a)(a'):=aa'\). La demostración es sencilla
+usando la segunda definición.
+
+\begin{prop}[Restricción de escalares]
+  Sea \(\phi:\R\longrightarrow S\) homomorfismo de anillos. Si \(M\)
+  es un \(S\)-módulo, vía un homomorfismo de anillos \(\rho:
+  S\longrightarrow\End(M)\), tenemos que \(M\) es un
+  \(R\)-módulo vía \(\rho\circ\phi\).
+
+  Equivalentemente, si \(r\in R\) y \(m\in M\), definimos
+  \[
+    rm=(\rho\circ\phi)(r)(m)=\rho(\phi(r))(m)=\phi(r)m
+  \]
+\end{prop}
+

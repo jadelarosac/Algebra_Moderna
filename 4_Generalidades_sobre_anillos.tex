@@ -1,0 +1,87 @@
+\subsubsection{Transformada discreta de Fourier}
+
+Ahora vamos a reindexar. En lugar de usar \(1,\ldots, t\)
+vamos a tomar los índices \(1,\ldots, n-1\).
+
+Vamos a suponer que el cuerpo \(K\)
+contiene una raíz primitiva de 1, o sea,
+existe un \(\omega\in K\) tal que \(\omega^n = 1\) y
+\(1, \omega, \omega^2,\ldots, \omega^{n-1}\) son distintos.
+
+Seguro que \(\car K \not\| n\) ya que \(1, \omega, \omega^2,\ldots,
+\omega^{n-1}\) son las raíces de \(x^n-1\) y son distintas.
+
+Vamos a interpolar las raíces de la unidad.
+
+Tomo \(\alpha_j =\omega^j\), \(j\in\{0,\ldots, n\}\) y
+\[M=A_\omega=
+\begin{pmatrix}
+  1&1&\cdots1\\
+  \omega^0&\omega^1&\cdots\omega^{n-1}\\
+  {(\omega^0)}^2&{(\omega^1)}^2&\cdots{(\omega^{n-1})}^2\\
+  \cdots&\cdots&\cdots
+\end{pmatrix}= (\omega^{ij})
+\]
+
+
+Tenemos que \(x^n-1=(x-1)(x^{n-1}+\cdots+x+1)\)
+y evaluando en \(\omega^{j}\) obtenemos
+\[
+  \omega^{(n-1)j}+\cdots+\omega^j+1=0
+\]
+
+Entonces \(\sum_{k=0}^{n-1}\omega^{ik}=0\) para \(0<i<n\).
+
+\[
+  \begin{pmatrix}
+    \omega^{i}&
+    \omega^{2i}&
+    \cdots&
+    \omega^{(n-1)i}
+  \end{pmatrix}
+  \begin{pmatrix}
+    \omega^{-j}\\
+    \omega^{-2j}\\
+    \cdots\\
+    \omega^{-(n-1)j}
+  \end{pmatrix}
+  =\sum_{k=0}^{n-1}\omega^{k(i-j)}=0
+\]
+
+Tenemos entonces que \(A_\omega A_{\omega^{-1}}^T=nI\),
+es decir, \(A^{-1}_\omega=\frac{1}{n}A_{\omega^{-1}}^T\).
+
+\(\tilde{\xi}:K[x]/\langle x^n-1\rangle\longrightarrow K^n\),
+con \(\xi^{-1}(y)\) es el polinomio interpolador.
+
+Tenemos unos datos \((y_0,\ldots, y_{n-1})\in K^n\). El polinomio
+interpolador de esos datos en los nodos \(1,\omega,\ldots,\omega^{n-1}\)
+viene dado por
+\[
+  \hat{y} =\sum_{j=0}^{n-1}\hat{y_j}x^j
+\]
+donde \(\hat{y}=y\frac{1}{n}A^T_{\omega^{-1}}\).
+
+Explicitamente, se calcula que los coeficientes quedan:
+\[
+  y_j=\frac{1}{n}\sum_{k=0}^{n-1}y_k\omega^{-jk}
+\]
+
+Tomamos \(K=\C\). \(\omega = e^{i2\pi/n}\):
+\[
+  y_j=\frac{1}{n}\sum_{k=0}^{n-1}y_k\omega^{-i2\pi jk/n}
+\]
+que es la transformada de Fourier de \(y\).
+
+¿Qué interpretación le damos? Supongamos una función periódica de periodo
+\(2\pi\), \(f:[0,2\pi]\longrightarrow\C\) con \(f(0)=f(2\pi)\).
+Dividimos el intervalo en \(n\) partes iguales, una muestra:
+\(y_j=f(\frac{2\pi j}{n})\) con \(j=0,\ldots,n-1\).
+
+Tomomamos \(g:[0,2\pi]\longrightarrow\C\) con
+\(g(t)=\sum_{j=0}^{n-1}\hat{y_j}e^{ijt}\).
+
+Tenemos entonces que \(g(\frac{2\pi l}{n})=
+\sum_{l=0}^{n-1}\hat{y_j}e^{i2\pi lj/n} = y_l=f(\frac{2\pi j}{n})\)
+
+A los \(\hat{y}\) también se le llama el espectro de \(y\).
