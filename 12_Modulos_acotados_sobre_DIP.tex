@@ -1,0 +1,43 @@
+Ejemplo: \(T\) endomorfismo \(K\)-lineal. \(V=\subscriptbefore{K[x]}{V}\).
+
+Un \(W\) es un submódulo de \(V\) es un subespacio vectorial tal que
+\(T(W)\subseteq W\), es decir, \(W\) es \(T\) invariante.
+
+Si \(\Ann_{K[x]}(V)\neq\{0\}\), tomo \(\mu(x)\in K[x]\), el polinomio
+mínimo de \(T\). Es decir, \(\Ann_{K[x]}(V)=\langle\mu(x)\rangle\).
+
+\[
+  \mu=p_1^{e_1}\cdots p_t^{e_t}
+\]
+
+Entonces la descomposición primaria de \(V\) es \(V=V_1\dot{+}
+\cdots\dot{+}V_t\) con
+\[
+  V_i=\{v\in V:p_i(x)v=0\}
+\]
+
+Caso particular: \(\dim(V)<\infty\) y que \(\mu(x)=(x-\alpha_1)\cdots
+(x-\alpha_t)\) con \(\alpha_i\neq\alpha_j\).
+\[
+  V_i=\{v\in V:(x-\alpha_i)v=\{v\in V:T(v)=\alpha_i v\}
+\]
+es decir, el subespacio propio asociado al valor propio \(\alpha_i\).
+
+Si el polinomio factoriza como producto de polinomios de grado 1 distintos,
+\(T\) es diagonalizable.
+Veremos en el futuro que el polinomio mínimo divide siempre al polinomio
+característico.
+
+¿Cómo se calcula el polinomio mínimo de un endomorfismo lineal?
+
+Ejercicio: Sea \(V\) un espacio vectorial real euclídeo (con producto
+escalar). Sea \(T:V\longrightarrow V\) una isometría.
+Se pide demostrar que si \(W\) es un subespacio \(T\) invariante de \(V\),
+entonces su ortogonal \(W^\perp\) es también \(T\) invariante.
+Entonces \(V=W\dot{+}W^\perp\). Se usa inducción. Como consecuencia, usando
+el teorema fundamental del álgebra, deducir que \(V\) admite una base
+ortonormal con respecto de la cual la matriz de \(T\) es diagonal por
+bloques, con bloques de dimensión 1 o 2. ¿Qué aspecto tienen dichos
+bloques? Hay que ver que uno de los dos subespacios invariantes tienen
+dimensión 1 o 2.
+

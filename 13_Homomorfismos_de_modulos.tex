@@ -1,0 +1,47 @@
+\subsection{Homomorfismos de módulos}
+
+\begin{df}[Módulo cociente o factor]
+  Sea \(\subscriptbefore{A}{M}\) y \(L\in\mathcal{L}(M)\).
+  Consideramos \(M/L\) grupo aditivo y se define la acción:
+  \[
+    a(m+L):=am+L
+  \]
+  \(M/L\) es un módulo.
+\end{df}
+
+\begin{df}[Homomorfismo de módulos]
+  Se dice que
+  \(f:\subscriptbefore{A}{M}\longrightarrow \subscriptbefore{A}{N}\)
+  es un homomorfismo de módulos si respeta sumas y productos.
+\end{df}
+
+\begin{df}[Proyección canónica]
+  Es la aplicación \(\pi:M\longrightarrow M/L\) dada por
+  \(\pi(m)=m+L\) es un homomorfismo de módulos.
+\end{df}
+
+\begin{teo}[Teorema de isomorfía para módulos]
+  \(f:M\longrightarrow N\) un homorfismo de \(A\)-módulos. Entonces
+  el núcleo \(\ker f\in\mathcal{L}(\subscriptbefore{A}{M})\) y
+  \(\Im f\in\mathcal{L}(N)\). Para cada \(L\in\mathcal{L}
+  (\subscriptbefore{A}{M})\) tal que \(L\subseteq \ker f\) existe
+  un único homomorfismo de módulos \(\tilde{f}:M/L\longrightarrow N\)
+  tal que \(\tilde{f}\circ\pi=f\). Finalmente, \(\tilde{f}\) es
+  inyectiva si y solo si \(L=\ker f\), en cuyo caso, \(\tilde{f}\)
+  da un isomorfismo de \(A\)-módulos
+  \(M/\ker f\cong \Im f\).
+\end{teo}
+
+Ejemplo \(\subscriptbefore{A}{M}\), definimos \(f:A\longrightarrow M\)
+dada por:
+\[
+  f(a)=am\hspace{1cm} \forall a \in A
+\]
+es un homomorfismo de \(A\)-módulos.
+
+Tenemos \(\Im f = Am\) y
+\(\ann(a)=\ker f=\{a\in A: am=0\}\) es un ideal izquierda y se tiene
+\[
+  A/\ann_A(m)\cong Am
+\]
+

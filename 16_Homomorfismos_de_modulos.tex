@@ -1,0 +1,36 @@
+\begin{df}[Base de un módulo libre]
+  Consideramos \(A^n=A\oplus\cdots\oplus A\), donde la suma se repite
+  \(n\) veces. Para cada \(i=1,\ldots, n\), tenemos que
+  \(\{e_i: e_i=(0,\ldots, 0,1,0, \ldots, 0)\}\) forman un sistema de
+  generadores de \(A^n\). Por tanto \(a=\sum_i a_i e_i\in A^n\)
+  es una expresión única.
+\end{df}
+
+Dicha base puede no existir.
+
+\begin{prop}
+  Dado un módulo cualquiera \(\subscriptbefore{A}{M}\) y \(m_1, m_n\in M\),
+  existe un único homomorfismo de módulos \(f:A^n\longrightarrow M\)
+  tal que \(f(e_i)=m_i\).
+\end{prop}
+
+\begin{cor}
+  Si \(M\) es finitamente generado con generadores \(\{m_i\}\),
+  entonces \(M\cong A^n/L\) para \(L\) un sierto submódulo.
+\end{cor}
+
+\begin{proof}
+  Unicidad: si existe una tal aplicación \(f\), entonces para
+  cualquier \(a\in A^n\),
+  \[
+    f(a)=\sum_i a_i f(e_i)=\sum_i a_i m_i
+  \]
+
+  Veamos la existencia,
+  Definiendo \(f(a)=\sum_i a_i m_i\) obtenemos un homomorfismo de módulos
+  que cumple lo exigido en el enunciado.
+
+  Si \(M=Am_1+\cdots+Am_n\) tenemos que \(L=\ker f\) cumple lo que se
+  pide por el teorema de isomorfía para módulos.
+\end{proof}
+

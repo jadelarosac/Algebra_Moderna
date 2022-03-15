@@ -1,0 +1,141 @@
+\begin{proof}
+  Veamos que la primera implica la segunda.
+  Tomamos:
+  \[
+    L=\bigcup_{n\ge 1} L_n\in\mathcal{L}(M)
+  \]
+  es un submódulo porque están encajados. Por hipótesis, es finitamente
+  generado. Si tomamos un conjunto finito de generadores \(F\)
+  tenemos que \(F\subset L\) y como es finito, debe existir un \(m\)
+  suficientemente grande tal que \(F\subseteq L_m\) y como
+  genera a \(F\) se tiene que \(L\subseteq L_m\subseteq L\)
+  con lo que \(L_n=L_m=L\) para todo \(n\ge m\).
+
+  Veamos que la segunda implica la primera. Sea \(\Gamma\subseteq
+  \mathcal{L}(M)\) no vacío. Si \(\Gamma\) no tiene elemento maximal
+  y tomamos \(L_1\in\Gamma\), entonces existe \(L_2\in\Gamma\)
+  tal que \(L_1\subsetneq L_2\).
+
+  Reiterando el proceso, tenemos que \(L_1\subsetneq L_2\subsetneq
+  \ldots\subsetneq L_n\subsetneq\ldots\) no se estabiliza.
+
+  Veamos que la tercera afirmación implica la primera.
+  Sea \(N\in\mathcal{L}(M)\).
+  Tomamos el conjunto \(\Gamma\) el conjunto de todos los submódulos
+  finitamente generados de \(N\). Tenemos que el módulo trivial
+  es finitamente generado, luego \(\Gamma\) es no vacío.
+
+  Sea \(L\) un elemento maximal de \(\Gamma\). Veamos que \(L=N\).
+
+  En caso contrario, tomamos \(x\in N\) tal que \(x\notin L\). Resulta que
+  \(L+Ax\) es un submódulo de \(N\) y es finitamente generado.
+  \(L+Ax\in\Gamma\) y \(L\neq L+Ax\), con lo que \(L\) no sería maximal.
+\end{proof}
+
+\begin{nt}
+  \(N\in\mathcal{L}(M)\), escribimos \(N\le M\).
+\end{nt}
+
+\begin{prop}[Sucesiones exactas cortas en módulos noetherianos]
+  Sea \(0\longrightarrow L\varphi\longrightarrow M\phi\longrightarrow N
+  \longrightarrow 0\).
+
+  Entonces \(M\) es noetheriano si y solo si \(L\) y \(N\) son
+  noetherianos.
+\end{prop}
+
+\begin{proof}
+  Supongamos \(M\) noetheriano.
+
+  \(L\cong \Im\psi\le M\) y entonces \(L\) es noetheriano trivialmente.
+
+  Tomamos \(N_1\subseteq N_2\subseteq\ldots\subseteq N_n\subseteq\ldots\)
+  una cadena ascendente en \(\mathcal{L}(N)\).
+
+  Tenemos \(\varphi^{-1}(N_1)\subseteq \varphi^{-1}(N_2)
+  \subseteq \varphi^{-1}(N_n)\subseteq\ldots\)
+  cadena en \(\mathcal{L}(M)\). Existe un \(m\) a partir del cual
+  se estabiliza. Entonces, para todo \(n\ge n\):
+  \[
+    N_n=\varphi(\varphi^{-1}(N_n))=\varphi(\varphi^{-1}(N_m))=N_m
+  \]
+  con lo cual \(N\) es noetheriano.
+
+
+  Supongamos ahora que \(N\) y \(L\) son noeherianos.
+  Tomamos una cadena ascendente \(M_n\) de submódulos de \(M\).
+
+  Por otro lado, \(M_n\cap\Im\psi\) es una cadena de submódulos de
+  \(M\), que se estabiliza por ser noetheriano \(\Im\psi\cong L\).
+
+  Tenemos \(\varphi(M_n)\) es una cadena de submódulos de \(N\),
+  que también se estabiliza.
+
+  Tomemos el menor natural tal que ambas cadenas se hayan estabilizado.
+  Sea \(n\) mayor, \(x\in M_n\), \(\varphi(x)\in\varphi(M_n)
+  =\varphi(M_m)\), debe existir \(y\in M_m\). Luego \(x-y\in\ker\varphi
+  =\Im\psi\), con lo que \(x-y\in M_n\cap\Im\psi=M_m\cap\Im\psi\subseteq M_m\)
+  y \(x\in M_m\) ya que \(y\in M_m\).
+
+  Por tanto \(M\) es noetheriano.
+\end{proof}
+
+\begin{cor}
+  Dados dos módulos \(M_1\) y \(M_2\).
+  Entonces:
+  \[
+    M_1\oplus M_2
+  \]
+  es noetheriano si y solo si \(M_1\) y \(M_2\) lo son.
+\end{cor}
+
+\begin{proof}
+  Sea la sucesión exacta corta
+  \[
+    0\longrightarrow M_1\longrightarrow M_1\oplus M_2\longrightarrow M_2
+    \longrightarrow 0
+  \]
+  donde la primera aplicación es \(m_1\mapsto(m_1,0)\)
+  y \((m_1,m_2)\mapsto m_2\) y el núcleo de la segunda es la imagen de
+  la primera. Trivialmente se sigue el corolario.
+\end{proof}
+
+\begin{teo}
+  Sea \(A\) un anillo. Cada módulo sobre \(A\) finitamente generado
+  es noetheriano si y solo si \(\subscriptbefore{A}{A}\) es noetheriano.
+\end{teo}
+
+\begin{proof}
+  Una de las implicaciones es obvia.
+
+  Veamos que si el módulo regular es noetheriano, veamos que cualquier otro
+  lo es.
+
+  Sea \(M\) finitamente generado, existe un homomorfismo sobreyectivo \(\phi\)
+  tal que \(A^n\longrightarrow M\).
+
+  Usando inductivamente el corolario, tenemos que \(A^n\) es noetheriano.
+  La proposición nos dice que \(M\) es noetheriano, aplicandolo
+  a la sucesión
+  \[
+    0\longrightarrow\ker\phi\longrightarrow A^n\longrightarrow
+    M\longrightarrow 0
+  \]
+\end{proof}
+
+\begin{df}[Anillo noetheriano]
+  \(A\) se dice noetheriano a izquierda si el módulo regular es
+  noetheriano. Si \(A\) es conmutativo diremos simplemente noetheriano.
+\end{df}
+
+\begin{cor}
+  Si \(A\) es noetheriano, equivalen para cualquier sucesión exacta corta:
+  \begin{enumerate}
+    \item \(M\) es finitamente generado.
+    \item \(L\) y \(N\) son finitamente generados.
+  \end{enumerate}
+\end{cor}
+
+\begin{cor}
+  Todo dominio de ideales principales es noetheriano.
+\end{cor}

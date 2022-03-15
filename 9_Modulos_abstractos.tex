@@ -1,6 +1,6 @@
-\subsubsection{Módulos abstractos}
+\subsection{Módulos abstractos}
 
-Sea \(A\) un anillo, \(M_A\) un \(A\)-módulo,
+Sea \(A\) un anillo, \(\subscriptbefore{A}{M}\) un \(A\)-módulo,
 entonces si tenemos
 un homomorfismo de anillos \(\varphi:A\longrightarrow\End(M)\)
 cuyo núcleo es un ideal de \(A\).
@@ -17,14 +17,14 @@ De hecho \((a+\ker\varphi)m=\varphi(m)\).
 \]
 se le llama el anulador de \(M\).
 
-Tenemos que \(M_A\) entonces \(M_{A/\Ann_A(M)}\)
+Tenemos que \(\subscriptbefore{A}{M}\) entonces \(M_{A/\Ann_A(M)}\)
 
 Ejercicio: si tenemos una plicación lineal entre espacios vectoriales
 de dimensión finita, entonces el anulador está generado por un único
 polinomio, el polinomio mínimo de \(T\).
 
 \begin{df}
-  Un submódulo de un módulo \(M_A\) es un subgrupo aditivo \(N\subseteq M\)
+  Un submódulo de un módulo \(\subscriptbefore{A}{M}\) es un subgrupo aditivo \(N\subseteq M\)
   tal que \(am\in N\) para cualquier \(a\in A\) y \(m\in N\). Los
   submódulos del módulo regular \(A\) se llaman ideales por la izquierda
   de \(A\).
@@ -66,8 +66,8 @@ es decir, un subespacio \(T\)-invariante (subespacio propio).
 El recíproco es también cierto.
 
 \begin{df}[Submódulo cíclico]
-  Dado \(M_A\), y un \(m\in M\). Es claro que
-  \(Am=\{am:a\in A\}\) es un submódulo de \(M_A\) que se llama submódulo
+  Dado \(\subscriptbefore{A}{M}\), y un \(m\in M\). Es claro que
+  \(Am=\{am:a\in A\}\) es un submódulo de \(\subscriptbefore{A}{M}\) que se llama submódulo
   cíclico generado por \(m\).
 \end{df}
 
@@ -78,7 +78,7 @@ Ejemplo: \(\R[x]\sin t=\R\sin t+\R\cos t\).
   \[
     Am_1+\cdots+Am_n=\{a_1 m_1+\cdots+a_n m_n: a_i\in A\}
   \]
-  es un submódulo de \(M_A\) llamado el submódulo generado por
+  es un submódulo de \(\subscriptbefore{A}{M}\) llamado el submódulo generado por
   \(m_1,\ldots, m_n\).
   Si \(M=Am_1+\cdots+Am_n\), diremos que \(M\) es finitamente generado
   con generadores
@@ -86,7 +86,7 @@ Ejemplo: \(\R[x]\sin t=\R\sin t+\R\cos t\).
 \end{df}
 
 \begin{df}[Módulo suma]
-  Dados \(N_1,\ldots, N_n\) submódulos de \(M_A\), defino:
+  Dados \(N_1,\ldots, N_n\) submódulos de \(\subscriptbefore{A}{M}\), defino:
   \[
     N_1+\cdots+ N_n=\{m_1+\cdots+m_n: m_i\in N_i\}
   \]
