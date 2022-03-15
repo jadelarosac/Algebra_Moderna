@@ -24,7 +24,8 @@ de dimensión finita, entonces el anulador está generado por un único
 polinomio, el polinomio mínimo de \(T\).
 
 \begin{df}
-  Un submódulo de un módulo \(\subscriptbefore{A}{M}\) es un subgrupo aditivo \(N\subseteq M\)
+  Un submódulo de un módulo
+  \(\subscriptbefore{A}{M}\) es un subgrupo aditivo \(N\subseteq M\)
   tal que \(am\in N\) para cualquier \(a\in A\) y \(m\in N\). Los
   submódulos del módulo regular \(A\) se llaman ideales por la izquierda
   de \(A\).
@@ -35,26 +36,26 @@ polinomio, el polinomio mínimo de \(T\).
   a izquierda coinciden con los ideales.
 \end{obs}
 
-Ejemplo: tomando \(A=\{\mathcal{M}_2(K)\}\) con \(K\) un cuerpo.
+Ejemplo: tomando \(A=\mathcal{M}_2(K)\) con \(K\) un cuerpo.
 \[
-  \mathcal{M}_2(K)=\{
+  \mathcal{M}_2(K)=\left\{
     \begin{pmatrix}
       a&b\\
       c&d
     \end{pmatrix}:
     a,b,c,d\in K
-  \}
+  \right\}
 \]
 
 Tenemos que el conjunto:
 \[
-  \{
+  \left\{
     \begin{pmatrix}
       0&b\\
       0&d
     \end{pmatrix}:
     b,d\in K
-  \}
+  \right\}
 \]
 es un ideal a izquierda de \(A\).
 
@@ -62,7 +63,8 @@ Ejemplo: \(T:V\longrightarrow V\), \(K\)-lineal.
 ¿Qué es un \(K[x]\)-submódulo de \(V_{K[x]}\)?
 Sea \(W\) un tal submódulo.
 \(W\) es un subespacio vectorial y además \(T(w)=xw\in W\),
-es decir, un subespacio \(T\)-invariante (subespacio propio).
+es decir, un subespacio \(T\)-invariante (un ejemplo
+de subespacio \(T\) invariante es un subespacio propio).
 El recíproco es también cierto.
 
 \begin{df}[Submódulo cíclico]
@@ -84,6 +86,8 @@ Ejemplo: \(\R[x]\sin t=\R\sin t+\R\cos t\).
   con generadores
   \(m_1,\ldots, m_n\).
 \end{df}
+
+\subsubsection{Suma directa interna}
 
 \begin{df}[Módulo suma]
   Dados \(N_1,\ldots, N_n\) submódulos de \(\subscriptbefore{A}{M}\), defino:
