@@ -1,0 +1,136 @@
+\begin{cor}
+  Dada una sucesión exacta corta, \(0\longrightarrow L
+  \longrightarrow M\longrightarrow N\longrightarrow 0\),
+  \(L\) y \(N\) admite serie de composición si y solo si
+  \(M\) admite serie de composición.
+\end{cor}
+
+\begin{cor}
+  \(M_1\), \(M_2\) admiten series de composición si y solo si
+  \(M_1\oplus M_2\) admite serie de composición.
+\end{cor}
+
+
+\begin{teo}[Jordan-Hölder]
+  Supongan que \(M\) admite series de composición:
+  \[
+    \{0\}=M_0\subsetneq M_1\subsetneq M_2\subsetneq\ldots\subsetneq M_n=M
+  \]
+  \[
+    \{0\}=N_0\subsetneq N_1\subsetneq N_2\subsetneq\ldots\subsetneq N_m=M
+  \]
+  Entonces \(n=m\) y existe una permutación \(\sigma\) tal que
+  \[
+    M_i/M_{i-1}\cong N_{\sigma(i)}/N_{\sigma(i)-1}
+  \]
+\end{teo}
+\begin{proof}
+  Si \(n=1\), entonces \(M\) es simple y \(m=1\) y el el único factor posible
+  es el \(M/\{0\}=M\).
+
+  Si \(n>1\), como \(M\) no es simple, \(m>1\).
+
+  Vamos a observar un caso particular. Supongamos que \(N_{m-1}
+  =M_{n-1}\). Por hipótesis de inducción aplicado a \(N_{m-1}\),
+  tenemos que  \(n-1=m-1\), luego \(n=m\) y se da el enunciado
+  (tomando la permutación \(\sigma\) para los \(n-1\) primeros elementos
+  y extendiendola a una permutación de \(n\) elementos \(\sigma'\) tal
+  que \(\sigma'(n):=n\), \(\sigma'(k):=\sigma(k)\)).
+
+  Vamos ahora al caso general. Como hemos visto
+  en el caso particular anterior, podemos suponer
+  \(M_{n-1}\neq N_{m-1}\), por lo que
+  \(M_{n-1}+M_{m-1}=M\) (ya que \(M_{n-1}\subsetneq M_{n-1}+
+  N_{m-1}\subseteq M\) y \(M_{n-1}\) es maximal).
+
+  Tomamos \(N_{m-1}\cap M_{n-1}\) que admite una serie de composición:
+  \[
+    \{0\}=L_0\subsetneq L_1\subsetneq\ldots\subsetneq L_k
+    =N_{m-1}\cap M_{n-1}
+  \]
+  y tenemos que, por el teorema de isomorfía:
+  \[
+    N_m/N_{m-1}=
+    M/N_{m-1}=
+    (M_{n-1}+N_{m-1})/N_{m-1}\cong M_{n-1}/(M_{n-1}\cap N_{m-1})
+  \]
+  que al ser un factor es simple.
+
+  Aplicando la inducción, \(n-1=k+1\) y existe una permutación
+  \(\tau\) de \(n-1\) elementos tal que
+  \[
+    L_i/L_{i-1}\cong M_{\tau(i)}/M_{\tau(i)-1}
+  \]
+  donde \(i=1,\ldots, n-2\)
+  y
+  \[
+    M_{n-1}/L_{n-2}=M_{n-1}/(M_{n-1}\cap N_{m-1})\cong
+    M_{\tau(n-1)}/M_{\tau(n-1)-1}
+  \]
+
+  Tenemos que, por el teorema de isomorfía:
+  \[
+    M_n/M_{n-1}=
+    M/M_{n-1}=
+    (N_{m-1}+M_{n-1})/M_{n-1}\cong N_{m-1}/(N_{m-1}\cap M_{n-1})
+  \]
+  que al ser un factor es simple.
+
+  Aplicando la inducción, \(m-1=k+1\) y existe una permutación
+  \(\rho\) de \(m-1\) elementos tal que
+  \[
+    L_i/L_{i-1}\cong N_{\rho(i)}/N_{\rho(i)-1}
+  \]
+  donde \(i=1,\ldots, n-2\)
+  y
+  \[
+    N_{n-1}/L_{n-2}=N_{n-1}/(M_{n-1}\cap N_{m-1})\cong
+    N_{\rho(n-1)}/N_{\rho(n-1)-1}
+  \]
+
+  Tenemos ya que \(n=k+2=m\), y si definimos \(\sigma\) la permutación
+  de \(n\) elementos:
+  \[
+    \sigma(i)=\left\{
+      \begin{matrix}
+        \rho\circ\tau^{-1}(i),
+        &i\in\{1,\ldots n-1\}, &\tau^{-1}(i)\in\{1,\ldots, n-2\}\\
+        n,
+        &i\in\{1,\ldots n-1\}, &\tau^{-1}(i)=n-1\\
+        \rho(n-1),
+        &i=n &
+      \end{matrix}
+      \right.
+  \]
+\end{proof}
+
+\begin{df}[Módulo de longitud finita]
+  Un módulo se dice de longitud finita si tiene una serie de composición
+  finita o es \(\{0\}\). La longitud \(\ell(M)\) es la de cualquiera
+  de sus series de composición, o cero si \(M=\{0\}\).
+\end{df}
+
+Ejercicio: sea \(M\) un módulo de longitud finita. Se pide demostrar
+que si \(0\longrightarrow L\longrightarrow M\longrightarrow N\longrightarrow
+0\) es una sucesión exacta corta, entonces:
+\[
+  \ell(M)=\ell(N)+\ell(M)
+\]
+Si \(U,V\in\mathcal{L}(M)\), entonces:
+\[
+  \ell(U+V)=\ell(U)+\ell(V)-\ell(U\cap V)
+\]
+
+Ejemplo: si \(V\) es un \(K\)-espacio vectorial, \(\ell(V)=\dim(V)\).
+
+Ejemplo: \(\ell(\Z_{12})=3\), ya que calculamos antes una serie de
+composición.
+
+Otro ejemplo: \(\ell(\Z_p)=1\) si \(p\) es primo.
+
+Ejercicio: \(\ell(\Z_n)\) es la suma de los exponentes de su descomposición
+en primos.
+
+Ejemplo: si \(n=\prod {p_i}^{e_i}\) entonces\(\Z_n\cong
+\Z_{{p_t}^{e_t}}\oplus\cdots
+\oplus\Z_{{p_t}^{e_t}}\)
