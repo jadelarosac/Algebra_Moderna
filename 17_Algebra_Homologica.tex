@@ -27,7 +27,8 @@ un homorfismo de módulos, obtenemos:
 \]
 
 \begin{prop}
-  Sea \(0\longrightarrow L\psi\longrightarrow M\varphi\longrightarrow
+  Sea \(0\longrightarrow L\overset{\psi}{\longrightarrow} M
+  \overset{\varphi}{\longrightarrow}
   N\longrightarrow 0\) una sucesión exacta de \(A\)-módulos. Entonces:
   \begin{enumerate}
     \item Si \(M\) es finitamente generado, lo es también \(N\).
@@ -45,16 +46,17 @@ un homorfismo de módulos, obtenemos:
   Tomamos \(\{e_i\}\) generadores de \(L\). Tomamos \(m\in M\).
   \[
     \varphi(m)=\sum_{i=1}^s r_i n_i = \sum_{i=1} r_i\varphi(m_i)
-    =\varphi(\sum r_i m_i)
+    =\varphi\left(\sum r_i m_i\right)
   \]
   con lo que \(m-\varphi(\sum r_i m_i)\in\ker\varphi=\Im\psi\).
   Luego existen \(b_1,\ldots, b_t\) tales que
   \[
-    m-\varphi(\sum r_i m_i)=\psi(\sum_j b_j e_j)
+    m-\varphi\left(\sum r_i m_i\right)=
+    \psi\left(\sum_j b_j e_j\right)
   \]
   y finalmente:
   \[
-    m=\varphi(\sum r_i m_i)+\sum r_j \varphi(e_j)
+    m=\varphi\left(\sum r_i m_i\right)+\sum r_j \varphi(e_j)
   \]
   con lo que \(\{m_i\}\cup\{\psi(e_j)\}\).
 \end{proof}
