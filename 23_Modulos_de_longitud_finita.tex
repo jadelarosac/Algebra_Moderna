@@ -1,0 +1,119 @@
+
+\[
+  M=M_1\dot{+}\cdots\dot{+} M_t
+\]
+donde
+\[
+  M_i=\{q_i m: m\in M\}=\{m\in M: p_i^{e_i} m=0\}=\{m\in M:
+  a_i q_i m = m\}
+\]
+con \(q_i=\frac{\mu}{p_i^{e_i}}\) y \(\sum_i a_i q_i=1\)
+y \(\langle \mu\rangle=\Ann_A(M)\). Se tiene que
+\(\Ann_A(M_i)=\langle p_i^{e_i}\rangle\).
+
+\begin{df}[Módulo p-primario]
+  \(\subscriptbefore{A}{M}\) se dice \(p\)-primario si
+  \(\Ann_A(M)=\langle p^e\rangle\), \(p\) un irreducible.
+\end{df}
+
+Vamos a estudiar la estructura de módulos primarios de longitud finita.
+
+\begin{obs}
+  \(\subscriptbefore{A}{M}\) \(p\)-primario, \(\ell(M)<\infty\).
+  \[
+    \Ann_A(M)=\langle p^t\rangle
+  \]
+
+  Si \(0\neq m\in M\), \(\ann_A(m)\supseteq \Ann_A(M)=\langle p^t
+  \rangle\), tenemso que \(\ann_A(m)=\langle p^r\rangle \)
+  con \(r\le t\).
+
+  Si \(M=Am_1+\cdots+Am_m\), entonces \(\langle p^t\rangle
+  =\ann_A(m_1)\cap\ldots\cap\ann_A(m_m)\). Luego
+  \(\langle p^t\rangle =\ann_A(m_i)\) para algún \(i\).
+\end{obs}
+
+\begin{cor}
+  Existe un \(x\i M\), \(\Ann_A(M)=\ann_A(x)\).
+\end{cor}
+
+\begin{lema}
+  \(\ell(M)<\infty\), \(M\) \(p\)-primario. Para \(0\neq m\in M\),
+  entonces:
+  \[
+    Am\textrm{ es simple} \iff \ann_A(m)=\langle p\rangle
+  \]
+  y como consecuencia
+  \[
+    \Soc(M)=\{m\in M: pm=0\}
+  \]
+\end{lema}
+\begin{proof}
+  Dado \(m\), tenemos \(Am\cong A/\ann_a(m)\). Si \(Am\) es simple,
+  entonces \(\ann_A(m)\) es ideal maximal (generado por irreducible o ideal
+  primo) y
+  \(\ann_A(m)\supseteq\Ann_A(M)=\langle p^t\rangle\).
+  Entonces \(\ann_A(m)=\langle p\rangle\).
+
+  Recíprocamente, si \(\ann_A(m)=\langle p\rangle\) entonces
+  \(Am\cong A/\langle p\rangle\) es simple.
+
+  \(\Soc(M)=S_1\dot{+}\cdots\dot{+}S_n\) con \(S_i\) simple.
+  Sea \(m\) en el zócalo, \(\ann_A(m)
+  \supseteq\Ann_A(S_1\dot{+}\cdots\dot{+}S_n)=
+  \bigcap_{k=1}^{n} \Ann_A(S_k)\). Tomamos \(s_i\) tal que
+  \(\Ann_A(S_i)=\ann_A(s_i)\), tenemos que \(S_i=As_i\), luego
+  \(As_i\cong A/\ann_A(s_i)\) y es simple, luego
+  \(\ann_A(s_i)=\langle p\rangle\),
+  tenemos que \(\ann_A(m)\supseteq\langle p\rangle\) y finalmente
+  \(pm=0\).
+
+  Tomamos ahora \(m\in M\) tal que \(pm=0\). \(\langle p\rangle
+  \subseteq\ann_A(m)\) pero es maximal, luego se da la igualdad.
+  \[
+    Am\cong A/\ann_A(m)= A/\langle p\rangle
+  \]
+  luego es simple, y \(Am\subseteq\Soc(M)\) y en particular
+  \(m\in\Soc(M)\).
+
+\end{proof}
+
+\begin{prop}
+  Suponemos que tenemos \(M\) \(p\)-primario y de longitud finita. Sea
+  \(x\in M\) tal que \(\Ann_A(M)=\ann_A(x)\). Entonces \(Ax\) es un
+  sumando directo interno de \(M\).
+\end{prop}
+\begin{proof}
+  Por inducción sobre la longitud \(\ell(M)<\infty\).
+
+  Si la longitud es 1, \(M\) es simple, entonces \(M=Ax\).
+
+  Si \(\ell(M)>1\) y \(Ax=M\), no hay nada que demostrar.
+
+  Veamos que pasa si \(Ax\neq M\). Veamos que existe un \(y \in M\)
+  tal que \(y\neq Ax\) y \(\ann_A(y)=\langle p\rangle\).
+  \(
+    \ell(M/Ax)<\infty
+  \), debe contener algún simple \(S\subseteq M/Ax\). Tomamos \(s\in S\)
+  tal que \(S=As\).
+  \[
+    \langle p^t\rangle =\Ann_A(M)\subseteq\Ann_A(M/Ax)\subseteq\Ann_A(S)
+    =\ann_A(s)
+  \]
+  Y por tanto \(\ann_A(s)=\langle p\rangle\).
+
+  Tomamos \(z\in M\) tal que \(s=z+Ax\), es decir, \(p z\in Ax\). Es decir,
+  \(p z=ax\) para cierto \(a\in A\). Afirmamos que \(p|a\) (no es obvio
+  porque es un módulo).
+
+  Supongamos que no es así. Por Bezout, \(1=ua+vp\) para \(u,v\in A\)
+  adecuados. En dicho caso, \(x=uax+vpx=upz+vpx=p(uz+vx)\).
+  \[
+    \ann_A(uz+vx)=\langle p^{t'}\rangle
+  \]
+  para \(t'\le t\). Se deduce que \(p^{t'-1} x=0\). \(p^{t-1}x=0\), y
+  entonces como el anulador de \(x\) es el de \(M\) y está generado
+  por \(p^t\), no puede anularlo \(p^{t'-1}\) ya que
+  \(t'-1\le t-1<t\).
+
+\end{proof}
