@@ -66,7 +66,7 @@ Aplicando el corolario, \(M\cong C_1\oplus\cdots\oplus C_n\) con
 Tenemos que \(M\cong \Z_{p^{m_1}}\oplus\cdots\oplus\Z_{p^{m_n}}\),
 \(M\) es finito de cardinal \(p^{m_1+\cdots+m_n}\).
 
-\begin{teo}
+\begin{teo}[Estructura de módulos sobre un DIP]
   \(\subscriptbefore{A}{M}\neq\{0\}\) de longitud finita. Existen
   irreducibles distintos \(p_1,\ldots,p_r\in A\) y enteros positivos
   \(n_1,\ldots, n_r\), tales que \(e_{i1}\ge\ldots\ge e_{in_i}\) con
@@ -74,10 +74,15 @@ Tenemos que \(M\cong \Z_{p^{m_1}}\oplus\cdots\oplus\Z_{p^{m_n}}\),
   \[
     M=\dot{+}_{i=1}^r\left(\dot{+}_{j=1}^{n_i} Ax_{ij}\right)
   \]
-  para \(x_{ij}\in M\) adecuados que verifican:
+  A esa expresión
+  se le llama la descomposición cíclica-primaria de \(M\) (la
+  primaria sería la primera suma y luego cada factor primario se
+  descompone en factores cíclicos).
+  Los \(x_{ij}\in M\) son tales que verifican:
   \[
     \ann_A(x_{ij})=\langle p_i^{e_{ij}}\rangle
   \]
-  con \(i\in\{1,\ldots,r\}, j\in\{1,\ldots, n_i\}\). Estos parámetros
+  con \(i\in\{1,\ldots,r\}, j\in\{1,\ldots, n_i\}\). Se le llaman
+  divisores elementales de \(M\) y
   determinan \(M\) salvo isomorfismos.
 \end{teo}
