@@ -1,0 +1,126 @@
+\section{Teoría de módulos}
+
+Sea \(R\) un anillo, \(\subscriptbefore{R}{M}\) un módulo. Sea la
+familia no vacía de submódulos
+\(\Gamma\subseteq\mathcal{L}(M)\) entonces
+\(\bigcap_{N\in\Gamma} N\in\mathcal{L}(M)\).
+
+\begin{df}[Submódulo generado por un conjunto \(X\)]
+  Si \(X\) es un subconjunto de \(M\), el menor submódulo de \(M\) que contiene
+  a \(X\) se llama submódulo generado por \(X\). Lo denotaremos por \(RX\).
+\end{df}
+
+\begin{lema}
+  \[
+    RX=\left\{\sum_{x\in F}v_x x:F\subseteq X \textrm{ finito}, v_x\in
+    R\right\}
+  \]
+\end{lema}
+\begin{proof}
+  \(X\subseteq RX\) por ser el menor submódulo que contiene a \(X\).
+
+  \[
+    C=\left\{\sum_{x\in F}v_x x:F\subseteq X \textrm{ finito}, v_x\in
+    R\right\}
+  \]
+
+  Entonces \(C\subseteq RX\).
+  Tenemos que, como \(C\) es un submódulo, se tiene que dar la igualdad.
+
+\end{proof}
+
+Si \(X=\{x_1,\ldots, x_n\}\), tenemos que \(RX=Rx_1+\cdots Rx_n\).
+
+\begin{df}[Módulo producto]
+  Tomamos \(I\neq\emptyset\) un conjunto de índices, tal que
+  \(i\in I\), tomamos un módulo \(M_i\).
+  \[
+    \prod_{i\in I} M_i=\{{(m_i)}_{i\in I}:m_i\in M_i\}
+  \]
+
+  Son tuplas, pero no ordenadas.
+\end{df}
+
+\begin{prop}
+  El producto de módulos es un módulo, con la suma término a término y el
+  producto por escalares también término a término.
+\end{prop}
+
+\begin{df}[Proyecciones e inclusiones canónicas]
+  Vamos a tomar \(M_i\)y \( \prod_{i\in I} M_i\). Definimos
+  la inclusión canónica \(\iota_i\)  mediante la
+  aplicación que asigna \(m_i\mapsto {(a_j)}_{j\in I}\) dado por
+  \(a_j=\delta_i^j m_i\).
+  Del mismo modo, definimos la proyección canónica \(\pi_i\) como
+  la aplicación que asigna \({(a_j)}_{j\in I}\mapsto a_i\).
+
+  Evidentemente \(\pi_i\circ\iota_i=\id\).
+\end{df}
+
+\begin{df}[Suma directa externa]
+  \[
+    \bigoplus_{i\in I} M_i:=\{{(m_i)}_{i\in I}: \textrm{ tiene soporte
+    finito}\}
+  \]
+\end{df}
+
+
+En el caso de \(I\) finito \(\bigoplus_{i\in I} M_i=\prod_{i\in I} M_i\),
+y en el caso general \(\bigoplus_{i\in I} M_i\subseteq\prod_{i\in I} M_i\)
+
+\begin{df}[Suma de módulos]
+  Definimos \(\sum_{i\in I} M_i\) como el menor submódulo que contiene
+  a cualquier \(M_i\) o equivalentemente:
+  \[
+    \sum_{i\in I} M_i=\{\sum_{i\in F} m_i: F\subseteq I \textrm{ finito}\}
+  \]
+\end{df}
+
+\begin{prop}[Relación entre sumas]
+  Tomamos \(\theta:\bigoplus M_i\longrightarrow \sum M_i\) tal que
+  \(\theta({(m_i)}_{i\in I})=\sum_{i\in I} m_i\) es un homomorfismo
+  sobreyectivo de \(R\)-módulos.
+
+  Para \(\{N_i:i\in I\}\subseteq\mathcal{L}(M)\), son equivalentes:
+  \begin{enumerate}
+    \item Para todo \(j\in I\), \(N_j\cap\sum_{i\in I\setminus\{j\}} N_i
+      =\{0\}\).
+    \item Para todo \(F\subseteq I\) finito, y para todo \(j\in F\),
+      \(N_j\cap\sum_{i\in F\setminus\{j\}} N_i
+      =\{0\}\).
+    \item Si \(0=\sum_{i\in I} m_i\) con \(m_i\in M_i\) para todo
+      \(i\in I\), entonces \(m_i=0\) para todo \(i\in I\).
+    \item \(\theta\) es inyectivo y por tanto un isomorfismo.
+    \item Para cada par \(J_1,J_2\subseteq I\) con
+      \(J_1\cap J_2=\emptyset\), se tiene que
+      \(\left(\sum_{i\in J_1} N_i\right)\cap
+      \left(\sum_{i\in J_2} N_i\right)=\{0\}\)
+  \end{enumerate}
+\end{prop}
+
+\begin{df}
+  En caso de satisfacerse cualquiera de las condiciones anteriores
+  equivalentes, diremos que la suma \(\sum_{i\in I} N_i\) es una suma
+  directa interna, que notaremos por \(\dot{+}_{i\in I} N_i\).
+\end{df}
+
+\begin{cor}
+  Si la familia \(\{N_i:i\in I\}\subseteq\mathcal{L}(M)\) verifican
+  las condiciones y \(N\in\mathcal{L}(M)\) tal que
+  \(N\cap\dot{+}_{i\in I} N_i=\{0\}\), entonces \(\{N_i:i\in I\}\cup\{N\}\).
+\end{cor}
+
+\begin{df}[Independencia]
+  Si la familia \(\{N_i:i\in I\}\) donde cada módulo es distinto de 0 y
+  satisface alguna de las condiciones anteriores equivalente, entonces
+  diremos que dicha familia es independiente.
+\end{df}
+
+\begin{df}[Módulo libre]
+  Caso particular: El módulo regular \(M_i=R\), llamamos:
+  \[
+    R^{(I)}=\bigoplus_{i\in I} M_i=\{
+      {(r_i)}_{i\in I}\in R^I:\textrm{ con soporte finito}\}
+  \]
+\end{df}
+
