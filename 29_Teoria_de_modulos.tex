@@ -1,0 +1,101 @@
+\begin{df}
+\(A\) es un DIP, \(\subscriptbefore{A}{M}\) módulo.
+\[
+  t(M)=\{m\in M:\ann_A(m)\neq\langle 0\rangle\}
+\]
+es un submódulo de \(M\), que se llama submódulo de torsión de \(M\).
+\end{df}
+
+
+Ejemplo: sea \(A\) un DIP,
+sea \(\subscriptbefore{A}{M}\) un módulo y consideramos
+su submódulo de torsión.
+
+Supongamos que \(t(M)\neq\{0\}\).
+Definimos \(P\) como el conjunto de representantes de las clases de
+equivalencia, bajo la relación ser asociados, de los irreducibles de \(A\).
+
+Sea \(p\in P\), tomamos \(M_p=\{m\in M: p^e m=0\textrm{ para algún }
+e\ge 1\}\). Tenemos que \(M_p\subseteq t(M)\), \(M_p\) es un submódulo.
+Entonces:
+\[
+  t(M)=\dot{+}_{p\in P} M_p
+\]
+Demostremos esto.
+
+Tomemos un \(m\in t(M)\), \(Am\) es un módulo de longitud finita.
+\[
+  Am=N_1\dot{+}\cdots\dot{+}N_r
+\] donde \(N_i\) es una componente \(p_i\)-primaria.
+
+En particular, \(m=m_1+\cdots+ m_r\) de manera que \(m_i\in N_i\subseteq
+M_{p_i}\).
+
+Luego \(M=\sum_{p\in P} M_p\). La unicidad es sencilla de deducir:
+cada \(m\) estará en una componente primaria.
+
+Caso particular. Tomamos \(M=\Cont^\infty(\R)\), \(M\) es un
+\(\R[x]\)-módulo si \(xf=f'\). Entonces \(t(M)\) es el conjunto
+de las funciones que satisfacen una EDO con coeficientes constantes.
+
+\(P=\{\textrm{ Polinomios mónicos o bien lineales o bien
+cuadráticos irreducibles}\}\). Es decir, cualquier función que se puede
+definir mediante una EDO lineal con coeficientes constantes se puede
+escribir como suma de funciones que resuelven
+\({(\alpha\frac{\textrm{d}^2}{\textrm{d}x^2}+
+\beta\frac{\textrm{d}}{\textrm{d}x}+\gamma)}^e f=0\) con \(e\in\N\).
+
+Como hemos visto en ese caso particular, \(M_p\) no tiene por qué
+tener longitud finita.
+
+Consideremos \(I\) un conjunto infinito y \(R^{(I)}\) tal y como lo hemos
+definido antes.
+\begin{lema}
+  Si \(M\) es un \(R\) módulo, existe una sucesión exacta de la forma
+  \[
+    0\longrightarrow L\longrightarrow R^{(I)}\longrightarrow M
+    \longrightarrow 0
+  \]
+  para \(I\) adecuado.
+\end{lema}
+\begin{proof}
+  Tomo \(\{m_i:i\in I\}\) tal que \(M=\sum_{i\in I}Rm_i\).
+  Definimos \(\varphi:R^{(I)}\longrightarrow M\) dada por
+  \(\varphi({(r_i)}_{i\in I})=\sum_{i\in I}r_i m_i\).
+
+  \(L=\ker\varphi\overset{\iota}{\longrightarrow} M\).
+\end{proof}
+
+\begin{lema}[]
+  Para \(\{m_i:i\in I\}\subseteq M\), son equivalentes:
+  \begin{enumerate}
+    \item \(\sum_{i\in I} r_i m_i=0\) implica que \(r_i=0\) para todo índice.
+    \item El homomorfismo \(\varphi:R^{(I)}\longrightarrow M\) con
+      \(\varphi({(r_i)}_{i\in I})=\sum_i r_i m_i\) es inyectiva.
+  \end{enumerate}
+  Si se satisface 1, diremos que el conjunto \(\{m_i:i\in I\}\) es linealmente
+  independiente. Si además estos elementos son además un conjunto de
+  generadores, diremos que forman una base.
+\end{lema}
+
+La demostración es trivial.
+
+\begin{obs}
+  \(M\) tiene una base si y solo si \(M\cong R^I\) para algún \(I\).
+\end{obs}
+
+\begin{df}[Módulos libres]
+  Un módulo se llama libre si admite una base.
+\end{df}
+
+\begin{obs}
+  Advertencia: hay muchos módulos que no son libres.
+\end{obs}
+
+Ejemplos de módulos no libres:
+\begin{enumerate}
+  \item Ningún grupo abeliano finito es libre como \(\Z\) módulo.
+  \item \(t(M)\), \(\subscriptbefore{A}{M}\) con \(A\) un DIP, nunca es libre.
+    En otras palabras \(A^{(I)}\) no es nunca un módulo de torsión (por
+    ser un dominio de integridad).
+\end{enumerate}
