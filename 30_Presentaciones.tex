@@ -1,0 +1,89 @@
+\subsection{Presentaciones de módulos}
+
+\begin{prop}[Módulo presentado]
+  Sea \(M\) un módulo. Existe una sucesión exacta
+  \[
+    \cdots\overset{f_{-2}}{\longrightarrow} F_{-1}
+    \overset{f_{-1}}{\longrightarrow} F_{0}
+    \overset{f_{0}}{\longrightarrow} M
+    \overset{}{\longrightarrow} 0
+  \]
+  donde \(F_{-n}\) es libre para todo \(n\in\N\). Esa sucesión se llama
+  resolución libre de \(M\).
+\end{prop}
+\begin{proof}
+  Tomo un conjunto de generadores de \(M\), y tomo un homomorfismo de módulos
+  sobreyectivo \(F_0\overset{p_0}{\longrightarrow} M\).
+  \[
+    F_{-1}
+    \overset{p_{-1}}{\longrightarrow} K_0
+    \overset{\iota}{\longrightarrow} F_0
+    \overset{p_{0}}{\longrightarrow} M
+    \overset{}{\longrightarrow} 0
+  \]
+  y reiteramos el proceso.
+
+  Exactitud vista en \(F_{-1}\) ya que otro caso sería análogo.
+  \(\ker f_{-1}=:K_{-1}=\Im p_{-2}=\Im  f_{-2}\).
+
+  La resolución puede pero no tiene por qué ser finita.
+
+\end{proof}
+
+\begin{df}[Módulo finitamente presentado]
+  \(M\) se dice finitamente presentado si existe un presentación finita que no
+  es sino una sucesión exacta de la forma
+  \[
+    F_{-1}\overset{f_{-1}}{\longrightarrow} F_0
+    \overset{f_{0}}{\longrightarrow}M \longrightarrow 0
+  \]
+\end{df}
+
+Ejercicio: dar una presentación finita del \(\Z\)-módulo \(\Z_2\oplus\Z_4\).
+
+\begin{prop}
+  Un anillo \(R\) es noetheriano a izquierda si y solo si todo módulo
+  finitamente generado es finitamente presentado.
+\end{prop}
+\begin{proof}
+  Veamos solo una implicación: que si \(\subscriptbefore{R}{R}\) es
+  noetheriano entonces que submódulo finitamente generado es finitamente
+  presentado.
+
+  Como \(M\) es finitamente generado, \(K_0\) es finitamente
+  generado \(F_{-1}\overset{p_{-1}}{\longrightarrow}
+  K_0\overset{\iota}{\longrightarrow}
+  F_0\overset{f_0}{\longrightarrow} M\longrightarrow 0\).
+
+\end{proof}
+
+Tenemos que \(M\cong F_0/\Im f_{-1}\). Tomemos \(E_s\), \(F_t\) módulos
+libres con bases finitas de cardinales \(s\) y \(t\) respectivamente.
+Diremos que \(E_s\) tiene rango \(s\) (a pesar de que no es una invariante
+del módulo, problema de la base de número invariante o INB, incluso se
+puede dar \(R\cong R\oplus R\)). Llamamos \(e=\{e_1,\ldots,e_s\}\) base
+de \(E_s\), y \(f=\{f_1,\ldots,f_t\}\) base de \(F_t\). Sea
+\(\psi: E_s\longrightarrow F_t\), definido por \(\psi(e_i)=
+\sum_{j=1}^t a_{ij}f_j\). Definimos la matriz \(A_\psi={(a_{ij})}_{
+  1\le i\le s, 1\le j\le t}\in\mathcal{M}_{s\times t}(R)\).
+
+Dado \(u=\sum_{i=1}^s x_i e_i\), \(x_i\in R\). Entonces
+\[
+  \psi(u)=\sum_{j=1}^t y_j f_j
+\]
+Resulta que si \(u_e=x=(x_1,\ldots,x_s)\) y \(y=(y_1,\ldots,y_t)\),
+tenemos que \(y=xA_\psi\) y por tanto
+\({\psi(u)}_f=u_e A_\psi\).
+
+Tenemos que \((\cdot)A_\psi\circ{(\cdot)}_e={(\cdot)}_f\circ\psi\).
+
+
+Sean \(E_s\overset{\psi}{\longrightarrow} F_t\overset{\varphi}{\longrightarrow}
+G_r\), entonces \(A_{\varphi\circ\psi}=A_\varphi A_\psi\).
+
+Ejemplo: Sea \(T:V\longrightarrow V\) un endomorfismo de espacios vectoriales,
+y \(V\) de dimensión finita. \(\subscriptbefore{K[x]}{V}\) es un módulo
+finitamente presentado. Buscamos una presentación finita.
+
+
+
