@@ -1,0 +1,120 @@
+Ejemplo: \(T:V\longrightarrow V\) aplicación \(K\)-lineal,
+\(n=\dim_K(V)<\infty\). Queremos una presentación
+libre finita de \(\subscriptbefore{K[x]}{V}\). Tomo una
+\(K\)-base (base como espacio vectorial)
+\(\{v_1,\ldots, v_n\}\) de \(V\).
+
+Tenemos que
+\[
+  T(v_i)=\sum_{j=1}^n b_{ij} v_i
+\]
+donde \((b_{ij})\in\mathcal{M}_n(K)\) es la matriz asociada a \(T\). Tomo
+\(F_n\) un \(K[x]\)-módulo libre con base \(\{f_1,\ldots, f_n\}\)
+y \(\phi: F_n\longrightarrow V\) tal que \(\phi(f_i)=v_i\)
+para todo \(i\in\{1,\ldots,n\}\). \(\phi\) es un homomorfismo de
+\(K[x]\)-módulos sobreyectivo.
+
+Tenemos que \(F_n\overset{\phi}{\longrightarrow} V\longrightarrow 0\).
+Tomamos \(Xf_i-\sum_{j=1}^n b_{ij}f_i\in\ker\phi\).
+
+Afirmamos que \(\{Xf_i-\sum_{j=1}^n b_{ij}f_i:i\in\{1,\ldots,n\}\}\)
+es un conjunto de generadores de \(\ker\phi\).
+
+Tomemos \(x\in F_n\), tenemos que \(x=\sum_{i=1}^n p_i(x)f_i\). Supongamos
+que \(x\neq 0\), definimos el peso como \(w(x):=\sum_{i=1}^n \gr(p_i)\ge 0\).
+
+Observemos que \(w(x)=0\) es solo posible si \(p_i\in K\) para todo \(i\).
+Si \(w(x)=0\), entonces \(x=\sum_{i=1}^n p_i f_i\).
+Entonces aplicando \(\phi\) tenemos
+\(0=\sum_{i=1}^n p_i v_i\), y por tanto \(x=0\) lo que es una contradicción.
+
+Así que si \(x\in\ker\phi\setminus\{0\}\), \(w(x)\ge 1\).
+
+Vamos a aplicar inducción sobre \(w(x)\). \(w(x)=1\). Entonces existe un
+único índice \(k\in\{1,\ldots,n\}\) tal que \(p_k\) no es constante
+y además \(p_k=aX+b\) con \(a,b\in K\).
+\begin{eqnarray*}
+  x&=&\sum_{i\neq k} p_i f_i + (aX+b)f_k\\
+  &=&\sum_{i\neq k} p_i f_i + a(Xf_k-\sum_j b_{kj}f_j)+a\sum_j b_{kj}f_j
+  +bf_k\\
+\end{eqnarray*}
+Luego
+\[
+  \sum_{i\neq k}p_i f_i+a\sum_j b_{kj}f_j+bf_k\in\ker\phi
+\]
+donde como son todos constantes, se tiene
+\[
+  \sum_{i\neq k}p_i f_i+a\sum_j b_{kj}f_j+bf_k=0
+\]
+y por tanto \(x=a(Xf_k-\sum_j b_{kj}f_j)\).
+
+Supongamos \(w(x)>1\). Existe algún \(k\in\{1,\ldots,n\}\) para el que
+\(\gr(p_k)\ge 1\). Así, \(p_k=q(X)X+b\), con \(\gr(q)=\gr(p_k)-1\) y
+\(b\in K\).
+
+\begin{eqnarray*}
+  x&=&\sum_{i\neq k} p_i f_i +q(X)(Xf_k-\sum_j b_{kj}f_j)
+  +q(X)\sum_j b_{kj}f_j+bf_k\\
+\end{eqnarray*}
+Tenemos que \(y=\sum_{i\neq k} p_i f_i+q(X)\sum_j b_{kj}f_j+bf_k\in\ker\phi\)
+y \(w(y)\le w(x)-1<w(x)\). Por inducción, sabemos que \(y=\sum_i q_i (Xf_i
+-\sum_j b_{ij}f_j)\),
+y tenemos:
+\[
+  x= q(X)(Xf_k-\sum_j b_{kj}f_j)+\sum_i q_i (Xf_i
+-\sum_j b_{ij}f_j)
+\]
+con lo que se demuestra el enunciado, sacando factor común lo que haga
+falta y redondeando.
+
+Definimos
+\[
+  F_n\overset{\psi}{\longrightarrow} F_n\overset{\phi}{\longrightarrow}
+  V\longrightarrow 0
+\]
+que es una representación libre finita, donde
+\[
+  \psi(f_i)=Xf_i-\sum_j b_{ij}f_j
+\]
+
+Con lo que la matriz nos queda:
+\[
+  A_\psi=
+  \begin{pmatrix}
+    X-b_{11}  & -b_{12}&\cdots&-b_{1n}\\
+    -b_{21}  & X-b_{22}&\cdots&-b_{2n}\\
+    \cdots&\cdots&\cdots&\cdots\\
+    -b_{n1}  & -b_{n2}&\cdots&X-b_{nn}\\
+  \end{pmatrix}\in\mathcal{M}_n(K[x])
+\]
+o si se quiere, \(A_\psi=XI-A_T\) con \(A_T=(b_{ij})\).
+
+\begin{lema}
+  Sea \(F\) un \(R\)-módulo libre y \(\varphi:M\longrightarrow N\) un
+  epimorfismo de \(R\)-módulos. Para cada homomorfismo de \(R\)-módulos
+  \(\alpha:F\longrightarrow N\) existe un homomorfismo de \(R\)-módulos
+  \(\beta: F\longrightarrow M\) tal que \(\varphi\circ\beta=\alpha\).
+  Es decir, \(\alpha\) se levanta como homomorfismo a \(M\).
+\end{lema}
+\begin{proof}
+  Tomo en \(F\) una base \(\{e_i:i\in I\}\). Como \(\varphi\) es sobreyectivo
+  para cada \(\alpha(e_i)\) existe un \(m_i\in M\) tal que \(\varphi(m_i)
+  =\alpha(e_i)\).
+  Ahora tenemos \(\beta\) dado por \(\beta(e_i)=m_i\).
+
+\end{proof}
+
+Sean \(\subscriptbefore{R}{M}\) y \(\subscriptbefore{R}{N}\) finitamente
+presentados y \(h:M\longrightarrow N\) homomorfismo de \(R\)-módulos.
+\[
+  E_s\overset{\psi}{\longrightarrow}
+  F_t\overset{\phi}{\longrightarrow} M\longrightarrow 0
+\]
+\[
+  E_{s'}\overset{\psi'}{\longrightarrow}
+  F_{t'}\overset{\phi'}{\longrightarrow} N\longrightarrow 0
+\]
+Por el lema anterior, existe un \(q\) tal que \(\phi'\circ q=h\circ\phi\).
+Observemos que \(\Im q\circ\psi\subseteq \ker\phi'=\Im\psi'\).
+Aplicando el lema sobre la imagen de \(\psi'\), existe un
+\(p\) tal que \(\psi'\circ p=q\circ\psi\).
