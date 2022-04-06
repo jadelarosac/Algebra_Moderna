@@ -1,0 +1,128 @@
+\begin{df}[Matrix quasidiagonal]
+  Sea \(A=(a_{ij})\in\mathcal{M}_{s\times t}(R)\). Diremos que
+  \(A\) es quasidiagonal si \(a_{ij}=0\) para todo \(i\neq j\).
+  Usaremos \(d_i=a_{ii}\) para \(i=1,\ldots,m\) con
+  \(m=\min\{s,t\}\). La notación
+  \[
+    A=\diag_{s\times t}(d_1,\ldots, d_m)
+  \]
+\end{df}
+
+Ejemplos:
+\[
+  \diag_{3\times 2}(1,3)
+  \begin{pmatrix}
+    1&0\\
+    0&3\\
+    0&0
+  \end{pmatrix}
+\]
+\[
+  \diag_{2\times 3}(1,3)
+  \begin{pmatrix}
+    1&0&0\\
+    0&3&0\\
+  \end{pmatrix}
+\]
+
+\begin{nt}
+  Denotaremos \(GL_n(R)\) al grupo de unidades de \(\mathcal{M}_n(R)\):
+  es decir, las matrices \(Q\) tales que existe
+  otra matriz \(Q^{-1}\) que cumpla \(QQ^{-1}=Q^{-1}Q=I_n\).
+\end{nt}
+
+\begin{prop}
+  Sea la presentación finita:
+  \[
+    E_s\overset{\psi}{\longrightarrow} F_t
+    \overset{\phi}{\longrightarrow} M\longrightarrow 0
+  \]
+  de \(\subscriptbefore{R}{M}\). Supongamos que existen \(P\in GL_s(R)\),
+  \(Q\in GL_t(R)\) y \\\(D=\diag_{s\times t}(d_1,\ldots, d_m)\)
+  tales que \(PA_\psi = DQ\). Si \(\{m_1,\ldots, m_t\}\) es el conjunto
+  de generadores de \(M\) y tales que \(m_i=\phi(f_i)\) con
+  \[
+    x_i=\sum_{j=1}^t q_{ij}m_j
+  \]
+  entonces \(M=\dot{+}_{i=1}^t Rx_i\) y \(\ann_R(x_i)=Rd_i\) si
+  \(i\le m\) y \(\ann_R(x_i)=\{0\}\) si \(i>m\) si se da el caso.
+\end{prop}
+
+\begin{proof}
+  Tomemos otra presentación:
+  \[
+    E_s\overset{\psi_1}{\longrightarrow} F_t
+    \overset{\phi_1}{\longrightarrow} M\longrightarrow 0
+  \]
+
+  Tomemos \(\id:M\longrightarrow M\) y dos homomorfismos
+  \(p:E_s\longrightarrow E_s\) y
+  \(q:F_t\longrightarrow F_t\), tales que \(A_p=P\),
+  \(A_q=Q\) y \(A_\psi =D\) y que conmuten todas las aplicaciones.
+
+  Para que conmuten, definimos \(\phi_1=\phi\circ q\),
+  con lo que \(\phi_1(f_i)=\phi(q(f_i))=\sum_{j=1}^t q_{ij} m_j=x_i\).
+
+  La condición de matrices \(PA_\psi=DQ\) garantiza que
+  \(\psi\circ p=q\circ A_\phi\).
+
+  Hay que comprobar que la sucesión que nos hemos inventado
+  es exacta en \(F_t\). Para demostrarlo, usamos que \(P\) y \(Q\) son
+  inversibles: \(p,q\) son isomorfismos y podemos recuperar la exactitud
+  de la sucesión del enunciado.
+
+  \[
+    M=Rx_1+\cdots+Rx_t
+  \]
+  porque \(x_i=\phi_1(f_i)\) y \(\phi_1\) es sobreyectiva. Para ver que es
+  directa, tomamos el \(0=r_1 x_1+\cdots+ r_t x_t\). Hay que ver
+  que cada \(r_i x_i=0\).
+  \[
+    0=\phi_1(r_1 f_1+\cdots+r_t f_t)\implies
+    r_1 f_1+\cdots+r_t f_t\in\ker\phi_1=\Im\psi_1
+  \]
+
+  Por otro lado, \(\Im\psi_1=R\psi_1(e_1)+\cdots+ R\psi_1(e_s)\).
+  Ahora bien, \(A_{\psi_1}=D\), con lo que
+  \(\Im\psi_1=Rd_1 f_1+\cdots +Rd_m f_m\). Tenemos que esos módulos
+  son independientes y la suma es directa:
+  \(\Im\psi_1=Rd_1 f_1\dot{+}\cdots\dot{+} Rd_m f_m\).
+  Entonces \(r_i\in Rd_i\) para \(i\le m\),
+  y si \(t>m\), entonces \(r_i=0\) para \(i>m\).
+
+  Así, cada \(r_i f_i = s_i d_i f_i\).
+  Tomamos \(r_1 x_i\phi_1(r_i f_i) \), tenemos que
+  \(r_i f_i\in\Im\psi_1=\ker\phi_1\), luego \(r_i x_i=0\).
+  Luego:
+  \[
+    M=Rx_1\dot{+}\cdots\dot{+}Rx_t
+  \]
+
+  Se deduce también que \(\ann_R(x_i)\supseteq Rd_i\).
+
+  \begin{eqnarray*}
+    M&\cong& F_t/\Im\psi_1=
+    (Rf_1\dot{+}\cdots\dot{+}Rf_t)/
+    (Rd_1f_1\dot{+}\cdots\dot{+}Rd_m f_m)\\
+    &\cong&
+    Rf_1/Rd_1 f_1\oplus\cdots\oplus Rf_m/Rd_m f_m
+    \oplus R/\{0\}\oplus\overset{(t-m)}{\cdots}\oplus R/\{0\}\\
+    &\cong&
+    Rf_1/Rd_1\oplus\cdots\oplus R/Rd_m
+    \oplus R\oplus\overset{(t-m)}{\cdots}\oplus R
+  \end{eqnarray*}
+
+\end{proof}
+
+Caso particular: \(R=\Z\). Aquí siempre podemos calcular P y Q.
+Si \(M\) es un grupo abeliano finitamente generado como \(\Z\)-módulo.
+Entonces existen \(d_1,\ldots, d_m\in\N\) tales que
+\[
+  M\cong \Z_{d_1}\oplus\cdots\oplus\Z_{d_m}\oplus\Z^{t-m}
+\]
+si \(t>m\) y en otro caso:
+\[
+  M\cong \Z_{d_1}\oplus\cdots\oplus\Z_{d_m}
+\]
+Es la suma de una parte de torsión y una libre de torsión.
+
