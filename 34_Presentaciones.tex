@@ -1,0 +1,154 @@
+¿Es posible encontrar \(P,Q\) cuadradas inversibles tales que
+\(PA_\psi Q^{-1}\) sea una matriz quasidiagonal?
+
+\begin{df}[Matrices y operaciones elementales]
+  \(E_{ij}\in\mathcal{M}_n(R)\) definida por su única entrada no nula es
+  la \((i,j)\)-ésima, que vale 1.
+  Se verifica:
+  \[
+    E_{ij}=\left\{
+      \begin{matrix}
+        E_{ie},&\textrm{si } j=k\\
+        0,&\textrm{si } j\neq k\\
+      \end{matrix}
+      \right.
+  \]
+
+  Para cualquier matriz \(B\) de entradas \(b_{ij}\), se puede escribir:
+  \[
+    B=\sum_{i,j} b_{ij}E_{ij}=\sum_{i,j} E_{ij}b_{ij}
+  \]
+
+  Sea \(A\) una matriz rectangular de tamaño adecuado, \(r\in R,
+  u\in\mathcal{U}(R)\).
+  \[
+    {(E_{ij}A)}_{rs}=\left\{
+      \begin{matrix}
+        a_{is},&\textrm{si } r=j\\
+        0,&\textrm{si } r\neq j\\
+      \end{matrix}
+      \right.
+  \]
+  La matriz \(I+rE_{ij}\) es inversible para \(i\neq j\). (multiplicando
+  por \(I-rE_{ij}\) sale).
+
+  La matriz \(I+E_{ij}+E_{ji}-E_{ii}-E_{jj}\) es inversible para \(i\neq j\),
+  pues al cuadrado es la identidad.
+
+  La matrix \(I+(u-1)E_{ii}\) es inversible, se prueba multiplicando
+  por \(I+(u^{-1}-1)E_{ii}\).
+
+  A las siguientes matrices las llamamos matrices elementales:
+  \begin{enumerate}
+    \item \(I+rE_{ij}\) (multiplicar por un escalar una fila o columna
+      y sumársela a otra).
+    \item \(I+E_{ij}+E_{ji}-E_{ii}-E_{jj}\) (intercambiar sus filas o
+      columnas).
+    \item \(I+(u-1)E_{ii}\) (multiplicar una fila o columna por una unidad).
+  \end{enumerate}
+  es un grupo.
+\end{df}
+
+Ejemplo: Sea \(M\) un grupo aditivo generado por \(\{m_1,m_2,m_3\) sujeto
+a las relaciones:
+\begin{enumerate}
+  \item \(2m_1+m_2-m_3=0\)
+  \item \(4m_1+m_2-3m_3=0\)
+\end{enumerate}
+
+Tomamos \(\Z\)-módulos libres \(F_3\) con bases \(\{f_1,f_2,f_3\}\) y
+\(E_2\) con bases \(\{e_1,e_2\}\).
+\[
+  F_3\overset{\psi}{\longrightarrow}
+  F_3\overset{\phi}{\longrightarrow}
+  M\longrightarrow 0
+\]
+
+Definimos \(\phi(f_i)=m_i\) y
+\[
+  A_\psi =
+  \begin{pmatrix}
+    2&1&-1\\
+    4&1&-3\\
+  \end{pmatrix}
+\]
+
+Solo apuntamos las operaciones por columnas porque solo nos interesa la
+matriz \(Q\). Para tener una sencilla, vamos a hacer el máximo número
+de matrices por filas.
+\[
+  \begin{pmatrix}
+    2&1&-1\\
+    4&1&-3\\
+  \end{pmatrix}\sim
+  \begin{pmatrix}
+    2&1&-1\\
+    0&-1&-1\\
+  \end{pmatrix}\sim
+\]
+Ahora comenzamos a hacer operaciones por columnas, anotándolas:
+\[
+  \begin{pmatrix}
+    2&0&-2\\
+    0&-1&-1\\
+  \end{pmatrix}\underset{c_3+c_2}{\sim}
+  \begin{pmatrix}
+    2&0&-2\\
+    0&-1&0\\
+  \end{pmatrix}\underset{c_3-c_1}{\sim}
+  \begin{pmatrix}
+    2&0&0\\
+    0&-1&0\\
+  \end{pmatrix}
+\]
+Tenemos que
+\[
+  D=
+  \begin{pmatrix}
+    2&0&0\\
+    0&-1&0\\
+  \end{pmatrix}
+\]
+y que
+\[
+  Q=
+  \begin{pmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&0&1\\
+  \end{pmatrix}\underset{c_3-c_1}{\sim}
+  \begin{pmatrix}
+    1&0&-1\\
+    0&1&0\\
+    0&0&1\\
+  \end{pmatrix}\underset{c_3-c_2}{\sim}
+  \begin{pmatrix}
+    1&0&-1\\
+    0&1&1\\
+    0&0&1\\
+  \end{pmatrix}
+\]
+
+\[
+  x_1=\sum_{j=1}^t q_{ij}m_j=m_1-m3
+\]
+\[
+  x_2=\sum_{j=1}^t q_{ij}m_j=m_2+m3
+\]
+\[
+  x_3=\sum_{j=1}^t q_{ij}m_j=m3
+\]
+
+\[M=\Z x_1\dot{+}\Z x_2\dot{+}\Z x_3\dot{+}\]
+\[
+  \ann_\Z(x_1)=2\Z
+\]
+\[
+  \ann_\Z(x_2)=-1\Z
+\]
+\[
+  \ann_\Z(x_3)=\langle 0\rangle
+\]
+
+Con lo que
+\[M=\Z x_1\dot{+}\Z x_3\dot{+}\cong\Z_2\oplus\Z\]
