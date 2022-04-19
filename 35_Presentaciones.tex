@@ -1,0 +1,149 @@
+Ejemplo: Sea \(K\) un cuerpo, \(T:V\longrightarrow V\), con
+\(\dim_K V=3\), \(\{v_1,v_2,v_3\}\) es una base de \(V\).
+
+Sea
+\[
+  B=
+  \begin{pmatrix}
+    \phantom{-}1  & -1  & -1  \\
+    -1  & \phantom{-}1  & -1  \\
+    -1  & -1 &  \phantom{-}1  \\
+  \end{pmatrix}
+\]
+la matriz de \(T\) en dicha base. Obtengamos la descomposición cíclica
+primaria de \(\subscriptbefore{K[x]}{V}\).
+
+Tenemos para
+\[
+  A=A_\psi=
+  \begin{pmatrix}
+    x{-}1  & 1  & -1  \\
+    1  & x{+}1  & -1  \\
+    1  & -1 &  x{-}1  \\
+  \end{pmatrix}\in\mathcal{M}(K[x])
+\]
+
+Busquemos \(P, Q\) y \(D\).
+\(v_i=\varphi(f_i)\). Al final obtendremos \(PAQ^{-1}=D\).
+
+Partimos de \(A\) y hacemos operaciones por filas:
+\[
+  A=
+  \begin{pmatrix}
+    x{-}1  & 1  & -1  \\
+    1  & x{+}1  & -1  \\
+    1  & -1 &  x{-}1  \\
+  \end{pmatrix}\sim
+\]
+(colocamos el polinomio de menor grado como pivote)
+\[
+  \begin{pmatrix}
+    1  & -1 &  x{-}1  \\
+    1  & x{+}1  & -1  \\
+    x{-}1  & 1  & -1  \\
+  \end{pmatrix}\sim
+  \begin{pmatrix}
+    1   & -1   &  x-1  \\
+    0   & x+2  & -x  \\
+    0   & x    & -x^2-2x-2  \\
+  \end{pmatrix}\sim
+\]
+(Suponiendo que el cuerpo tiene característica
+  distinta de 2)
+\[
+  \begin{pmatrix}
+    1   & -1   &  x-1  \\
+    0   & 2    & x^2-3x+2  \\
+    0   & x+2  & -x  \\
+  \end{pmatrix}\sim
+  \begin{pmatrix}
+    1   & -1   &  x-1  \\
+    0   & 2    & x^2-3x+2  \\
+    0   & x+2  & -x  \\
+  \end{pmatrix}\sim
+\]
+\[
+  \begin{pmatrix}
+    1   & -1   &  x-1  \\
+    0   & 2    & x^2-3x+2  \\
+    0   & 0    & -\frac{1}{2}x^3+\frac{1}{2}x^2+x-2  \\
+  \end{pmatrix}\sim
+  \begin{pmatrix}
+    1   & -1   &  x-1  \\
+    0   & 2    & x^2-3x+2  \\
+    0   & 0    & x^3-x^2-2x+4  \\
+  \end{pmatrix}
+\]
+Empezamos con las operaciones por columnas
+\[
+  \begin{pmatrix}
+    1   & -1   &  x-1  \\
+    0   & 2    & x^2-3x+2  \\
+    0   & 0    & x^3-x^2-2x+4  \\
+  \end{pmatrix}
+  \overset{c_2+c_1}{\sim}
+  \begin{pmatrix}
+    1   & 0   &  x-1  \\
+    0   & 2    & x^2-3x+2  \\
+    0   & 0    & x^3-x^2-2x+4  \\
+  \end{pmatrix}
+  \overset{c_3-(x-1)c_1}{\sim}
+\]
+\[
+  \begin{pmatrix}
+    1   & 0   &  0  \\
+    0   & 2    & x^2-3x+2  \\
+    0   & 0    & x^3-x^2-2x+4  \\
+  \end{pmatrix}
+  \overset{c_3-(\frac{1}{2})(x^2-3x+2)c_2}{\sim}
+  \begin{pmatrix}
+    1   & 0   &  0  \\
+    0   & 2    & 0\\
+    0   & 0    & x^3-x^2-2x+4  \\
+  \end{pmatrix} = D
+\]
+
+Calculamos ahora \(Q\):
+\[
+  Q=
+  \begin{pmatrix}
+    1 & 1 & x\\
+    0 & 1 & \frac{1}{2}(x^2-3x+2)\\
+    0 & 0 & 1
+  \end{pmatrix}
+\]
+
+Quiero encontrar \(x_1, x_2, x_3\) tales que
+\(\subscriptbefore = K[x]x_1\dot{+}K[x]x_2\dot{+}K[x]x_3\).
+
+Tenemos que \(\ann_{K[x]}(x_1)=K[x]\), \(\ann_{K[x]}(x_2)=2K[x]=K[x]\) y
+\(\ann_{K[x]}(x_3)=\langle x^3-x^2-2x+4 \rangle\).
+Con esto, \(x_1=x_2=0\) y por tanto
+\[
+  \subscriptbefore{K[x]}{V}=K[x]v_3
+\]
+donde la última igualdad es porque \(q_{33}=1\).
+
+Es cíclica primaria si \( x^3-x^2-2x+4 \) es una potencia del irreducible.
+Vamos a estudiar según quien sea el cuerpo \(K\), al menos en un par de
+casos.
+
+Caso particular \(K=\Q\): Probando con \(\pm 1, \pm 2, \pm 4\) vemos que
+no tiene raíces en \(\Q\). Por tanto, como el grado es 3,
+\(\mu= x^3-x^2-2x+4\) es el polinomio mínimo y es irreducible.
+\[
+  \subscriptbefore{\Q[x]}{V}=\Q[x]v_3
+\]
+es la descomposición cíclica primaria. Además, \(\subscriptbefore{\Q[x]}{V}\)
+es simple.
+
+Caso particular \(K=\R\): Por análisis, al ser grado impar, existe al menos
+una raíz real. \(\mu'(x)=3x^2-2x-2\), que tiene como raíces
+\(\frac{1\pm\sqrt{7}}{3}\) y tenemos una parábola con coeficiente líder
+positivo. Luego hay 1 raíces o 3 si los máximos y mínimos son positivos
+o negativos: \(\mu(\frac{1+\sqrt{7}}{3})>0\) luego \(\mu\) tiene una única
+raíz en \(\R\).
+
+Tenemos que, si \(\alpha\) es la raíz real y \(z\in\C\setminus\R\),
+\(\mu=(x-\alpha)(x^2-2\Re(z)x+|z|^2)\) en \(\R[x]\).
+
