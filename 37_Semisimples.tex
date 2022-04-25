@@ -100,16 +100,30 @@
   y que \(g\) es un monomorfismo escindido (o roto o partido).
 \end{df}
 
-\begin{teo}
-  Las siguientes condiciones son equivalentes para un módulo \(M\):
-  \begin{enumerate}
-    \item Todo submódulo de \(M\) es un sumando directo.
-    \item Todo monomorfismo \(L\longrightarrow M\) es escindido.
-    \item Todo epimorfismo \(M\longrightarrow M \) es escindido.
-    \item \(\Soc(M)=M\).
-    \item \(M\) es suma de una familia de submódulos simples.
-    \item \(M\) es suma directa interna de una familia de submódulos simples.
-  \end{enumerate}
-\end{teo}
+\begin{lema}
+  Todo módulo finitamente generado no nulo contiene un submódulo propio
+  maximal.
+\end{lema}
+\begin{proof}
+  Sea \(M\) el módulo y \(\Gamma\) el conjunto de los submódulos propios
+  de \(M\), o sea,
+  \[
+    \Gamma = \{ N:N\in\mathcal{L}(M), N\neq M\}
+  \]
+
+  Tenemos que \(\{0\}\in\Gamma\), luego es no vacío. Tomamos \(\chi\)
+  cadena en \(\Gamma\) y \(N=\bigcup_{C\in\chi} C\). Veamos que
+  \(N\in \Gamma\).
+
+  Tomamos \(m_1,\ldots, m_t\) generadores de \(M\). Si \(N=M\), tendríamos
+  que \(m_1,\ldots, m_t\in N\) y existiría en ese caso un \(C\in\chi\)
+  tal que \(m_1,\ldots, m_t\in C\), con lo que
+  \(M\subseteq C\subseteq M\) con lo que \(C=M\) y en particular
+  \(C\notin \Gamma\), lo cuál es una contradicción.
+
+  Aplicando el lema de Zorn a \(\Gamma\), tenemos que tiene elementos
+  maximales.
+
+\end{proof}
 
 
