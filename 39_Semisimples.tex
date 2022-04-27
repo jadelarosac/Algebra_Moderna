@@ -107,22 +107,32 @@
 \end{proof}
 \begin{obs}
   El conjunto de ``triendomorfismos'' coincide con el de endomorfismos.
+  Es decir, \(S=\End_T(M)\).
 \end{obs}
 \begin{prop}
   Los \(R\)-sumandos directos de \(M\) son los mismos que los \(T\)-sumandos
   directos de \(M\).
 
   Como consecuencia, si \(\subscriptbefore{R}{M}\) es semisimple, entonces
-  \(\subscriptbefore{T}{M}\).
+  \(\subscriptbefore{T}{M}\) también lo es.
 \end{prop}
 \begin{proof}
   Si \(N\) es un \(T\)-sumando directo de \(M\) tenemos que
   \(M=N\dot{+}X\) para cierto \(X\in\mathcal{L}(\subscriptbefore{T}{M})\).
   Entonces \(N\dot{+}X=M\) como \(R\)-módulos.
 
-  Recíprocamente, \(\subscriptbefore{R}{M}=X\dot{+}Y\) con \(X,Y\mathcal{L}
+  Recíprocamente, \(\subscriptbefore{R}{M}=X\dot{+}Y\) con \(X,Y\in\mathcal{L}
   (\subscriptbefore{R}{M})\). Basta ver que \(X\) es un \(T\)-módulo.
 
-  Tomo \(p:M\longrightarrow M\), tal que \(p(x+y)=x\) y \(p\in S\).
+  Tomo \(p:M\longrightarrow M\), tal que \(p(m)=p(x+y)=x\) y
+  \(p\in S=\End_R(S)\), y \(X=\Im p\). Tomo \(g\in T\), \(x\in X\),
+  \[g x=g(x)=g(p(x))=(g\circ p)(x)=(p\circ g)(x)=p(g(x))\in \Im p=X\]
+  luego \(X\in\mathcal{L}(\subscriptbefore{T}{M})\).
+
+  Veamos que si uno es semisimple lo es el otro.
+  Entonces si \(N\)  es un sumando directo de \(M\)
+  visto como \(R\)-módulo, entonces
+  lo es como sumando directo como \(T\) módulo, luego \(M\) es semisimple.
+
 \end{proof}
 

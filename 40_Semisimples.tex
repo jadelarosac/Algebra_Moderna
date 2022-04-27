@@ -1,0 +1,65 @@
+
+\begin{cor}
+  Si \(\subscriptbefore{R}{M}\) es semisimple,
+  \(\ell(\subscriptbefore{R}{M})<\infty\), entonces \(\subscriptbefore{T}{M}\)
+  y \(\ell(\subscriptbefore{R}{M})=\ell(\subscriptbefore{T}{M})\).
+\end{cor}
+
+Tenemos que, dado \(\subscriptbefore{R}{M}\),
+\(\subscriptbefore{R}{M}^n=M\oplus\overset{(n)}{\cdots}\oplus M\).
+Sea \(S'=\End_R(M^n)\).
+
+Sea \(\iota_i\) la aplicación dada por \(m\mapsto(0,\ldots,0,m,0,\ldots0)\) y
+\(\pi_j\) la que aplica \(m_i=(m_1,\ldots, m_j,\ldots, m_n)\mapsto m_j\).
+
+Tenemos que \(\id_{M^n}=\sum_{i=1}^n\iota_i\circ\pi_i\in S'\).
+Dado \(f\in\End_S(M)\), definimos \(\bar{f}=\sum_{i=1}^n\iota_i\circ
+f\circ\pi_i\in\End(M^n)\), en concreto
+\[
+  \bar{f}(m_1,\ldots, m_n)=(f(m_1),\ldots,f(m_n))
+\]
+
+A partir de ahora prescindimos del símbolo \(\circ\) para indicar composición.
+
+Tomando \(g\in S'\), tenemos que
+\[
+  g\bar{f}=\sum_{i,j=1}^n \iota_i\pi_i g \iota_j f\pi_j
+  =\sum_{i,j=1}^n \iota_i f\pi_i g\iota_j\pi_j=\bar{f}g
+\]
+con lo que \(f\in \End_{S'}(M^n)\).
+
+\begin{teo}[de densidad de Jacobson]
+  Sea \(M\) un \(R\)-módulo semisimple. Sean \(m_1,\ldots, m_n\in M\)
+  y \(S=\End_R(M)\). Para cada \(f\in\End_S(M)\) existe un \(r\in R\)
+  tal que \(f(m_i)=rm_i\) para todo \(i\in\{1,\ldots,n\}\).
+\end{teo}
+\begin{proof}
+  Sea \(m=(m_1,\ldots, m_n)\in M^n\). Sé que \(M^n\) es \(R\)-semisimple.
+  \(
+    Rm
+  \) es un \(R\)-sumando directo de \(M^n\). Entonces \(Rm\) es un
+  \(\End_{S'}(M^n)\)-submódulo de \(M^n\).
+
+  Como \(\bar{f}\in\End_{S'}(M^n)\), entonces
+  \((f(m_1),\ldots,f(m_n))=\bar{f}(m)=\bar{f} m\in Rm\), con lo que
+  existe un \(r\in R\) tal que \(f(m_i)=rm_i\).
+
+\end{proof}
+
+\begin{lema}[de Schur]
+  Sean \(\subscriptbefore{R}{M}\), \(\subscriptbefore{R}{N}\) y
+  \(f:M\longrightarrow N\) es homomorfismo de \(R\)-módulos,
+  entonces \(f\) o es 0 o es un isomorfismo.
+
+  Así, \(\End_R(M)\) es una anillo de división.
+\end{lema}
+
+\begin{prop}
+  Sea \(R\) tal que \(\subscriptbefore{R}{R}\) es artiniano y
+  \(\subscriptbefore{R}{M}\) un módulo simple. Si \(\subscriptbefore{R}{M}\)
+  es fiel (\(\Ann_R(M)=\{0\}\)),
+  entonces \(\lambda:R\longrightarrow\End_D(M)\) es un isomorfismo, donde
+  \(D=\End_R(M)\).
+  Además, \(\dim_D M<\infty\).
+\end{prop}
+
