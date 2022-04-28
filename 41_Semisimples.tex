@@ -1,0 +1,152 @@
+\begin{prop}
+  Sea \(R\) tal que \(\subscriptbefore{R}{R}\) es artiniano y
+  \(\subscriptbefore{R}{M}\) un módulo simple. Si \(\subscriptbefore{R}{M}\)
+  es fiel (\(\Ann_R(M)=\{0\}\)),
+  entonces \(\lambda:R\longrightarrow\End_D(M)\) es un isomorfismo, donde
+  \(D=\End_R(M)\).
+  Además, \(\dim_D M<\infty\).
+\end{prop}
+\begin{proof}
+  Supongamos que \(\subscriptbefore{D}{M}\) no fuera de dimensión finita.
+  Entonces \(M\) admite una base \(B\) infinita. Tomamos \(\{x_i:i\in N\}
+  \subseteq B\) linealmente independiente.
+
+  Dado \(i\in \N\), tomamos \(f_i:M\longrightarrow M\) la aplicación
+  \(D\)-lineal que vale 0 sobre todo elemento de \(B\) y sobre
+  \(f_i(x_i)=x_i\).
+
+  Cada \(f_i\in\End_D(M)\). El teorema de densidad nos permite asegurar
+  que existe \(r_i\in R\) tal que \(f_i(x_j)=r_i x_j\) para
+  \(j=0,\ldots, i\).
+
+  \(r_i\in\ann_R(x_0)\cap\ldots\cap\ann_R(x_{i-1})\), pero el
+  \(r_i\in\ann_R(x_0)\cap\ldots\cap\ann_R(x_{i-1})\cap\ann_R(x_i)\).
+  Tenemos que \[\ann_R(x_0)\cap\ldots\cap\ann_R(x_{i-1})
+  \supsetneq\ann_R(x_0)\cap\ldots\cap\ann_R(x_{i-1})\cap\ann_R(x_i)\]
+  con \(i\ge 1\) y tenemos una cadena descendente y por tanto
+  \(\subscriptbefore{R}{R}\) no es artiniano.
+
+  Tomo \(\{m_1,\ldots,m_n\}\) una base de \(M\). Dado \(f\in\End_D(M)\),
+  el teorema de densidad asegura que existe \(r\in R\), entonces
+  \(f(m_i)=rm_i\) para todo \(i\in\{1,\ldots,n\}\). Basta tomar
+  \(\lambda(r)=f\) y tenemos que es sobreyectivo. Como además \(M\)
+  es fiel, \(\lambda\) es un isomorfismo.
+
+\end{proof}
+
+\begin{df}[Idempotentes]
+  Un elemento \(e\in R\) se dice idempotente si \(e^2=e\).
+
+  Un conjunto \(e_1,\ldots,e_n\in R\) de idempotentes se dice un conjunto
+  completo de idempotentes ortogonales (CCIO) si:
+  \[
+    e_i e_j=0
+  \] siempre que \(i\neq j\) y además:
+  \[
+    e_1+\cdots+e_n = 1
+  \]
+\end{df}
+\begin{prop}
+  Si \(\{e_1,\ldots,e_n\}\) es CCIO, entonces
+  \(R=Re_1\dot{+}\cdots\dot{+}Re_n\).
+\end{prop}
+\begin{proof}
+  Sea \(r\in R\), tenemos que \(r=r1=re_1+\cdots+ren\).
+
+  Por otro lado, si \(0=r_1 e_1+\cdots+r_n e_n\) para \(r_i\in R\),
+  entonces multiplicando la identidad por \(e_i\) nos queda
+  \(0=r_i e_i^2=r_i e_i\) para cada \(i\in\{1,\ldots,n\}\).
+
+\end{proof}
+
+\begin{df}[Anillo simple]
+  \(R\) es simple si y solo si los únicos ideales de \(R\) son \(\{0\}\)
+  y \(R\).
+\end{df}
+
+\begin{teo}
+  Son equivalentes, para un anillo no trivial:
+  \begin{enumerate}
+    \item \(\subscriptbefore{R}{R}\) semisimple y todos los \(R\)-módulos
+      simples son isomorfos entre sí.
+    \item \(R\) es isomorfo como anillo a \(\End_D(M)\) con \(D\) de división
+      y \(\subscriptbefore{D}{M}\) es de dimensión finita.
+    \item \(\subscriptbefore{R}{R}\) artiniano y existe un \(R\)-módulo simple
+      y fiel.
+    \item \(\subscriptbefore{R}{R}\) es artiniano y simple.
+  \end{enumerate}
+
+  Además, para la segunda afirmación se da necesariamente que
+  \(D\cong\End_R(\Sigma)\) para cualquier \(\subscriptbefore{R}{\Sigma}\)
+  el único sumódulo simple salvo isomorfismo dado en la primera afirmación.
+  Por último, necesariamente, \(\dim_D(M)=\ell(\subscriptbefore{R}{R})\).
+\end{teo}
+\begin{proof}
+  Veamos que la primera afirmación implica la cuarta.
+  Sabemos que \(\subscriptbefore{R}{R}\) tiene longitud finita.
+  Sea \(I\) un ideal de \(R\) propio (\(R\neq \{0\}\)).
+  \(R/I\) es semisimple como \(R\)-módulo. Como es finitamente generado,
+  es suma directa finita de simples. Todos esos submódulos son isomorfos
+  entre sí.
+  \[
+    R/I\cong \Sigma^n
+  \]
+  donde \(\subscriptbefore{R}{\Sigma}\) es simple.
+
+  Tenemos que \(I=\Ann_R(R/I)\) (aquí es donde hace falta que sea ideal y no
+  solo ideal por la izquierda).
+  \[
+    I=\Ann_R(R/I)=\Ann_R(\Sigma^n)=\Ann_R(\Sigma)
+  \]
+
+  Por otro lado \(R\cong\Sigma^m\), con  \(m=\ell(\subscriptbefore{R}{R})\).
+  \[
+    I=\Ann_R(\Sigma)=\Ann_R(\Sigma^m)=\Ann_R(R)=\{0\}
+  \]
+
+  Demostremos ahora que la cuarta afirmación implica la tercera.
+  Tomamos \(\subscriptbefore{R}{\Sigma}\) simple (existe tomando el primero
+  de la serie de descomposición, por ser artiniano).
+  \(R\neq\Ann_R(\Sigma)\) por se simple, luego \(\Ann_R(\Sigma)=\{0\}\).
+  Luego \(\subscriptbefore{R}{\Sigma}\) fiel.
+
+  La segunda afirmación se deduce de la tercera por la proposición anterior.
+
+  Veamos finalmente que la cuarta afirmación implica la primera. Tomamos
+  \(S=\End_D(M)\). Si \(m, m'\in M\) con \(m\neq 0\), existe entonces un
+  \(f\in S\) tal que \(f(m)=m'\).
+
+  Así, \(Sm=M\) con lo que \(\subscriptbefore{S}{M}\) es simple.
+  Sea \(\{m_1,\ldots, m_n\}\) \(D\)-base de \(M\). Para \(i\in\{1,\ldots,n\}\)
+  defino \(e_i\in S\) tal que
+  \[
+    e_i(m_j)=
+    \left\{
+    \begin{matrix}
+      0&\textrm{si } j\neq i\\
+      m_i&\textrm{si } j = i
+    \end{matrix}
+    \right.
+  \]
+
+  \(\{e_1,\ldots,e_n\}\) es CCIO de \(S\), entonces \(S=Se_1\dot{+}
+  \cdots\dot{+}Se_n\).
+  Veamos que \(Se_i\) es simple. Basta con demostrar que si \(f\in S\)
+  tal que \(fe_i\neq 0\) entonces \(Sfe_i=Se_i\).
+  \[
+    fe_i=f(e_i)=\sum_{j=1}^n a_j m_j
+  \]
+  con \(a_j\in D\). Tomamos un índice \(k\) tal que \(a_k\neq 0\) (posible
+  porque \(fe_i\neq 0\)). Tenemos que \(s(m_k)=a_k^{-1} m_i\) y
+  \(s(m_j)=0\) si \(j\neq k\).
+
+  Tenemos entonces
+  \[
+    sfe_i(m_i)=s(\sum_j a_j m_j)=a_k^{-1}a_k m_i=m_i
+  \]
+  con lo que \(sfe_i=e_i\) y por tanto \(Se_i=Sfe_i\) con lo que
+  \(\subscriptbefore{S}{S}\) es semisimple.
+
+\end{proof}
+
+
