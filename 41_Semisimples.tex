@@ -147,6 +147,50 @@
   con lo que \(sfe_i=e_i\) y por tanto \(Se_i=Sfe_i\) con lo que
   \(\subscriptbefore{S}{S}\) es semisimple.
 
+  Veamos que cualquier módulo simple es isomorfo a \(\subscriptbefore{S}{S}\).
+  Para ver que cada \(Se_i\) es isomorfo a \(\subscriptbefore{S}{M}\), por
+  el lema de Schur, basta encontrar un homomorfismo no nulo
+  \(Se_i\longrightarrow M\). Sea \(F:Se_i\longrightarrow M\) dado por
+  \(F(f):=f(m_i)=f m_i\). Es fácil ver que \(F\) es un \(S\)-módulo.
+  \(F(e_i)=e_i(m_i)=m_i\neq 0\), con lo que \(F\neq 0\) y por el lema
+  de Schur es un isomorfismo.
+
+  Si \(\subscriptbefore{S}{\Sigma}\) es simple, luego existe un epimorfismo
+  \(p:S\longrightarrow\Sigma\) de \(S\)-módulos (descomponer por anuladores
+  de cualquiera de sus elementos). Como \(p\neq 0\), existe un \(i\) tal
+  que \(p|_{Se_i}\neq 0\) y por tanto es un isomorfismo.
+
+  Sea \(\phi:S\longrightarrow R\) un isomorfismo de anillos.
+  \(\{\phi(e_1),\longrightarrow,\phi(e_n)\}\) es claramente CCIO de R.\@
+  En particular, \(R=\dot{+}_{i=1}^n R\phi(e_i)\).
+  Cada \(R\phi(e_i)\) es simple como \(R\)-módulo.
+  \(Se_i\cong \subscriptbefore{S}{M}\), y \(\subscriptbefore{R}{M}\) por
+  restricción de escalares. Comprobando que
+  \(\mathcal{L}(\subscriptbefore{S}{M})=\mathcal{L}(\subscriptbefore{R}{M})\),
+  deducimos que \(\subscriptbefore{R}{M}\) es simple.
+
+  \(R\phi(e_i)\), veamos que
+  \(\mathcal{L}{R\phi(e_i)}\cong\mathcal{L}{R\phi(e_i)}\)
+  dados por \(I\mapsto\phi(I)\) y \(J\mapsto\phi^{-1}(M)\), luego son dos
+  conjuntos ordenados por la inclusión isomorfos. Luego como uno solo tiene
+  dos elementos, en el otro también.
+
+  \(R\phi(e_i)\) es simple y por tanto \(\subscriptbefore{R}{R}\) es
+  semisimple. Además:
+  \[
+    \dim_D(M)=n=\ell(\subscriptbefore{S}{S})=\ell(\subscriptbefore{R}{R})
+  \]
+
+  Sea \(\Sigma\) un \(R\)-módulo simple. Mediante restricción de escalares
+  es un \(S\)-módulo simple, luego \(\subscriptbefore{S}{\Sigma}\cong
+  \subscriptbefore{S}{M}\) con lo que \(\subscriptbefore{R}{\Sigma}\cong
+  \subscriptbefore{R}{M}\).
+
+  \[
+    \lambda:D\longrightarrow\End_S(M)=\End_R(M)
+  \]
+  es, por densidad, un isomorfismo.
+
 \end{proof}
 
 
