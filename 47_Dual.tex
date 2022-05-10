@@ -1,0 +1,91 @@
+\begin{prop}
+  Si \(\subscriptbefore{R}{M}\) tiene una base \(\{v_1,\ldots,v_n\}\),
+  puedo definir \(\{\superscriptbefore{*}{v_1},\ldots,
+  \superscriptbefore{*}{v_n}\}\), definidos mediante \(v_i(
+  \superscriptbefore{*}{v_j})=\delta_{ij}\). Los \(\subscriptbefore{*}{v_i}\)
+  forman una base de \(\superscriptbefore{*}{M}_R\). Además, \(\theta\) es un
+  isomorfismo de anillos.
+\end{prop}
+\begin{proof}
+  Veamos que es una base. Observemos que para cualquier \(m\in M\):
+  \[
+    m=\sum_{i=1}^n \superscriptbefore{*}{v_i}(m)v_i
+  \]
+
+  Sea \(\varphi\in\superscriptbefore{*}{M}\):
+  \[
+    \varphi(m)=\sum_{i=1}^n \superscriptbefore{*}{v_i}(m)\varphi(v_i)
+    =\left(\sum_{i=1}^n \varphi(v_i)\superscriptbefore{*}{v_i}\right)(m)
+  \]
+  luego \(\varphi=\sum_{i=1}^n \varphi(v_i)\superscriptbefore{*}{v_i}\).
+  Con lo que los \(\superscriptbefore{*}{v_i}\) generan
+  \(\superscriptbefore{*}{\subscriptbefore{R^{op}}{M}}\).
+
+  Si
+  \[
+    0=\sum_i r_i\superscriptbefore{*}{v_i}
+  \]
+  entonces:
+  \[
+    0=\sum_i (r_i\superscriptbefore{*}{v_i})(v_j)=r_j
+  \]
+
+  \({\End_R(M)}^{op}\overset{\theta}{\longrightarrow}\End_{R^{op}}
+  (\superscriptbefore{*}{M})\) dado por \(\theta(f)(\varphi):=\varphi\circ f\).
+
+  Veamos que \(\theta\) es inyectivo: tomo \(f\) tal que \(\theta(f)=0\).
+  Dado \(m\in M\) tenemos:
+  \[
+    f(m)=\sum_i \superscriptbefore{*}{v_i}(f(m))v_i
+    =\sum_i \theta(f)(\superscriptbefore{*}{v_i})(m)v_i=0
+  \]
+  luego es inyectivo. Veamos que es sobreinyectivo.
+
+  Dado \(\psi\in\End_{R^{op}}(\superscriptbefore{*}{M})\) definimos
+  \(f:M\longrightarrow M\) por:
+  \[
+    f(m)=\sum_i \psi(\superscriptbefore{*}{v_i})(m)v_i
+  \]
+  Es fácil ver que \(f\in\End_R(M)\cong{\End_R(M)}^{op}\).
+  \begin{eqnarray*}
+    \theta(f)(\varphi)(m)&=&(\varphi\circ f)(m)=\sum_i
+    \psi(\superscriptbefore{*}{v_i})(m)\varphi(v_i)\\
+    &=&\left(\sum_i \varphi(v_i)\psi(\superscriptbefore{*}{v_i})\right)(m)\\
+    &=&\psi\left(\sum_i \varphi(v_i)\superscriptbefore{*}{v_i}\right)(m)\\
+    &=&\psi(\varphi)(m)
+  \end{eqnarray*}
+  Por lo tanto, \(\theta(f)(\varphi)=\psi(\varphi)\), y se sigue
+  \(\varphi=\theta(f)\), con lo que \(\theta\) es sobreyectivo.
+
+\end{proof}
+
+\begin{df}
+  Si \(\subscriptbefore{R}{R}\) es semisimple, entonces
+  \(R\cong\End_{D_1}(\Sigma_1)\times\cdots\times\End_{D_t}(\Sigma_t)\)
+  donde \(D_i\) de dimensión y \(n_i=\dim_{D_i}(\Sigma_i)z\infty\) con
+  \(D_i\) únicos salvo isomorfismo y reordenación y \(n_i\) únicos.
+  Diremos que \(R\) es de tipo \((D_1,\ldots,D_t,n_1,\ldots,n_t)\).
+\end{df}
+
+\begin{teo}
+  Si \({R}\) es semisimple de tipo
+  \((D_1,\ldots,D_t,n_1,\ldots,n_t)\), entonces \(R^{op}\) es semisimple
+  de tipo \((D_1^{op},\ldots,D_t^{op},n_1,\ldots,n_t)\).
+\end{teo}
+\begin{proof}
+  Tenemos que \(R^{op}\cong{\End_{D_1}(\Sigma_1)}^{op}\times\cdots\times
+{\End_{D_t}(\Sigma_t)}^{op}\cong
+  {\End_{D_1^{op}}(\superscriptbefore{*}{\Sigma_1})}\times\cdots\times
+  {\End_{D_t^{op}}(\superscriptbefore{*}{\Sigma_t})}\)
+  y \(\dim_{D_i}(\Sigma_i)=\dim_{D_i^{op}}(\superscriptbefore{*}{\Sigma_i})\).
+  \(R^{op}\) es semisimple con la estructura del enunciado.
+
+\end{proof}
+
+
+\begin{cor}
+  \(R\) es semisimple si y solo si \(R^{op}\) es semisimple.
+\end{cor}
+
+
+
