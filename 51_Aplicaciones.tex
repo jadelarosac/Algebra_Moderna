@@ -118,6 +118,33 @@
     \sum_{x\in G} t_{ki}^{\Sigma_a}(x)\overline{t_{ki}^{\Sigma_a}(x)}=
     |G|
   \]
-  Luego son una base ortonormal.
+  Luego son una base ortogonal.
+
+  \(\tilde{p}_{ii}(v) = \sum_{x\in G} x^{-1} p_{ii}(xv)\),
+   con lo que \(\tilde{p}_{ii}
+   =\sum_{x\in G}\rho(x^{-1})\circ p_{ii}\circ\rho(x)\)
+   donde \(\rho:G\longrightarrow GL(\Sigma_a)\) donde \(\rho(x)(v):=xv\).
+   Por ser homomorfismo de grupos:
+  \[
+    \tilde{p}_{ii} =\sum_{x\in G}{\rho(x)}^{-1}\circ p_{ii}\circ\rho(x)
+  \]
+  Luego la traza del endomorfismo es
+  \(d_a \alpha_{ii} = |G|\). Tenemos:
+  \[
+    \alpha_{ii}  =
+    \sum_l\sum_{x\in G} t^V_{ki}(x) \overline{t_{li}^V(x)}
+    \sum_l\sum_{x\in G} |t^V_{ki}(x)|^2
+  \]
+  con lo que \(|t_{ij}^{\Sigma_a}|^2=
+  \langle t_{ij}^{\Sigma_a}| t_{ij}^{\Sigma_a}\rangle
+  =\frac{1}{|G|}\alpha_{ii}=\frac{1}{d_a}\).
+
+  Luego la base
+  \[
+    \{\sqrt{d_a}t_{ij}^{\Sigma_a}:
+    a\in \{1,\ldots t\}, i,j\in\{1,\ldots, d_a\}\}
+  \]
+  es una base ortonormal.
 
 \end{proof}
+
