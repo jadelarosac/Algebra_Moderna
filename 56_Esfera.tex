@@ -1,0 +1,86 @@
+Sea ahora \(U\) un subespacio invariante, es decir,
+\(\C \Sphere^1\)-submódulo.
+\[
+  U^\perp=\{v\in V:\langle v|u\rangle =0\quad\forall u\in U\}
+\]
+
+En efecto, si \(v\in U^\perp\) y \(z\in\Sphere\), he de ver que
+\(zv\in U^\perp\). Tomo \(u\in U\) con
+\(\langle zv|u\rangle_\Sphere=\langle zv|zz^{-1}u\rangle=
+\langle v|z^{-1}u\rangle=0\) y que \(\rho(z^{-1})(u)\in U\).
+
+Tenemos entonces que \(V=U\dot{+}U^\perp\) y haciendo inducción sobre la
+dimensión compleja de \(V\), tenemos que \(V\) es semisimple como
+\(\C\Sphere^1\)-submódulo.
+
+Busquemos las funciones matriciales: tomamos \(\{v_1,\ldots,v_n\}\) base
+de \(\Sphere^1\).
+\[
+  z v_i=\sum_{j} t_{ij}(z)v_j
+\]
+con \(t_{ij}(z)\in\C\). Pero como la representación \(\rho\)
+es continua, son continuas. Es decir, \(t_{ij}\in\mu(\Sphere^1)
+\cap\mathcal{C}(\Sphere^1)\).
+
+Como consecuencia \(C(V)\subset\mathcal{C}(V)\).
+
+\begin{df}[Función representativa]
+  Sea \(G\) un grupo. Llamaremos \(\varphi\in\mu(G)\) representativa si
+  el submódulo cíclico generado por \(\varphi\), es decir,
+  \(\C G\varphi\), es de dimensión finita como \(\C\)-espacio vectorial.
+  Denotaremos por \(\mathcal{R}(G)\) al conjunto de las funciones
+  representativas.
+\end{df}
+
+Ejercicio: \(\varphi\) es representativa si y solo si \(\varphi\in C(V)\)
+para \(V\) cualquier \(\C G\)-módulo de dimensión finita.
+
+\begin{prop}
+  \(\mathcal{R}(G)\) es un \(\C G\)-submódulo de \(\mu(G)\).
+\end{prop}
+
+\begin{df}
+  \(\mathcal{R}_c(\Sphere):=\mathcal{R}(\Sphere)\cap\mathcal{C}(\Sphere)\)
+\end{df}
+\begin{prop}
+  \(\varphi\in\mathcal{R}_c(\Sphere)\) si y solo si \(\varphi\in C(V)\)
+  para \(\rho:S\longrightarrow GL(V)\) continua \(\mathcal{R}_c(\Sphere)\)
+  es un \(\C\Sphere\)-submódulo de \(\mathcal{R}(\Sphere)\).
+\end{prop}
+
+Tenemos que \(\Omega^c_{\C\Sphere^1}\) son homomorfismo continuos de grupos de
+dimensión uno, entre \(\Sphere\) y \(\C^\times\).
+
+Vamos a parametrizarlo, \(\theta\mapsto e^{i\theta}\) tenemos que
+todos los homomorfismos peridicos de \(\R\) en \(\C^\times\)
+son de la forma \(\chi_k(e^{i\theta})=e^{ik\theta}\) para cada \(k\in\Z\).
+Es decir, \(\chi_k(z)=z^k\) para todo \(z\in\Sphere^1\).
+
+Entonces
+\[
+  \Omega^c_{\C\Sphere^1}=\{\chi_k:k\in\Z\}
+\]
+son todas las representaciones irreducibles continuas.
+
+Para cada una de ellas, tenemos \(C(\chi_k)=\C\chi_k\) o parametrizando
+\(C(\chi)=\C e^{i\theta}\).
+
+Tenemos que \(\C\chi_k\cong\C\chi_{k'}\) si y solo si \(k=k'\).
+
+\[
+  \dot{+}_{k\in\Z}\C\chi_k\subseteq\mathcal{R}_c(\Sphere^1)
+  \subseteq\mathcal{C}(\Sphere^1)
+\]
+donde se usa un producto interno
+\[
+  \langle\varphi|\psi\rangle=\int_\Sphere\varphi\overline{\psi}
+\]
+con lo que los \(\chi_k\) son base ortogonal de \(\dot{+}\C \chi_k\).
+
+El análisis funcional, obtenemos la suma directa de espacios de Hilbert,
+con lo que \(\dot{+}\C \chi_k=\mathcal{R}_c(\Sphere)\cong
+\mathcal{L}^2(\Z)\), mientras que \(\mathcal{C}(\Sphere)\)
+se obtiene al completar \(L^2(\Sphere)\). Finalmente se obtiene un isomorfismo
+entre ambos.
+
+
