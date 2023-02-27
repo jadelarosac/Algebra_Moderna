@@ -1,7 +1,7 @@
 \subsubsection{Transformada discreta de Fourier}
 
 Ahora vamos a reindexar. En lugar de usar \(1,\ldots, t\)
-vamos a tomar los índices \(1,\ldots, n-1\).
+vamos a tomar los índices \(0,\ldots, n-1\).
 
 Vamos a suponer que el cuerpo \(K\)
 contiene una raíz primitiva de 1, o sea,
@@ -13,7 +13,7 @@ Seguro que \(\car K \not\| n\) ya que \(1, \omega, \omega^2,\ldots,
 
 Vamos a interpolar las raíces de la unidad.
 
-Tomo \(\alpha_j =\omega^j\), \(j\in\{0,\ldots, n\}\) y
+Tomo \(\alpha_j =\omega^j\), \(j\in\{0,\ldots, n-1\}\) y
 \[M=A_\omega=
 \begin{pmatrix}
   1&1&\cdots1\\
@@ -34,12 +34,14 @@ Entonces \(\sum_{k=0}^{n-1}\omega^{ik}=0\) para \(0<i<n\).
 
 \[
   \begin{pmatrix}
+  	\omega^{0i}&
     \omega^{i}&
     \omega^{2i}&
     \cdots&
     \omega^{(n-1)i}
   \end{pmatrix}
   \begin{pmatrix}
+  	\omega^{-0j}\\
     \omega^{-j}\\
     \omega^{-2j}\\
     \cdots\\
@@ -52,7 +54,7 @@ Tenemos entonces que \(A_\omega A_{\omega^{-1}}^T=nI\),
 es decir, \(A^{-1}_\omega=\frac{1}{n}A_{\omega^{-1}}^T\).
 
 \(\tilde{\xi}:K[x]/\langle x^n-1\rangle\longrightarrow K^n\),
-con \(\xi^{-1}(y)\) es el polinomio interpolador.
+con \(\tilde{\xi}^{-1}(y)\) es el polinomio interpolador.
 
 Tenemos unos datos \((y_0,\ldots, y_{n-1})\in K^n\). El polinomio
 interpolador de esos datos en los nodos \(1,\omega,\ldots,\omega^{n-1}\)
@@ -62,14 +64,14 @@ viene dado por
 \]
 donde \(\hat{y}=y\frac{1}{n}A^T_{\omega^{-1}}\).
 
-Explicitamente, se calcula que los coeficientes quedan:
+Explícitamente, se calcula que los coeficientes quedan:
 \[
-  y_j=\frac{1}{n}\sum_{k=0}^{n-1}y_k\omega^{-jk}
+  \hat{y_j}=\frac{1}{n}\sum_{k=0}^{n-1}y_k\omega^{-jk}
 \]
 
 Tomamos \(K=\C\). \(\omega = e^{i2\pi/n}\):
 \[
-  y_j=\frac{1}{n}\sum_{k=0}^{n-1}y_k\omega^{-i2\pi jk/n}
+  \hat{y_j}=\frac{1}{n}\sum_{k=0}^{n-1}y_k\omega^{-i2\pi jk/n}
 \]
 que es la transformada de Fourier de \(y\).
 
@@ -78,7 +80,7 @@ que es la transformada de Fourier de \(y\).
 Dividimos el intervalo en \(n\) partes iguales, una muestra:
 \(y_j=f(\frac{2\pi j}{n})\) con \(j=0,\ldots,n-1\).
 
-Tomomamos \(g:[0,2\pi]\longrightarrow\C\) con
+Tomamos \(g:[0,2\pi]\longrightarrow\C\) con
 \(g(t)=\sum_{j=0}^{n-1}\hat{y_j}e^{ijt}\).
 
 Tenemos entonces que \(g(\frac{2\pi l}{n})=
