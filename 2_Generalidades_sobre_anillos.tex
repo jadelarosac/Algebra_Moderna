@@ -16,24 +16,22 @@
 \end{df}
 
 
-La suma de ideales es un ideal.
+\noindent Recordemos que tanto la suma como el producto de dos ideales de un anillo es un ideal del mismo anillo.
 
 \begin{df}[Ideales coprimos]
   Dos ideales \(I, J\subset A\) se dirán primos entre sí
-  o coprimos si \(I+J=A\).
-
-  Equivalentemente, existen \(x\in I\), \(y\in J\) tales que
+  o coprimos si \(I+J=A\). Equivalentemente, existen \(x\in I\), \(y\in J\) tales que
   \(1=x+y\).
 \end{df}
 
-La motivación de la definición anterior reside en la identidad
+\noindent La motivación de la definición anterior reside en la identidad
 de Bezout, que estamos generalizando.
 
 \begin{lema}
   Sean \(I, J, K\) ideales de \(A\),
-  \(I+J=I+K=A\) si y solo si \(I+(J\cap K)=I+J\cap K=A\).
+  \(I+J=I+K=A\) si, y solo si, \(I+(J\cap K)=I+J\cap K=A\).
 
-  Es decir, son coprimos entre sí si y solo si uno es coprimo
+  Es decir, son coprimos entre sí si, y solo si, uno es coprimo
   con la intersección de los otros dos.
 \end{lema}
 \begin{proof}
@@ -71,7 +69,7 @@ de Bezout, que estamos generalizando.
   Hipótesis de trabajo para el teorema chino del resto:
   \begin{enumerate}
     \item \(A\) un anillo.
-    \item \(A_1,\ldots,A_t\) anillos.
+    \item \(A_1,\ldots,A_t\) anillos, con \(t \ge 2\).
     \item \(f_i:A\longrightarrow A_i\) un homomorfismo de anillos
       para cada \(i\in\{1,\ldots,t\}\).
     \item \(\Im f_i\subseteq A_i\) es un subanillo.
@@ -80,12 +78,14 @@ de Bezout, que estamos generalizando.
     \item Definimos \(f:A\longrightarrow\Im f_1\times\cdots\times\Im f_t\),
       \(f(x)=(f_1(x),\ldots,f_t(x))\) para cada \(x\in A\).
     \item Tenemos que \(f\) es un homomorfismo de anillos, cuyo núcleo es la
-      intersección de todos los núcleos. Llamaremos \(I=\ker f\).
-      \(x\in A\), \(x\in\ker f\) si y solo si \(f_i(x)=0\) para todo \(i\),
-      es decir, \(x\in\bigcap_{i=0}^t \ker f_i\).
-    \item  Además, existe \(\tilde{f}:A/I
-      \longrightarrow\Im f_1\times\cdots\times\Im f_t\),
-      con \(x+I\mapsto f(x)\).
+      intersección de todos los núcleos.
+      En efecto, dado \(x\in A\), \(x\in\ker f\) si, y solo si, \(f_i(x)=0\) para todo \(i\),
+      es decir, \(x\in\bigcap_{i=0}^t \ker f_i\). Llamaremos \(I=\ker f\).
+    \item  Además, por el primer teorema de isomorfía, existe un homomorfismo
+    \(\tilde{f}:A/I \longrightarrow\Im f_1\times\cdots\times\Im f_t\),
+      con \(x+I\mapsto f(x)\). Por construcción, \(\tilde{f}\) es inyectiva, 
+      pero no sobreyectiva. El Teorema Chino del Resto se basa en demostrar
+      que \(\tilde{f}\) es sobreyectiva bajo ciertas condiciones.
     \item Cada \(\ker f_i\) es coprimo con cualquier \(\ker f_j\)
       para \(j\neq i\).
     \item Llamamos \(I_i=\ker f_i\).
@@ -96,32 +96,31 @@ de Bezout, que estamos generalizando.
   \(I_i+I_j=A\) para todo \(i\neq j\).
 \end{teo}
 \begin{proof}
-  Veamos primero la implicación a la derecha.
-
-  Vamos a suponer \(\tilde{f}\) sobreyectiva, es decir, que \(f\) lo es.
+  Probemos primero la implicación a la derecha. Vamos a suponer \(\tilde{f}\) sobreyectiva, es decir, que \(f\) lo es, 
+  pues \(\tilde{f}(a + \ker{f}) = f(a)\).
+  
   Veamos que todos los \(I_i\) son coprimos entre sí.
 
-  Dado \(i\) tomamos \(x\in A\) tal que \(f_i(x)=1\) y
+  Dado \(i\), tomamos \(x\in A\) tal que \(f_i(x)=1\) y
   \(f_j(x)=0\) para todo \(j\neq i\).
 
-  Observemos que \(x-1\in I_i\), \(x\in\bigcap_{j\neq i} I_j\)
+  Observemos que \(1-x\in I_i\), ya que \(f_i(1-x) = f_i(1) - f_i(x) = 
+  1 - 1 = 0\), y que \(x\in\bigcap_{j\neq i} I_j\).
   \[
-    1=1-x+x\in I_i+\bigcap_{j\neq i} I_j
+    1=1-x+x \in I_i+\bigcap_{j\neq i} I_j
   \]
 
   Por tanto, \(I_i+\bigcap I_j =A\) y entonces por el lema anterior
   \(I_i+I_j=A\).
-
+  
   Veamos el recíproco.
-  Suponemos que \(I_i+I_j=A\) para cualquier \(i\neq j\).
+  Suponemos que \(I_i+I_j=A\) para cualquier \(i\neq j\). Por el lema
+  anterior, \(\forall i \in \{1, \cdots, t\} \ I_i + \bigcap_{i \neq j} I_j = A\).
 
   Tomamos \((f(b_1),\ldots,f(b_t))\in I_1\times\cdots\times I_t\).
 
-  Para cada \(i\), tomamos
-  \(
-  1=a_i+p_i\) con \(a_i\in I_i\) y \(p_i\in\bigcap I_j\).
-
-  Tomamos \(x=\sum_{i=1}^t b_i p_i\).
+  Para cada \(i\), tomamos \(a_i\in I_i\) y \(p_i\in\bigcap I_j\) tales que
+  \(1=a_i+p_i\) y sea \(x=\sum_{i=1}^t b_i p_i\). Entonces
 
   \[
     f_j(x)=\sum_{k=1}^t f_j(b_k) f_j(p_k)=f_j(b_j)f_j(p_j)=f_j(b_j(1-a_j))

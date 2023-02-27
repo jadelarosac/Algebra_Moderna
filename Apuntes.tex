@@ -11,6 +11,8 @@
 \usepackage{mathtools}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{etoolbox}
+
 \hypersetup{
   colorlinks=false,
   allbordercolors=white
@@ -37,6 +39,8 @@
 
 \theoremstyle{plain}
 \newtheorem{teo}{Teorema}
+
+\AtBeginEnvironment{proof}{\parindent=0pt}
 
 \newcommand{\Sphere}{\mathbb{S}}
 \newcommand{\C}{\mathbb{C}}
@@ -69,8 +73,6 @@
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\sgn}{sgn}
 
-\title{Álgebra Abstracta}
-\date{}
 
 \begin{document}
 
@@ -87,6 +89,7 @@
 	\vspace{3cm}
 	{\LARGE José Antonio de la Rosa Cubero\\}
 	\vspace{11cm}
+	{Correcciones y notas por Carlos Romero Cruz\\}
 	{Última revisión: \today\\}
 	
 \end{titlepage}

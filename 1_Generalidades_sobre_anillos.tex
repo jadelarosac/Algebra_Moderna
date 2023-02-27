@@ -31,10 +31,25 @@
     \begin{itemize}
       \item \(I\) es un subgrupo aditivo de \(A\) (es decir,
         \(I\) es un conjunto no vacío que cumple
-        \(b-a\in I\) para todo \(a, b\in I\)).
+        \(a + b\in I\) para todo \(a, b\in I\)).
       \item \(ax, xa\in I\) para todo \(a\in I\) y \(x \in A\).
     \end{itemize}
   \end{df}
+
+  \begin{obs}
+      La primera condición para que un subconjunto de A sea un ideal suyo
+      es equivalente a que \(b - a \in I\) para todo \(a, b \in I\). 
+      Recordemos que, dado cualquier anillo \(A\), \(0a = (0+0)a = 0a + 0a
+      \implies 0a = 0, \forall a \in A\).
+      
+      Esta propiedad, aunque evidentemente intuitiva, no viene explícita
+      en la definición de anillo. Ahora bien, comprobemos que la propiedad
+      de ideal anteriormente descrita se cumple.
+      
+      Sean \(a, b \in I\). \(b - a = b + (-1)a \in I\), pues \((-1) \in A\)
+      y \(a \in I \implies (-1)a \in I)\) por la segunda propiedad de un
+      ideal. 
+  \end{obs}
 
   \begin{teo}[Teorema de Isomorfía]
     Sea \(f:A\longrightarrow B\) un homomorfismo de anillos. Entonces:
