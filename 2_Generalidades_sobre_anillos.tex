@@ -1,15 +1,5 @@
-\begin{df}[Homomorfismo de anillos]
-  \(A,B\) anillos. Se dice que \(f:A\longrightarrow B\) se dice un
-  (homo)morfismo de anillos si para todos \(a,a'\in A\) se tiene:
-  \begin{enumerate}
-    \item \(f(a+a')=f(a)+f(a')\)
-    \item \(f(aa')=f(a)f(a')\)
-    \item \(f(1)=1\)
-  \end{enumerate}
-\end{df}
-
 \begin{df}[Producto de ideales]
-  Sean \(I, J\) ideales. Definimos su producto por:
+  Sea \(A\) un anillo e \(I,\,J\) ideales de \(A\). Definimos su producto por:
   \[
     IJ=\{\sum_i x_i y_i: x_i\in I, y_i\in J\}\subseteq I\cap J
   \]
@@ -19,8 +9,8 @@
 \noindent Recordemos que tanto la suma como el producto de dos ideales de un anillo es un ideal del mismo anillo.
 
 \begin{df}[Ideales coprimos]
-  Dos ideales \(I, J\subset A\) se dirán primos entre sí
-  o coprimos si \(I+J=A\). Equivalentemente, existen \(x\in I\), \(y\in J\) tales que
+  Sea \(A\) un anillo. Dos ideales de \(A\) \(I,\,J\subset A\) se dirán primos entre sí
+  o coprimos si \(I+J=A\). Equivalentemente, existen \(x\in I\) e \(y\in J\) tales que
   \(1=x+y\).
 \end{df}
 
@@ -28,35 +18,37 @@
 de Bezout, que estamos generalizando.
 
 \begin{lema}
-  Sean \(I, J, K\) ideales de \(A\),
-  \(I+J=I+K=A\) si, y solo si, \(I+(J\cap K)=I+J\cap K=A\).
+  Sea \(A\) un anillo e \(I,\,J,\,K\) ideales de \(A\).
+  Entonces \(I+J=I+K=A\) si, y solo si, \(I+(J\cap K)=I+J\cap K=A\).
 
   Es decir, son coprimos entre sí si, y solo si, uno es coprimo
   con la intersección de los otros dos.
 \end{lema}
 \begin{proof}
-  \[1=x+y=x'+z\]
-  con \(x,x'\in I\), \(y\in J\), \(z\in K\).
-  \[1=x+y=x+y1=x+y(x'+z)=x+yx'+yz\]
-  \(x+yx'\in I\), y \(yz\in J\cap K\).
+  Supongamos que \(I+J=I+K=A\). Dados \(x,\,x'\in I\), \(y\in J\) y \(z\in K\),
+  se verifica que \[1=x+y=x'+z.\] Desarrollando la expresión anterior se obtiene que
+  \[1=x+y=x+y1=x+y(x'+z)=x+yx'+yz,\]
+  donde \(x+yx'\in I\), e \(yz\in J\cap K\).
 
   Para el recíproco, \(A\supseteq I+J\supseteq I+J\cap K=A\),
   luego \(A=I+J\).
 \end{proof}
 
 \begin{lema}
-  Sean \(I_1,\ldots, I_t\) ideales de \(A\).
-  \(I_1\cap I_i=A\) si y solo si
-  \(I_1+\bigcap_{i=2}^t I_i=A\).
+  Sea \(A\) un anillo e \(I_1,\,\ldots,\,I_t\) ideales de \(A\), donde
+  \(t \ge 2\).
+  Entonces \(I_1\cap I_i=A\) si, y solo si, \(I_1+\bigcap_{i=2}^t I_i=A\).
 \end{lema}
 \begin{proof}
-  Para \(t=2\) es trivial.
+  Se va a probar por inducción sobre el parámetro \(t \ge 2\).
+  Para \(t=2\), el caso base, es trivial.
 
-  Supongamos cierto \(I_1\cap I_i=A\implies
-  I_1+\bigcap_{i=2}^t I_i=A\) para \(t\), veamos para \(t+1\).
+  Supongamos cierto que \(I_1\cap I_i=A\) implica que
+  I_1+\bigcap_{i=2}^t I_i=A\) para \(t \ge 2\). Veamos que se sigue cumpliendo
+  para \(t+1\).
 
-  Llamo \(I=I\), \(J=\bigcap_{i=2}^t I_i\), \(K=I_{t+1}\).
-  Por hipótesis de inducción \(I+J=A\) y \(I+K=A\) por ser coprimos
+  Llamo \(I=I_1\), \(J=\bigcap_{i=2}^t I_i\), \(K=I_{t+1}\).
+  Por hipótesis de inducción, \(I+J=A\) e \(I+K=A\) por ser coprimos
   (hipótesis del lema). Por el lema anterior tenemos:
   \[
     I+J\cap K=I_1+I_{t+1}\cap \bigcap_{i=2}^{t}
@@ -66,7 +58,8 @@ de Bezout, que estamos generalizando.
   La otra implicación es muy sencilla.
 \end{proof}
 
-  Hipótesis de trabajo para el teorema chino del resto:
+A continuación, se va a enunciar y demostrar el Teorema Chino del Resto, pero antes
+debemos establecer las hipótesis necesarias:
   \begin{enumerate}
     \item \(A\) un anillo.
     \item \(A_1,\ldots,A_t\) anillos, con \(t \ge 2\).

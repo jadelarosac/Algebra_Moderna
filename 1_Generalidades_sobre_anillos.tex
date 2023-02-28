@@ -1,4 +1,7 @@
 \section{Introducción}
+Antes de comenzar con el contenido propio de la asignatura, debemos recordar
+ciertos conceptos y resultados relacionados con la estructura de anillo,
+impartidos en asignaturas básicas de álgebra.
 \subsection{Generalidades sobre anillos}
 \begin{df}[Anillo]
   Sea \(A\) un conjunto en el que existen dos operaciones
@@ -26,8 +29,8 @@
   \end{df}
 
   \begin{df}[Ideales]
-    Sea \(A\) un anillo. \(I\subset A\) se dice ideal si cumple las
-    siguientes propiedades:
+    Sea \(A\) un anillo. Un subconjunto \(I\subset A\) se dice ideal de \(A\)
+    si cumple las siguientes propiedades:
     \begin{itemize}
       \item \(I\) es un subgrupo aditivo de \(A\) (es decir,
         \(I\) es un conjunto no vacío que cumple
@@ -39,30 +42,39 @@
   \begin{obs}
       La primera condición para que un subconjunto de A sea un ideal suyo
       es equivalente a que \(b - a \in I\) para todo \(a, b \in I\). 
-      Recordemos que, dado cualquier anillo \(A\), \(0a = (0+0)a = 0a + 0a
-      \implies 0a = 0, \forall a \in A\).
+      Recordemos que, dado cualquier anillo \(A\), se verifica que \(0a = (0+0)a
+      = 0a + 0a\), luego \(0a = 0\) para todo \(a \in A\).
       
       Esta propiedad, aunque evidentemente intuitiva, no viene explícita
       en la definición de anillo. Ahora bien, comprobemos que la propiedad
       de ideal anteriormente descrita se cumple.
       
-      Sean \(a, b \in I\). \(b - a = b + (-1)a \in I\), pues \((-1) \in A\)
-      y \(a \in I \implies (-1)a \in I)\) por la segunda propiedad de un
-      ideal. 
-  \end{obs}
+      Sean \(a, b \in I\). Entonces \(b - a = b + (-1)a \in I\), pues \((-1) \in A\)
+      y \(a \in I\). 
+   \end{obs}
 
+   \begin{df}[Homomorfismo de anillos]
+     \(A,B\) anillos. Se dice que \(f:A\longrightarrow B\) se dice un
+     (homo)morfismo de anillos si para todos \(a,a'\in A\) se tiene:
+     \begin{enumerate}
+     \item \(f(a+a')=f(a)+f(a')\)
+     \item \(f(aa')=f(a)f(a')\)
+     \item \(f(1)=1\)
+     \end{enumerate}
+   \end{df} 
+
+  
   \begin{teo}[Teorema de Isomorfía]
     Sea \(f:A\longrightarrow B\) un homomorfismo de anillos. Entonces:
     \begin{itemize}
       \item \(\ker f\) es un ideal de \(A\),
       \item \(\Im f\) es un subanillo de \(B\),
       \item Si \(I\subset \ker f\) es un ideal de \(A\), entonces
-        existe un único homomorfismo de anillos tal que
-        \(\tilde{f}:A/I\longrightarrow B\) tal que \(\tilde{f}(a+I)=f(a)\).
-      \item El homomorfismo anterior es inyectivo si y solo si
+        existe un único homomorfismo de anillos
+        \(\tilde{f}:A/I\longrightarrow B\) definido por \(\tilde{f}(a+I)=f(a)\).
+      \item El homomorfismo \(\tilde{f}\) es inyectivo si, y solo si,
         \(I=\ker f\).
-      \item El homomorfismo anterior es sobreyectivo si y solo si lo era
+      \item El homomorfismo \(\tilde{f}\) es sobreyectivo si, y solo si, lo es
         \(f\).
     \end{itemize}
   \end{teo}
-
