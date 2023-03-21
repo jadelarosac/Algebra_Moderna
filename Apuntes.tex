@@ -1,54 +1,65 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Plantilla para libro de texto de matemáticas.
-%
-% Esta plantilla ha sido desarrollada desde cero para el proyecto apuntesDGIIM
-% de LibreIM.
-%
-%	Copyright (C) 2019 LibreIM
-%
-% This program is free software: you can redistribute it and/or modify
-% it under the terms of the GNU Affero General Public License as
-% published by the Free Software Foundation, either version 3 of the
-% License, or (at your option) any later version.
-% This program is distributed in the hope that it will be useful,
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-% GNU Affero General Public License for more details.
-% You should have received a copy of the GNU Affero General Public License
-% along with this program.  If not, see <https://www.gnu.org/licenses/>.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % ------------------------------------------------------------------------------
 % CONFIGURACIÓN BÁSICA DEL DOCUMENTO
 % ------------------------------------------------------------------------------
 
-\documentclass[fontsize=12pt]{scrartcl}
-\usepackage[spanish, es-tabla, es-lcroman, es-noquoting, es-minimal]{babel}
-\usepackage{graphicx}
+\documentclass[12pt, a4paper, oneside]{book}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
 
-\usepackage{templatetools}
-
-% ------------------------------------------------------------------------------
-% CONFIGURACIÓN DE ASIGNATURA
-% ------------------------------------------------------------------------------
-
-\usepackage{config}
-
-% ------------------------------------------------------------------------------
-% TIPOGRAFÍA
-% ------------------------------------------------------------------------------
-
-% Tipografía personalizada
-\usepackage[bitstream-charter]{mathdesign}
-\usepackage[scale=0.88, type1]{FiraSans}
-\usepackage[scale=0.88, type1]{FiraMono}
 \usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue
+}
 
-% Microtype
-\usepackage[activate={true, nocompatibility}, final, tracking=true,factor=1100, stretch=10, shrink=10]{microtype}
-\SetTracking{encoding={*}, shape=sc}{0}
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{prop}[teo]{Proposición}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corolario}
+
+\theoremstyle{definition}
+\newtheorem{nt}[teo]{Notación}%[chapter]
+\newtheorem{df}[teo]{Definición}%[chapter]
+\newtheorem{ejemplo}[teo]{Ejemplo}%[chapter]
+\newtheorem{ejemplos}[teo]{Ejemplos}
+\newtheorem{ejercicio}[teo]{Ejercicio}
+\newtheorem{estrategia}[teo]{Estrategia}
+\newtheorem{obs}[teo]{Observación}
+\newtheorem{observaciones}[teo]{Observaciones}  
+
+\newcommand{\Sphere}{\mathbb{S}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Cont}{\mathcal{C}}
+
+\newcommand{\md}[1]{\left|#1\right|}
+
+\newcommand{\superscriptbefore}[2]{\prescript{#1}{}{#2}}
+\newcommand{\subscriptbefore}[2]{\prescript{}{#1}{#2}}
+
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\Biad}{Biad}
+\DeclareMathOperator{\Ring}{Ring}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Soc}{Soc}
+\DeclareMathOperator{\minpol}{minpol}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}
 
 % ------------------------------------------------------------------------------
 % DISEÑO DE PÁGINA
@@ -62,186 +73,24 @@
 \setlength{\parindent}{12pt}
 \setlength{\parskip}{0pt}
 
-% Listas
-\setlist{noitemsep}
 
-% Cabeceras
-\usepackage[automark]{scrlayer-scrpage}
-\clearpairofpagestyles
-\chead{\leftmark}
-\cfoot*{\pagemark}
+\title{\rule{\textwidth}{3pt}\\
+  \vspace{3mm} \Huge{\textsc{Álgebra Moderna}}\\
+  \rule{\textwidth}{3pt}}
 
-% Enlaces
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=500,
+\author{\Large José Antonio de la Rosa Cubero\\{}\\ Doble Grado en Ingeniería Informática y Matemáticas
+  \\Universidad de Granada\\{}
+  \\{}\\\small \textit{Apuntes tomados del profesor José Gómez Torrecillas}
+  \\\small \textit{Correciones y notas por Carlos Romero Cruz}
 }
 
-% No mostrar cabecera en páginas de sección
-\usepackage{xpatch}
-\xpretocmd{\section}{\vspace*{1cm}\thispagestyle{plain}}{}{}
-
-% Páginas de color para portada
-\usepackage{pagecolor}
-\usepackage{afterpage}
-
-% ------------------------------------------------------------------------------
-% ENTORNOS PERSONALIZADOS
-% ------------------------------------------------------------------------------
-
-\usepackage[theorems, skins, breakable]{tcolorbox}
-
-\tcolorboxenvironment{teo}{
-    blanker,
-    breakable,
-    left=12pt,
-    before skip=12pt,
-    after skip=12pt,
-    borderline west={2pt}{0pt}{500},
-    before upper={\parindent 12pt},
-}
-
-\tcolorboxenvironment{prop}{
-    blanker,
-    breakable,
-    left=12pt,
-    before skip=12pt,
-    after skip=12pt,
-    borderline west={2pt}{0pt}{300},
-    before upper={\parindent 12pt},
-}
-
-\tcolorboxenvironment{cor}{
-    blanker,
-    breakable,
-    left=12pt,
-    before skip=12pt,
-    after skip=12pt,
-    borderline west={2pt}{0pt}{300},
-    before upper={\parindent 12pt},
-}
-
-\tcolorboxenvironment{df}{
-    skin=enhancedmiddle jigsaw,
-    frame hidden,
-    colback=50,
-    breakable = true,
-    break at = -6pt,
-    top = 4pt,       % Estos márgenes están un poco a ojo
-    bottom = 4pt,
-    left= 8pt,
-    right = 8pt,
-    before skip=8pt, % Normalmente dejamos 12pt, pero
-    after skip=8pt,  % aquí tenemos espacio adicional por el fondo
-    no borderline,
-    borderline west={2pt}{0pt}{500},
-    borderline east={2pt}{0pt}{50},
-    before upper={\parindent 12pt},
-}
-
-\tcolorboxenvironment{ejer}{
-    skin=enhancedmiddle jigsaw,
-    frame hidden,
-    colback=50,
-    breakable = true,
-    break at = -6pt,
-    top = 4pt,       % Estos márgenes están un poco a ojo
-    bottom = 4pt,
-    left= 8pt,
-    right = 8pt,
-    before skip=8pt, % Normalmente dejamos 12pt, pero
-    after skip=8pt,  % aquí tenemos espacio adicional por el fondo
-    no borderline,
-    borderline west={2pt}{0pt}{500},
-    borderline east={2pt}{0pt}{50},
-    before upper={\parindent 12pt},
-}
-
-% ------------------------------------------------------------------------------
-% LISTINGS
-% ------------------------------------------------------------------------------
-
-\IfPackageLoaded{listings}{
-    \renewcommand{\lstlistingname}{Listado}
-    
-    \lstset{
-        frame=lines,
-        rulecolor=\color{black},
-        framerule=1pt,
-        numbers=left,
-        belowcaptionskip=1\baselineskip,
-        basicstyle=\ttfamily\color{black},
-        keywordstyle=\bfseries\color{700},
-        commentstyle=\color{300},
-        stringstyle=\color{500},
-        numberstyle=\color{black},
-        breaklines=true,
-        showstringspaces=false,
-        tabsize=2,
-    }
-}
+\date{}
 
 \begin{document}
-    
-    % ---------------------------------------------------------------------------
-    % PORTADA EXTERIOR
-    % ---------------------------------------------------------------------------
-    
-    \newpagecolor{500}
-    \begin{titlepage}
-        \noindent
-        \setlength\fboxsep{0cm}
-        \parbox[t]{\textwidth}{
-            \raggedright
-            \fontsize{50pt}{50pt}\selectfont\sffamily\color{white}{
-                \textbf{\asignatura}
-            }
-        }
-        
-        \vfill
-        
-        \noindent
-        \parbox[b]{\textwidth}{
-            \raggedright
-            \sffamily\large\color{white}
-            {\Large \autor }\\[4pt]
-            \grado\\
-            \universidad\\[4pt]
-            \texttt{\enlaceweb}
-        }
-        
-    \end{titlepage}
-    \restorepagecolor
-    
-    % ---------------------------------------------------------------------------
-    % PORTADA INTERIOR
-    % ---------------------------------------------------------------------------
-    
-    \begin{titlepage}
-        
-        \noindent
-        \parbox[t]{\textwidth}{
-            \raggedright
-            \fontsize{50pt}{50pt}\selectfont\sffamily\color{500}{
-                \textbf{\asignatura}
-            }
-        }
-        
-        \vfill
-        
-        \noindent
-        \parbox[b]{\textwidth}{
-            \raggedright
-            \sffamily\large
-            {\Large \autor}\\[4pt]
-            \grado\\
-            \universidad\\[4pt]
-            \texttt{\enlaceweb}
-        }
-        
-    \end{titlepage}
-    
+
+\maketitle
+\newpage
+
     % ---------------------------------------------------------------------------
     % ÍNDICE
     % ---------------------------------------------------------------------------
@@ -254,61 +103,9 @@
     % CONTENIDO
     % ---------------------------------------------------------------------------
 
-    \input{1_Generalidades_sobre_anillos.tex}
-    \input{2_Generalidades_sobre_anillos.tex}
-    \input{3_Generalidades_sobre_anillos.tex}
-    \input{4_Generalidades_sobre_anillos.tex}
-    \input{5_Modulos.tex}
-    \input{6_Modulos.tex}
-    \input{7_Modulos_sobre_Kx.tex}
-    \input{8_Modulos_sobre_Kx.tex}
-    \input{9_Modulos_abstractos.tex}
-    \input{10_Modulos_abstractos.tex}
-    \input{11_Modulos_acotados_sobre_DIP.tex}
-    \input{12_Modulos_acotados_sobre_DIP.tex}
-    \input{13_Homomorfismos_de_modulos.tex}
-    \input{14_Homomorfismos_de_modulos.tex}
-    \input{15_Homomorfismos_de_modulos.tex}
-    \input{16_Homomorfismos_de_modulos.tex}
-    \input{17_Algebra_Homologica.tex}
-    \input{18_Algebra_Homologica.tex}
-    \input{19_Modulos_Artinianos.tex}
-    \input{20_Modulos_de_longitud_finita.tex}
-    \input{21_Modulos_de_longitud_finita.tex}
-    \input{22_Modulos_de_longitud_finita.tex}
-    \input{23_Modulos_de_longitud_finita.tex}
-    \input{24_Modulos_de_longitud_finita.tex}
-    \input{25_Modulos_de_longitud_finita.tex}
-    \input{26_Modulos_de_longitud_finita.tex}
-    \input{27_Modulos_de_longitud_finita.tex}
-    \input{28_Teoria_de_modulos.tex}
-    \input{29_Teoria_de_modulos.tex}
-    \input{30_Presentaciones.tex}
-    \input{31_Presentaciones.tex}
-    \input{32_Presentaciones.tex}
-    \input{33_Presentaciones.tex}
-    \input{34_Presentaciones.tex}
-    \input{35_Presentaciones.tex}
-    \input{36_Presentaciones.tex}
-    \input{37_Semisimples.tex}
-    \input{38_Semisimples.tex}
-    \input{39_Semisimples.tex}
-    \input{40_Semisimples.tex}
-    \input{41_Semisimples.tex}
-    \input{42_Componentes_Homogeneas.tex}
-    \input{43_Componentes_Homogeneas.tex}
-    \input{44_Idempotentes.tex}
-    \input{45_Idempotentes.tex}
-    \input{46_Dual.tex}
-    \input{47_Dual.tex}
-    \input{48_Aplicaciones.tex}
-    \input{49_Aplicaciones.tex}
-    \input{50_Aplicaciones.tex}
-    \input{51_Aplicaciones.tex}
-    \input{52_Aplicaciones.tex}
-    \input{53_Aplicaciones.tex}
-    \input{54_Aplicaciones.tex}
-    \input{55_Esfera.tex}
-    \input{56_Esfera.tex}
-
+    \input{capitulo1.tex}
+´    \input{capitulo2.tex}
+    \input{capitulo3.tex}
+    \input{capitulo4.tex}
+    \input{capitulo5.tex}
 \end{document}
