@@ -91,3 +91,94 @@ Ejercicio, demostrar que la aplicación \(\psi\) es una biyección.
   Sea \(A\) anillo, \(M\) un grupo aditivo. Sea \(\Ring(A,\End(M))\),
   llamamos \(A\)-módulo a la imagen por \(\psi\) de ese conjunto.
 \end{teo}
+
+\begin{df}
+  \[
+    \Ring(R,S)=\{\phi:R\longrightarrow S, \phi \textrm{ es homomorfismo
+    de anillos}\}
+  \]
+\end{df}
+
+
+\begin{prop}
+  Dados un grupo aditivo \(M\) y un anillo \(A\), se tiene una
+  correspondencia biyectiva entre:
+  \begin{enumerate}
+    \item Homomorfismos de anillos \(\rho:A\longrightarrow\End(M)\)
+    \item Las aplicaciones \(A\times M\longrightarrow M\)
+      que satisfacen:
+      \begin{itemize}
+        \item \((a+a')m=am+a'm\)
+        \item \(a(m+m')=am+am'\)
+        \item \((aa')m=a(a'm)\)
+        \item \(1\cdot m=m\)
+      \end{itemize}
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  Tomamos la biyección \(\psi^{-1}:\Map(A,\Map(M,M))\longrightarrow
+  \Map(A\times M,M)\).
+  Tomamos \(\rho\in\Ring(A,\End(M))\), su imagen por la biyección,
+  \(\psi^{-1}(\rho)\)
+  son las aplicaciones que satisfacen justo las propiedades
+  anteriores.
+
+  Llamamos a \(\psi^{-1}(\rho)(a,m)=a\cdot m\). Tenemos que
+  \(\psi^{-1}(\rho)(a,m)=\rho(a)(m)\). Entonces
+  \(a\cdot m=\rho(a)(m)\).
+
+  Comprobamos la tercera propiedad como ejemplo:
+
+  Dados \(a, a'\in A\) y \(m\in M\):
+  \[
+    (aa')m=\rho(aa')(m)=(\rho(a)\circ\rho(a'))(m)
+    =\rho(a)(\rho(a')(m))=\rho(a)(a'm)=a(a'm)
+  \]
+
+  De forma análoga se demuestran el resto de propiedades.
+
+  Esta correspondencia responde a la fórmula \(am=\rho(a)(m)\).
+\end{proof}
+
+Un \(A\)-módulo lo veremos de cualquiera de las maneras anteriores, que
+ya hemos visto que son equivalentes, según su conveniencia.
+
+\begin{ejemplo}
+  Si \(K\) es un cuerpo, un \(K\)-módulo es esencialmente
+  un \(K\)-espacio vectorial.
+\end{ejemplo}
+
+\begin{ejemplo}
+  Sean \(A\) un anillo y  \(\lambda:A\longrightarrow A\) definida como
+  \(\lambda(a)(a'):=aa'\). Entonces \(\lambda\) es un homomorfismo de anillos que
+  dota a \(A\) de una estructura de \(A\)-módulo, llamada \textbf{módulo regular}.
+\end{ejemplo}
+\begin{proof}
+  Veamos que \(\lambda\) es un homomorfismo de
+  anillos probando que se cumplen las condiciones de la definición \ref{df:homo_anillos}.
+  Sean \(a_1, a_2, a' \in A\).
+  \begin{itemize}
+  \item \(\lambda(a_1+a_2)(a') = (a_1+a_2)a' = a_1a' + a_2a' = \lambda(a_1)(a') +
+    \lambda(a_2)(a')\), luego \(\lambda(a_1 + a_2) = \lambda(a_1) + \lambda(a_2)\).
+  \item \(\lambda(a_1a_2)(a') = a_1a_2a' = \lambda(a_1)(\lambda(a_2)a') =
+    (\lambda(a_1) \circ \lambda(a_2))(a')\), luego \(\lambda(a_1a_2) =
+    \lambda(a_1) \circ \lambda(a_2)\).
+  \item \(\lambda(1)(a') = 1 \cdot a' = a'\), luego \(\lambda(1) = 1\) es la aplicación
+    identidad en el anillo \(A\).
+  \end{itemize}
+\end{proof}.
+
+\begin{prop}[Restricción de escalares]
+  Sean \(A,\ R\) anillos, \(M\) un grupo aditivo y \(\phi:R\longrightarrow A\)
+  homomorfismo de anillos. Si \(M\)es un \(A\)-módulo, vía el homomorfismo de anillos
+  \(\rho : A \longrightarrow \End(M)\), tenemos que \(M\) es un \(R\)-módulo
+  vía \(\rho \circ \phi\).
+
+  Equivalentemente, si \(r\in R\) y \(m\in M\), definimos
+  \[
+    rm=(\rho\circ\phi)(r)(m)=\rho(\phi(r))(m)=\phi(r)m
+  \]
+  Este proceso se conoce como \textbf{restricción de escalares}.
+\end{prop}
+

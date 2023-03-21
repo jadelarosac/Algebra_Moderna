@@ -1,88 +1,107 @@
 \subsection{Módulos abstractos}
 
-Sea \(A\) un anillo, \(\subscriptbefore{A}{M}\) un \(A\)-módulo,
-entonces si tenemos
-un homomorfismo de anillos \(\varphi:A\longrightarrow\End(M)\)
-cuyo núcleo es un ideal de \(A\).
-
-Aplicando el primer teorema de isomorfía, tenemos:
-\[
-  A/\ker\varphi\longrightarrow\Im\varphi\subseteq\End(M)
-\]
-y entonces \(M\) es un \(A/\ker\varphi\)-módulo.
-De hecho \((a+\ker\varphi)m=\varphi(m)\).
-
-\[
-  \ker\varphi=\{a\in A: am=0\}=\Ann_A(M)
-\]
-se le llama el anulador de \(M\).
-
-Tenemos que \(\subscriptbefore{A}{M}\) entonces \(M_{A/\Ann_A(M)}\)
-
-Ejercicio: si tenemos una plicación lineal entre espacios vectoriales
-de dimensión finita, entonces el anulador está generado por un único
-polinomio, el polinomio mínimo de \(T\).
-
 \begin{df}
-  Un submódulo de un módulo
-  \(\subscriptbefore{A}{M}\) es un subgrupo aditivo \(N\subseteq M\)
-  tal que \(am\in N\) para cualquier \(a\in A\) y \(m\in N\). Los
-  submódulos del módulo regular \(A\) se llaman ideales por la izquierda
-  de \(A\).
+  Sea \({}_AM\) un módulo cuyo homomorfismo es \(\rho\). Se dice que \({}_AM\) es
+  \textbf{fiel} si \(\rho\) es inyectivo.
+\end{df}
+\begin{df}
+  Se define el \textbf{anulador de M} como
+  \[\Ann_A(M) = {a \in A \ /\ am = 0\ \text{para todo}\ m \in M}.\]
 \end{df}
 
 \begin{obs}
-  Todo ideal es un ideal a izquierda. Si \(A\) es conmutativo, los ideales
-  a izquierda coinciden con los ideales.
+  Sean \(A\) un anillo, \(\subscriptbefore{A}{M}\) un \(A\)-módulo y
+  un homomorfismo de anillos \(\rho:A\longrightarrow\End(M)\) y \(a \in A\).
+  \(\rho(a) = 0\) siempre que \(a \in \Ann_A(M)\), luego \(\Ann_A(M) = \ker(\rho)\).
+  Por eso, se puede afirmar que \(\Ann_A(M)\) es un ideal de \(A\) y se tiene que
+  \(M\) es fiel si, solo si, \(\Ann_A(M) = {0}\).
+
+  Aplicando el primer teorema de isomorfía, tenemos:
+  \[
+    A/\ker\rho = A/\Ann_A(M) \simeq \Im\rho \leqslant \End(M)
+  \]
+  \noindent y entonces \(M\) es un \(A/\ker\rho\)-módulo.
+  De hecho, \((a+\ker\rho)m=\rho(m)\).
+  \(M\) siempre es fiel sobre \(A/\Ann_A(M)\), aunque \(\rho\) no sea inyectiva.
 \end{obs}
 
-Ejemplo: tomando \(A=\mathcal{M}_2(K)\) con \(K\) un cuerpo.
-\[
-  \mathcal{M}_2(K)=\left\{
-    \begin{pmatrix}
-      a&b\\
-      c&d
-    \end{pmatrix}:
-    a,b,c,d\in K
-  \right\}
-\]
+\begin{ejercicio}
+  Si tenemos una aplicación lineal entre espacios vectoriales
+  de dimensión finita, entonces el anulador está generado por un único
+  polinomio, el polinomio mínimo de \(T\). Se denota como \(\Ann_{K[x]}(V) =
+  < \mu(x) >\).
+\end{ejercicio}
 
-Tenemos que el conjunto:
-\[
-  \left\{
-    \begin{pmatrix}
-      0&b\\
-      0&d
-    \end{pmatrix}:
-    b,d\in K
-  \right\}
-\]
-es un ideal a izquierda de \(A\).
+\begin{ejercicio}
+  Sea \(K\) un cuerpo, \(V\) un \(K\)-espacio vectorial de dimensión finita y
+  \(T:V \longrightarrow V\) una aplicación linea. Considerando que \(V\) tiene estructura
+  de \(K[x]\)-módulo, probar que el anulador es no vacío.
+\end{ejercicio}
 
-Ejemplo: \(T:V\longrightarrow V\), \(K\)-lineal.
-¿Qué es un \(K[x]\)-submódulo de \(V_{K[x]}\)?
-Sea \(W\) un tal submódulo.
-\(W\) es un subespacio vectorial y además \(T(w)=xw\in W\),
-es decir, un subespacio \(T\)-invariante (un ejemplo
-de subespacio \(T\) invariante es un subespacio propio).
-El recíproco es también cierto.
+\subsection{Submódulos}
+\begin{df}
+  Dado un módulo \({}_AM\), un \textbf{submódulo} de \({}_AM\)
+  es un subgrupo aditivo \(N\subseteq M\)
+  tal que \(am\in N\) para cualquier \(a\in A\) y \(m\in N\).
+\end{df}
+
+\begin{ejemplo}
+  Los submódulos del módulo regular \(A\) se llaman \textbf{ideales por la izquierda de
+    \(A\)}. Todo ideal es un ideal a izquierda. Si \(A\) es conmutativo, los ideales
+  a izquierda coinciden con los ideales.
+
+  Tomando \(A=\mathcal{M}_2(K)\) con \(K\) un cuerpo.
+  \[
+    \mathcal{M}_2(K)=\left\{
+      \begin{pmatrix}
+        a&b\\
+        c&d
+      \end{pmatrix}:
+      a,b,c,d\in K
+    \right\}
+  \]
+
+  Tenemos que el conjunto:
+  \[
+    \left\{
+      \begin{pmatrix}
+        0&b\\
+        0&d
+      \end{pmatrix}:
+      b,d\in K
+    \right\}
+  \]
+  es un ideal a izquierda de \(A\).
+\end{ejemplo}
+
+\begin{ejemplo}
+  \(T:V\longrightarrow V\), \(K\)-lineal.
+  ¿Qué es un \(K[x]\)-submódulo de \(V_{K[x]}\)?
+  Sea \(W\) un tal submódulo.
+  \(W\) es un subespacio vectorial y además \(T(w)=xw\in W\),
+  es decir, un subespacio \(T\)-invariante (un ejemplo
+  de subespacio \(T\) invariante es un subespacio propio).
+  El recíproco es también cierto.
+\end{ejemplo}
 
 \begin{df}[Submódulo cíclico]
   Dado \(\subscriptbefore{A}{M}\), y un \(m\in M\). Es claro que
-  \(Am=\{am:a\in A\}\) es un submódulo de \(\subscriptbefore{A}{M}\) que se llama submódulo
-  cíclico generado por \(m\).
+  \(Am=\{am:a\in A\}\) es un submódulo de \(\subscriptbefore{A}{M}\) que se llama
+  \textbf{submódulo cíclico generado por \(m\)}.
 \end{df}
 
-Ejemplo: \(\R[x]\sin t=\R\sin t+\R\cos t\).
+\begin{ejemplo}
+  \(\R[x]\sin t=\R\sin t+\R\cos t\).
+\end{ejemplo}
 
 \begin{df}[Submódulo finitamente generado]
   Dados \(m_1,\ldots, m_n\in M\), el conjunto
   \[
     Am_1+\cdots+Am_n=\{a_1 m_1+\cdots+a_n m_n: a_i\in A\}
   \]
-  es un submódulo de \(\subscriptbefore{A}{M}\) llamado el submódulo generado por
-  \(m_1,\ldots, m_n\).
-  Si \(M=Am_1+\cdots+Am_n\), diremos que \(M\) es finitamente generado
+  es un submódulo de \(\subscriptbefore{A}{M}\) llamado el \textbf{submódulo generado por
+  \(m_1,\ldots, m_n\)}.
+  Si \(M=Am_1+\cdots+Am_n\), diremos que \(M\) es \textbf{finitamente generado}
   con generadores
   \(m_1,\ldots, m_n\).
 \end{df}
@@ -90,11 +109,11 @@ Ejemplo: \(\R[x]\sin t=\R\sin t+\R\cos t\).
 \subsubsection{Suma directa interna}
 
 \begin{df}[Módulo suma]
-  Dados \(N_1,\ldots, N_n\) submódulos de \(\subscriptbefore{A}{M}\), defino:
+  Dados \(N_1,\ldots, N_n\) submódulos de \(\subscriptbefore{A}{M}\),
   \[
     N_1+\cdots+ N_n=\{m_1+\cdots+m_n: m_i\in N_i\}
   \]
-  es un submódulo de \(M\) que se llama suma de \(N_1+\cdots+N_n\).
+  es un submódulo de \(M\), que se llama \textbf{suma de \(N_1, \cdots, N_n\)}.
 \end{df}
 
 \begin{nt}
@@ -104,10 +123,59 @@ Ejemplo: \(\R[x]\sin t=\R\sin t+\R\cos t\).
 \begin{prop}
   Sean \(N_1,\ldots, N_t\) submódulos de \(A\). Son equivalentes:
   \begin{enumerate}
-    \item \(N_i\cap\sum_{j\neq i}N_j =\{0\}\) para todo \(i\).
+    \item Para cada \(i = 1, \cdots t\), \(N_i\cap\sum_{j\neq i}N_j =\{0\}\).
     \item Si \(0=n_1+\cdots+n_t\), \(n_i\in N_i\) entonces \(n_i=0\)
-      para todo \(i\).
+      para todo \(i = 1, \cdots t\).
     \item Cada \(n\in N_1+\cdots+N_t\) admite una representación
-      única como \(n=n_1+\cdots+n_t\) con \(n_i\in N_i\).
+      única como \(n=n_1+\cdots+n_t\), con \(n_i\in N_i\).
   \end{enumerate}
 \end{prop}
+\begin{proof}
+  Veamos que 1 implica 2. Tenemos que \(0=n_1+\cdots+n_t\),
+  si despejamos, \(n_i=-\sum_{j\neq i} n_j\in N_i\cap\left(
+  \sum_{j\neq i} N_j\right)=\{0\}\).
+
+  Veamos que 2 implica 3. Si \(n=\sum n_i=\sum n_i'\),
+  entonces \(0=\sum(n_i-n_i')\) lo que implica que
+  \(n_i=n_i'\).
+
+  Finalmente, tomando \(n\in N_i\cap\left(
+  \sum_{j\neq i} N_j\right)\), es decir,
+  \(n=\sum_{j\neq i}n_j\) con lo que
+  \(0=n-\sum_{j\neq i} n_j\) y como las descomposiciones
+  son únicas, \(n=0\).
+\end{proof}
+
+\begin{df}[Suma interna]
+  Si \(M=N_1+\cdots+ N_t\) tales que satisfacen una de las condiciones
+  equivalentes anteriores, diremos que \(M\) es la suma directa interna
+  y usaremos la notación \(M=N_1\dot{+}\cdots\dot{+} N_t\).
+\end{df}
+
+\begin{df}
+  Si \(\{N_1,\ldots, N_t\}\) verifican las condiciones equivalentes
+  anteriores y \(N_i\neq \{0\}\), se dice que el conjunto
+  \(\{N_1,\ldots, N_t\}\) es una
+  familia independiente.
+\end{df}
+
+\begin{ejemplo}
+  \(\Z_6\) es un \(\Z\) módulo.
+\[
+  \Z_6=\{0,1,2,3,4,5,6\}
+\]
+Tomamos
+\[
+  N_1=\{0,3\}
+\]
+y
+\[
+  N_2=\{0,2,4\}
+\]
+
+Tenemos que \(N_1, N_2\) es una familia independiente. Además es obvio que:
+\[
+  N_1\dot{+}N_2=\Z_6
+\]
+ya que tienen como intersección \(\{0\}\) y su suma es el total.
+\end{ejemplo}
