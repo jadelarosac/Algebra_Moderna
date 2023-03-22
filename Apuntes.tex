@@ -14,7 +14,9 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=blue
-}
+  }
+\usepackage{fancyhdr,fancybox}  %para las cabeceras y pie de página
+\usepackage[Sonny]{fncychap}  % Encabezado de capítulos
 
 \newtheorem{teo}{Teorema}[chapter]
 \newtheorem{prop}[teo]{Proposición}
@@ -65,14 +67,34 @@
 % DISEÑO DE PÁGINA
 % ------------------------------------------------------------------------------
 
-% Márgenes
-\usepackage[bottom=3.125cm, top=2.5cm, left=2.5cm, right=4.5cm, marginparwidth=70pt]{geometry}
-
 % Párrafos
 \linespread{1.1}
 \setlength{\parindent}{12pt}
 \setlength{\parskip}{0pt}
 
+\reversemarginpar % notas al margen a la izquierda
+
+\hoffset -12mm %para disminuir el margen a la izquierda
+\voffset -2mm % para subir 2mm la cabecera
+
+% Cabecera de capítulos - Redefino el estilo tipográfico del título
+
+\makeatletter%
+\ChNameVar{\fontsize{18}{20}\usefont{OT1}{phv}{m}{n}\selectfont}
+\ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}%
+\ChTitleVar{\fontsize{18}{20}\usefont{OT1}{phv}{m}{n}\selectfont}
+\ChRuleWidth{1pt}
+\makeatother
+
+\renewcommand{\MakeUppercase}{}     % Para que los títulos no salgan en mayúscula
+
+% Cabecera y pie de páginas
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+\fancyhead[OL]{{\bfseries\rightmark}}%
+\fancyhead[ER]{{\bf \leftmark}} %
+\fancyhead[OR, EL]{{\bf\thepage}}%
 
 \title{\rule{\textwidth}{3pt}\\
   \vspace{3mm} \Huge{\textsc{Álgebra Moderna}}\\
