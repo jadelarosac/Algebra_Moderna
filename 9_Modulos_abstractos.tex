@@ -131,51 +131,52 @@
   \end{enumerate}
 \end{prop}
 \begin{proof}
-  Veamos que 1 implica 2. Tenemos que \(0=n_1+\cdots+n_t\),
-  si despejamos, \(n_i=-\sum_{j\neq i} n_j\in N_i\cap\left(
-  \sum_{j\neq i} N_j\right)=\{0\}\).
+  Veamos que 1 implica 2. Tenemos que \(0=n_1+\cdots+n_t\), luego para todo
+  \(i = 1, \ldots t\) se puede despejar \(n_i=-\sum_{j\neq i} n_j\in N_i\cap\left(
+    \sum_{j\neq i} N_j\right)=\{0\}\). Por tanto, \(n_i = 0\) para todo \(i = 1, \ldots,
+  t\).
 
-  Veamos que 2 implica 3. Si \(n=\sum n_i=\sum n_i'\),
-  entonces \(0=\sum(n_i-n_i')\) lo que implica que
-  \(n_i=n_i'\).
-
-  Finalmente, tomando \(n\in N_i\cap\left(
+  Veamos que 2 implica 3. Si \(n=\sum n_i=\sum n_i'\), donde cada \(n_i, n_i' \in N_i\)
+  entonces \(0=\sum(n_i-n_i')\), lo que implica que
+  \(n_i=n_i'\) para todo \(i = 1, \ldots t\).
+ 
+  Finalmente, probemos que 3 implica 1. Tomando \(n \in N_i\cap\left(
   \sum_{j\neq i} N_j\right)\), es decir,
   \(n=\sum_{j\neq i}n_j\) con lo que
   \(0=n-\sum_{j\neq i} n_j\) y como las descomposiciones
   son únicas, \(n=0\).
 \end{proof}
 
-\begin{df}[Suma interna]
-  Si \(M=N_1+\cdots+ N_t\) tales que satisfacen una de las condiciones
-  equivalentes anteriores, diremos que \(M\) es la suma directa interna
+\begin{df}[Suma directa interna]
+  Sean \({}_AM\) un módulo y \(N_1, \ldots, N_t\) submódulos de \(M\). Si
+  \(M=N_1+\cdots+ N_t\) tales que satisfacen una de las condiciones
+  equivalentes anteriores, diremos que \(M\) es la \textbf{suma directa interna}
   y usaremos la notación \(M=N_1\dot{+}\cdots\dot{+} N_t\).
 \end{df}
 
 \begin{df}
   Si \(\{N_1,\ldots, N_t\}\) verifican las condiciones equivalentes
   anteriores y \(N_i\neq \{0\}\), se dice que el conjunto
-  \(\{N_1,\ldots, N_t\}\) es una
-  familia independiente.
+  \(\{N_1,\ldots, N_t\}\) es una familia independiente.
 \end{df}
 
 \begin{ejemplo}
   \(\Z_6\) es un \(\Z\) módulo.
-\[
-  \Z_6=\{0,1,2,3,4,5,6\}
-\]
-Tomamos
-\[
-  N_1=\{0,3\}
-\]
-y
-\[
-  N_2=\{0,2,4\}
-\]
+  \[
+    \Z_6=\{0,1,2,3,4,5,6\}
+  \]
+  Tomamos
+  \[
+    N_1=\{0,3\}
+  \]
+  y
+  \[
+    N_2=\{0,2,4\}
+  \]
 
-Tenemos que \(N_1, N_2\) es una familia independiente. Además es obvio que:
-\[
-  N_1\dot{+}N_2=\Z_6
-\]
-ya que tienen como intersección \(\{0\}\) y su suma es el total.
+  Tenemos que \(N_1, N_2\) es una familia independiente. Además es obvio que:
+  \[
+    N_1\dot{+}N_2=\Z_6
+  \]
+  ya que tienen como intersección \(\{0\}\) y su suma es el total.
 \end{ejemplo}
