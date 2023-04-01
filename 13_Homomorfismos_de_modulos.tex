@@ -1,47 +1,222 @@
-\subsection{Homomorfismos de módulos}
+\subsection{Homomorfismos y cocientes de módulos}
 
-\begin{df}[Módulo cociente o factor]
-  Sea \(\subscriptbefore{A}{M}\) y \(L\in\mathcal{L}(M)\).
-  Consideramos \(M/L\) grupo aditivo y se define la acción:
+\begin{prop}[Módulo cociente o factor]
+  Sea \(\subscriptbefore{A}{M}\) un \(A\)-módulo y \(L\in\mathcal{L}(M)\) un submódulo
+  de \({}_AM\). Se considera \(M/L\) grupo aditivo cociente con la suma
+  \(m + L) + (m' + L) = (m + m') + L\). Se define la acción:
   \[
     a(m+L):=am+L
   \]
-  \(M/L\) es un módulo.
-\end{df}
+  Entonces \(M/L\) es un \(A\)-módulo con la acción anterior, llamado
+  \textbf{módulo cociente}.
+\end{prop}
+
+Además, la proyección canónica \(\pi: M \longrightarrow \frac{M}{L}\) dada por
+\(\pi(m) = m + L\) para todo \(m \in M\) es un homomorfismo de \(A\)-módulos en el
+sentido siguiente.
 
 \begin{df}[Homomorfismo de módulos]
   Se dice que
   \(f:\subscriptbefore{A}{M}\longrightarrow \subscriptbefore{A}{N}\)
-  es un homomorfismo de módulos si respeta sumas y productos.
+  es un homomorfismo de \(A\)-módulos si \(f(m + m') = f(m) + f(m')\) y \(f(am) = af(m)\)
+  para todo \(m, m' \in M\) y \(a \in A\).
 \end{df}
 
-\begin{df}[Proyección canónica]
-  Es la aplicación \(\pi:M\longrightarrow M/L\) dada por
-  \(\pi(m)=m+L\) es un homomorfismo de módulos.
-\end{df}
+\begin{nt}
+  La familia \(\mathcal{L}({}_AM)\) es el retículo de submódulos de \(M\).
+\end{nt}
 
-\begin{teo}[Teorema de isomorfía para módulos]
-  \(f:M\longrightarrow N\) un homorfismo de \(A\)-módulos. Entonces
-  el núcleo \(\ker f\in\mathcal{L}(\subscriptbefore{A}{M})\) y
-  \(\Im f\in\mathcal{L}(N)\). Para cada \(L\in\mathcal{L}
-  (\subscriptbefore{A}{M})\) tal que \(L\subseteq \ker f\) existe
-  un único homomorfismo de módulos \(\tilde{f}:M/L\longrightarrow N\)
-  tal que \(\tilde{f}\circ\pi=f\). Finalmente, \(\tilde{f}\) es
-  inyectiva si y solo si \(L=\ker f\), en cuyo caso, \(\tilde{f}\)
-  da un isomorfismo de \(A\)-módulos
-  \(M/\ker f\cong \Im f\).
+\begin{teo}[Primer teorema de isomorfía para módulos]
+  Sea \(f : M \longrightarrow N\) un homorfismo de \(A\)-módulos. Entonces
+  \begin{enumerate}
+  \item El núcleo \(\ker f \in \mathcal{L}(\subscriptbefore{A}{M})\).
+  \item La imagen \(\Im f \in \mathcal{L}(N)\).
+  \item Para cada \(L \in \mathcal{L}(\subscriptbefore{A}{M})\) tal que
+    \(L \subseteq \ker f\) existe un único homomorfismo de módulos
+    \(\tilde{f} : M/L \longrightarrow N\)
+    tal que \(\tilde{f}\circ\pi=f\). Finalmente, \(\tilde{f}\) es
+    inyectiva si y solo si \(L=\ker f\), en cuyo caso, \(\tilde{f}\)
+    da un isomorfismo de \(A\)-módulos
+    \(M/\ker f\cong \Im f\).
+
+  \item El isomorfismo de grupos aditivos \(\tilde{f}: \frac{M}{\ker f} \longrightarrow
+    \Im f\) es de \(A\)-módulos.
+  \end{enumerate}
 \end{teo}
+\begin{proof}
+  \begin{itemize}
+  \item Se emplea el teorema de isomorfía para grupos.
+  \item
+  \item
+  \item \(\tilde{f}(a(m + \ker f)) = \tilde{f}(am + \ker f) = f(am) = af(m) =
+    a\tilde{f}(m + \ker f)\).
+  \end{itemize}
+\end{proof}
 
-Ejemplo \(\subscriptbefore{A}{M}\), definimos \(f:A\longrightarrow M\)
-dada por:
-\[
-  f(a)=am\hspace{1cm} \forall a \in A
-\]
-es un homomorfismo de \(A\)-módulos.
 
-Tenemos \(\Im f = Am\) y
-\(\ann(a)=\ker f=\{a\in A: am=0\}\) es un ideal izquierda y se tiene
-\[
-  A/\ann_A(m)\cong Am
-\]
+\begin{ejemplo}
+  Sea \(m \in {}_AM\) y \(f: A \longrightarrow M\) definida como \(f(a) = am\) para cada
+  \(a \in A\). Entonces \(f\) es un homomorfismo de \(A\)-módulos.
 
+  Tenemos que \(\Im f = Am\) y
+  \(\ker f=\{ a \in A \ / \ am=0 \}\) es un ideal izquierda de \(A\), que se llama
+  \textbf{anulador del elemento \(m\)} y denotado por \(\ann_A(m)\). Por el primer
+  teorema de isomorfía, existe un isomorfismo de módulos \(\tilde{f}: \frac{A}
+  {\ann_A(m)} \longrightarrow Am\) dado por \(\tilde{f}(a + \ann_A(m)) = am\). 
+\end{ejemplo}
+
+\begin{ejemplo}
+  Sea el espacio vectorial \(\Cont^\infty(\R)\), la aplicación lineal
+  \(T = \frac{d}{dt}\) y \(\sin t \in \Cont^\infty(\R)\). Existe un isomorfismo
+  de \(\frac{\R[x]}{\ann_{\R[x]}(\sin t)}\) en \(\R[x]\sin t\), donde
+  \(\ann_{\R[x]}(\sin t) = \langle x^2 + 1 \rangle\). Sea \(f\) dicho isomorfismo.
+
+  Entonces \(f([1]) = \sin t\) y \(f([x]) = \cos t\).
+
+  Dada \(\varphi\),
+  tenemos que
+  \[
+    \ann_{\R[x]}(\varphi)=\{f\in\R[x]: f(x)\varphi=0\}
+    =\{f=\sum_i f_i\frac{d^i}{dt^i}: f\varphi=0\}
+  \]
+  \(\ann(\varphi)\neq\langle 0\rangle\) si \(\varphi\) satisface una ecuación
+  diferencial lineal homogénea con coeficientes constantes. Bla bla.
+
+  \(\R[x]/\ann_{\R[x]}(\varphi)\cong \R[x]\varphi\), donde \(\varphi\)
+  satisface bla bla.
+
+  Tenemos que \(\varphi''-\varphi'-\varphi=0\), cuya solución
+  \(\varphi(t)=e^{\phi t}\), donde \(\phi\) es la razón aúrea.
+\end{ejemplo}
+  
+\begin{ejemplo}
+  Sea \(S=\Map(\N,K)\) el conjunto de las sucesiones en un cuerpo \(K\) (que forman
+  un \(K\)-espacio vectorial). Tomamos \(T: S \longrightarrow S\)
+  tal que \(T(s)(n) = s(n+1)\), que es lineal. A este operador se le conoce como
+  retraso de ley. Entonces
+  \(S\) es un \(K[x]\)-módulo, donde \(xs=T(s)\).
+
+  Para cualquier \(f \in K[x]\), es decir \(f = \sum_i f_i x^i\), se tiene:
+  \[
+    (fs)(n)=\sum_i f_i s(n+i)
+  \]
+
+  Imaginémosnos que \(s\) verifica que \(\ann_{K[x]}(s)\neq\langle0\rangle\).
+  Podemos tomar entonces un polinomio tal que \(fs = 0\) y que sea mónico.
+  Tenemos entonces que \(s(n+m)=-\sum_{i=0}^{m-1} f_i s(n+i)\)
+  para todo \(n\in\N\). Es decir, la sucesión es linealmente recursiva.
+
+  Veamos el caso particular en el que \(s(0)=s(1)=1\). Entonces
+  \[
+    s(n+2)=s(n)+s(n+1)
+  \]
+
+  \[
+    x^2-x-1 \in \ann_{\Q[x]}(s)
+  \]
+
+  Volviendo al caso general, tenemos que
+  \[
+    K[x]/\ann_{K[x]}(s)\cong K[x]s
+  \]
+
+  Tenemos que \(\dim_{K}(K[x]s)<\infty\) si y solo si
+  \(\ann_{K[x]}(s)\neq\langle0\rangle\) si y solo si
+  \(s\) es una sucesión linealmente recursiva.
+
+  El generador \(p(x)\) de \(\ann_{K[x]}(s)\) se le llama el polinomio
+  mínimo de \(s\). El grado de dicho polinomio, coincide con
+  \(\dim_{k}(K[x]s)\) y se le llama complejidad lineal de \(s\).
+
+  \(s,t\) dos sucesiones linealmente recursivas.
+  \(K[x](s+t)\subseteq K[x]s+K[x]t\), luego la primera tiene dimensión finita.
+  Luego \(s+t\) es una sucesión linealmente recursiva, de complejidad menor
+  o igual a la suma de las complejidades lineales.
+  Puede argumentarse lo mismo para combinaciones lineales.
+
+  Las sucesiones linealmente recursivas forman un subespacio vectorial
+  del espacio de sucesiones. De hecho forman un submódulo. Sea
+  \(S^l\) el conjunto de las sucesiones linealmente recursivas, forma
+  un \(S^l\) es un \(K[x]\)-submódulo de \(S\), ya que es ivariante por la
+  acción de \(x\) (es \(T\)-invariante).
+
+  Sea \(K = \R\). Queremos una sucesión \(s \in S\) tal que \(\ann_{\R[x]}(s) =
+  \langle x^2 + 1 \rangle\), es decir, \(x^2 + 1)s = 0 \in S\). Entonces
+  \[
+    (x^2 + 1)s(n) = x^2s(n) + 1s(n) = s(n+2) + s(n),
+  \]
+  luego hay que resolver la recurrencia \(s(n+2) + s(n) = 0\) para cada \(n \in \N\).
+
+  De manera más abstracta, hemos de tener un isomorfismo de \(\R[x]-módulos\) para
+  \(\frac{\R[x]}{\langle x^2 + 1 \rangle} \cong \R[x]s\) y tal que \(1 \mapsto s\) y
+  \(x \mapsto xs\).
+
+  Una propuesta de lo anterior es \(s(n) = \frac{d^n}{dt}|_{t=0} \sin t\),
+  que es una solución de la recurrencia.
+\end{ejemplo}
+
+\begin{ejemplo}
+  ¿Qué relación hay entre los \(\R[x]\)-módulos \(\Cont^\infty(\R)\) y \(\Map(\N, \R)\)?
+
+  Sea \(\tau : \Cont^\infty(\R) \longrightarrow \Map(\N, \R)\) dada por
+  \(\tau(\phi) = \phi^{(n)}(0)\) da una sucesión. Se trata de una aplicación lineal, pero
+  además es un homomorfismo de módulos. Basta con comprobar que \(\tau(x\phi) =
+  x\tau(\phi)\) para cualquier \(\phi \in \Cont^\infty(\R)\). Veámoslo:
+  \[
+    \tau(x\phi)(n) = \tau(\phi')(n) = \phi^{n+1}(0) = \tau(\phi)(n+1) = x\tau(\phi)(n)
+  \]
+  para cada \(n \in \N\). Entonces \(\tau(x\phi) = x\tau(\phi)\). Por tanto,
+  \(\tau\) es un homomorfismo.
+
+  Además, los anuladores en \(\R[x]\) de \(\phi\) y \(tau(\phi)\) están relacionados.
+  Por ejemplo, si \(p(x) \in \ann_{\R[x]}(\phi)\), entonces \(p(x)\tau(\phi) =
+  \tau(p(x)\phi) = \tau(0) = 0\). Por tanto, \(\ann_{\R[x]}(\phi) \subset
+  \ann_{\R[x]}(\tau(\phi))\). Si \(\tau\) es inyectiva y \(p(x) \in
+  \ann_{\R[x]}(\tau(\phi))\), entonces, por definición,
+  \(\tau(p(x)\phi) = p(x)\tau(\phi) = 0\) y \(p(x)\phi = 0\), lo que implica que
+  \(p(x)\) está en el anulador de \(\phi\).
+
+  Sin embargo, en general, que \(\phi\) sea inyectiva no es cierto, ya que hay alguna
+  función no nula cuya derivada es cero.
+
+  Al restringir \(\tau\) a las funciones que admiten un desarrollo de Taylor, es decir,
+  funciones analíticas complejas (\(\Cont^{\omega}(\R)\)) en la recta \(\R\). Si
+  \(\tau\) fuese inyectiva, entonces se restringe a las analíticas en la recta. Por
+  tanto, si \(\phi\) es analítica, entonces \(\ann_{\R[x]}(\phi) = \ann_{\R[x]}(\tau(\phi))
+  \).
+
+  Si \(\ann_{\R[x]}(\phi) \neq \langle 0 \rangle\), entonces \(\phi\) es solución de una
+  ecuación diferencial ordinaria lineal con coeficientes constantes.
+
+  Supongamos que \(\phi\) es solución de \(\phi'' - \phi' - \phi = \). Entonces
+  \(\tau(\phi)\) es solución de \(\tau(\phi)(n+2) - \tau(\phi)(n+1) - \tau(\phi)(n) = 0\).
+
+  ¿Cuántas soluciones tiene la primera ecuación? Forma un \(\R\)-espacio vectorial de
+  dimensión 2. El polinomio \(p(x) = x^2 - x - 1\) genera el anulador de todas esas
+  soluciones. Las raíces de \(p\) son \(\alpha = \frac{1 + \sqrt(5)}{2}\) y
+  \(\beta = \frac{1 - \sqrt(5)}{2}\). Ahora buscamos un \(\phi_1\) tal que
+  \((x-\alpha)\phi_1 = 0 \ \iff \ \phi_1' - \alpha\phi_1 = 0\). Por ejemplo,
+  \(\phi_1(t) = c_1\exp{\alpha t}\), para algún \(c_1 \in \R\). Entonces \(\phi_1\)
+  es también solución de la primera ecuación. Análogamente se probaría para
+  \(\phi_2(t) = c_2\exp{\beta t}\), para algún \(c_2 \in \R\). Son soluciones
+  linealmente independientes, por tanto, una base es \(\{\phi_1, \phi_2\}\).
+
+  Si tomamos la ecuación discreta, obtendríamos de manera directa que la bse sería
+  \(\{\tau(\phi_1), \tau(\phi_2)\}\).
+
+  Por ejemplo, la solución de \(\tau(\phi)(0) = 0\) y \(\tau(\phi)(1) = 1\) se obtiene
+  ajustando coeficientes \(a, b \in \R\) tales que \(\tau(\phi) = a\tau(\phi_1) +
+  b \tau(\phi_2)\), es decir, \(tau(\phi) = \tau(a\phi_1 + b\phi_2)\). Hagámoslo:
+  \begin{center}
+    \begin{tabular}{c c c}
+      \(\tau(\phi_1)(n) = \phi_1^{(n)}(0)\) & \(\tau(\phi_1)(0) = \phi_1^{(0)}(0) = 1\) & \(\tau(\phi_2)(0) = \phi_2^{(0)}(0) = 1\) \\
+      \(\tau(\phi_2)(n) = \phi_2^{(n)}(0)\) & \(\tau(\phi_1)(1) = \phi_1^{(1)}(0) = \alpha\) & \(\tau(\phi_2)(1) = \phi_2^{(1)}(0) = \beta\) \\
+    \end{tabular}
+  \end{center}
+
+  Ahora buscamos \(a, b \in \R\) tales que \(a + b = 0\) y \(a\alpha + b\beta = 1\).
+  Nos sirven \(a = \frac{1}{\sqrt(5)}\) y \(b = -\frac{1}{\sqrt(5)}\).
+  Por tanto, \(\tau(\phi)(n) = \frac{1}{\sqrt(5)}\alpha^n - \frac{1}{\sqrt(5)}\beta^n\).
+\end{ejemplo}
+
+  
