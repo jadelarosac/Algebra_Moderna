@@ -1,0 +1,66 @@
+\subsection{Suma directa externa}
+
+\begin{prop}
+  Sean \(R\) un anillo y \(M_1, \ldots, M_t\), con \(t \in \N\), \(R\)-módulos y se considera
+  el producto cartesiano de los módulos anteriores y las operaciones:
+  \begin{itemize}
+  \item \((m_1, \ldots, m_t) + (m_1', \ldots, m_t') = (m_1 + m_1', \ldots, m_t + m_t')\)
+    para \(m_i, m_i' \in M_i\) y para cada \(i \in \{1, \ldots, t\}\). 
+  \item \(r(m_1, \ldots, m_t) = (rm_1, \ldots, rm_t\) para \(m_i \in M_i\), \(r \in R\) e
+    \(i \in \{1, \ldots, t\}\).
+  \end{itemize}
+
+  Entonces \(M_1 \times \cdots \times M_t\) es un \(R\)-módulo, denotado por \(M_1
+  \oplus \cdots \oplus M_t\) y llamado \textbf{suma directa externa de \(M_1,\ldots, M_t\)},
+  con \(M^t\) si son todos iguales.
+\end{prop}
+
+\begin{df}[Base de un módulo libre]
+  Consideramos \(R^t=R\oplus\cdots\oplus R\). Para cada \(i=1,\ldots, t\), tenemos que
+  \(\{e_i: e_i=(0,\ldots, 0,1,0, \ldots, 0)\}\) forman un sistema de
+  generadores de \(R^t\). Por tanto \(a=\sum_i a_i e_i\in R^t\)
+  es una expresión única y a \(\{e_1, \cdots, e_t\}\) se le llama \textbf{base canónica
+    de \(R^t\)}.
+\end{df}
+
+Dicha base puede no existir.
+
+\begin{prop}
+  Dado un módulo cualquiera \(\subscriptbefore{R}{M}\) y \(m_1, \ldots, m_t\in M\),
+  existe un único homomorfismo de \(R\)-módulos \(f:R^t \longrightarrow M\)
+  tal que \(f(e_i)=m_i\) para cada \(i = 1, \ldots, t\).
+\end{prop}
+
+\begin{proof}
+  Unicidad: si existe una tal aplicación \(f\), entonces para
+  cualquier \(x = \sum_{i=1}^tx_ie_i \in R^t\), con \(x_i \in R\) para cada \(i = 1, \ldots,
+  t\),
+  \[
+    f(\sum_{i=1}^{t}x_ie_i) = \sum_{i=1}^t x_i f(e_i)=\sum_{i=1}^t x_i m_i
+  \]
+
+  Veamos la existencia,
+  Definiendo \(f(x)=\sum_i x_i m_i\), obtenemos un homomorfismo de módulos
+  que cumple lo exigido en el enunciado.
+\end{proof}
+
+\begin{cor}
+  Si \(M\) es finitamente generado con generadores \(\{m_1, \ldots, m_t\}\),
+  entonces \(M\cong R^t/L\) para \(L\) un cierto submódulo de \(M\).
+\end{cor}
+
+\begin{proof}
+  Si \(M=Am_1+\cdots+Am_n\), \(f\) es sobreyectivo y tenemos que \(L=\ker f\) cumple lo
+  que se pide por el teorema de isomorfía para módulos.
+\end{proof}
+
+¿Qué relación hay ebtre la suma directa externa e interna?
+\begin{ejercicio}
+  Sea \(\subscriptbefore{R}{M}\), \(N_1,\ldots,
+  N_t\in\mathcal{L}(\subscriptbefore{R}{M})\). Se pide demostrar que existe
+  un homomorfismo \(f:N_1\oplus\cdots\oplus N_t\longrightarrow
+  N_1{+}\cdots{+}N_t\)
+  sobreyectivo de \(A\)-módulos tal que entre la suma directa
+  externa y la suma interna, tal que \(f\) es un isomorfismo si y solo si
+  la suma interna es directa. Podría ser interesante usar coordenadas.
+\end{ejercicio}
