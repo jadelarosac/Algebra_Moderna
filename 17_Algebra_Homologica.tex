@@ -1,32 +1,32 @@
-\section{Módulos noetherianos, artinianos y de longitud finita}
-\subsection{Módulos noetherianos}
+\section{Módulos noetherianos}
 
 \begin{df}[Sucesiones exactas]
-  Una suceión de homomorfismos de módulos \(f_i:M_i\longrightarrow
-  M_{i+1}\) se dice exacta en
-  \(M_{i+1}\) si \(\ker f_{i+1}=\Im f_i\).
+  Una sucesión de homomorfismos de módulos \(f_i:M_i\longrightarrow  M_{i+1}\) se dice
+  exacta en \(M_{i+1}\) si \(\ker f_{i+1}=\Im f_i\).
 \end{df}
 
-Ejemplo: Dada una sucesión \(\{0\}\longrightarrow L 
-\overset{\alpha}{\longrightarrow} M 
-\overset{\beta}{\longrightarrow} N\longrightarrow \{0\}\)
-es exacta en \(L\) si y solo si \(\ker \alpha=\{0\}\), es decir,
-\(\alpha\) es inyectiva, en \(N\) si y solo si \(\Im \beta = N\),
-es decir, \(\beta\) sobreyectiva y en \(M\) si y solo si
-\(\ker\beta=\Im\alpha\).
+\begin{ejemplo}
+  Dada una sucesión \(\{0\}\longrightarrow L 
+  \overset{\alpha}{\longrightarrow} M 
+  \overset{\beta}{\longrightarrow} N\longrightarrow \{0\}\)
+  es exacta en \(L\) si y solo si \(\ker \alpha=\{0\}\), es decir,
+  \(\alpha\) es inyectiva, en \(N\) si y solo si \(\Im \beta = N\),
+  es decir, \(\beta\) sobreyectiva y en \(M\) si y solo si
+  \(\ker\beta=\Im\alpha\).
+   
+  A \(\alpha\) se les llama monomorfismos de módulos y a
+  \(\beta\) epimorfismos de módulos.
 
-A \(\alpha\) se les llama monomorfismos de módulos y a
-\(\beta\) epimorfismos de módulos.
+  A esta sucesión se le llama sucesión exacta corta.
 
-A esta sucesión se le llama sucesión exacta corta.
-
-Caso particular: Por ejemplo, si \(f:M\longrightarrow N\) es
-un homorfismo de módulos, obtenemos:
-\[
-  0\longrightarrow\ker f\overset{\iota}{\longrightarrow}
-  M \overset{f}{\longrightarrow}\Im f
-  \longrightarrow 0
-\]
+  Caso particular: Por ejemplo, si \(f:M\longrightarrow N\) es
+  un homorfismo de módulos, obtenemos:
+  \[
+    0\longrightarrow\ker f\overset{\iota}{\longrightarrow}
+    M \overset{f}{\longrightarrow}\Im f
+    \longrightarrow 0
+  \]
+\end{ejemplo}
 
 \begin{prop}
   Sea \(0\longrightarrow L\overset{\psi}{\longrightarrow} M
