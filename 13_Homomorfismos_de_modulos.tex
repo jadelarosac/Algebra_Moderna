@@ -1,13 +1,13 @@
 \subsection{Homomorfismos de módulos}
 
-\begin{df}[Módulo cociente o factor]
+\begin{prop}[Módulo cociente o factor]
   Sea \(\subscriptbefore{A}{M}\) y \(L\in\mathcal{L}(M)\).
   Consideramos \(M/L\) grupo aditivo y se define la acción:
   \[
     a(m+L):=am+L
   \]
-  \(M/L\) es un módulo.
-\end{df}
+  Entonces \(M/L\) es un módulo.
+\end{prop}
 
 \begin{df}[Homomorfismo de módulos]
   Se dice que
@@ -17,7 +17,7 @@
 
 \begin{df}[Proyección canónica]
   Es la aplicación \(\pi:M\longrightarrow M/L\) dada por
-  \(\pi(m)=m+L\) es un homomorfismo de módulos.
+  \(\pi(m)=m+L\). Es un homomorfismo de módulos.
 \end{df}
 
 \begin{teo}[Teorema de isomorfía para módulos]
@@ -45,3 +45,72 @@ Tenemos \(\Im f = Am\) y
   A/\ann_A(m)\cong Am
 \]
 
+\[
+  a+\ann_A(m)\mapsto am
+\]
+
+Ejemplo: \(S=\Map(\N,K)\), el conjunto de las sucesiones (que forman
+un \(K\)-espacio vectorial). Tomamos \(T:S\longrightarrow S\)
+tal que \(T(s)(n)=s(n+1)\). Es lineal. Entonces
+\(\subscriptbefore{K[x]}{S}\), donde \(xs=T(s)\).
+
+Para cualquier \(f\in K[x]\), es decir \(f=\sum_i f_i x^i\), se tiene:
+\[
+  (fs)(n)=\sum_i f_i s(n+i)
+\]
+
+Imaginémosnos que \(s\) verifica que \(\ann_{K[x]}(s)\neq\langle0\rangle\).
+Podemos tomar entonces un polinomio tal que \(fs = 0\) y que sea mónico.
+Tenemos entonces que \(s(n+m)=-\sum_{i=0}^{m-1} f_i s(n+i)\)
+para todo \(n\in\N\). Es decir, la sucesión es linealmente recursiva.
+
+Caso particular, \(s(0)=s(1)=1\), tenemos que
+\[
+  s(n+2)=s(n)+s(n+1)
+\]
+
+\[
+  x^2-x-1\in\ann_{\Q[x]}(s)
+\]
+
+Volviendo al caso general, tenemos que
+\[
+  K[x]/\ann_{K[x]}(s)\cong K[x]s
+\]
+
+Tenemos que \(\dim_{K}(K[x]s)<\infty\) si y solo si
+\(\ann_{K[x]}(s)\neq\langle0\rangle\) si y solo si
+\(s\) es una sucesión linealmente recursiva.
+
+El generador \(p(x)\) de \(\ann_{K[x]}(s)\) se le llama el polinomio
+mínimo de \(s\). El grado de dicho polinomio, coincide con
+\(\dim_{k}(K[x]s)\) y se le llama complejidad lineal de \(s\).
+
+\(s,t\) dos sucesiones linealmente recursivas.
+\(K[x](s+t)\subseteq K[x]s+K[x]t\), luego la primera tiene dimensión finita.
+Luego \(s+t\) es una sucesión linealmente recursiva, de complejidad menor
+o igual a la suma de las complejidades lineales.
+Puede argumentarse lo mismo para combinaciones lineales.
+
+Las sucesiones linealmente recursivas forman un subespacio vectorial
+del espacio de sucesiones. De hecho forman un submódulo. Sea
+\(S^l\) el conjunto de las sucesiones linealmente recursivas, forma
+un \(S^l\) es un \(K[x]\)-submódulo de \(S\), ya que es ivariante por la
+acción de \(x\) (es \(T\)-invariante).
+
+Otro ejemplo: \(T\) endomorfismo de \(\Cont^\infty(\R)\) tal que
+\(T(\varphi)=\varphi'\). Tenemos que
+\(\subscriptbefore{R[x]}{\Cont^\infty(\R)}\). Dada \(\varphi\),
+tenemos que
+\[
+  \ann_{\R[x]}(\varphi)=\{f\in\R[x]: f(x)\varphi=0\}
+  =\{f=\sum_i f_i\frac{d^i}{dt^i}: f\varphi=0\}
+\]
+\(\ann(\varphi)\neq\langle 0\rangle\) si \(\varphi\) satisface una ecuación
+diferencial lineal homogénea con coeficientes constantes. Bla bla.
+
+\(\R[x]/\ann_{\R[x]}(\varphi)\cong \R[x]\varphi\), donde \(\varphi\)
+satisface bla bla.
+
+Tenemos que \(\varphi''-\varphi'-\varphi=0\), cuya solución
+\(\varphi(t)=e^{\phi t}\), donde \(\phi\) es la razón aúrea.
