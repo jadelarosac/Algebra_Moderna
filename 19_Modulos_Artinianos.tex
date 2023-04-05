@@ -1,46 +1,61 @@
-\subsection{Módulos artinianos}
+\section{Módulos artinianos}
 
-\begin{df}[Módulo artinano]
-  Para un \(\subscriptbefore{A}{M}\), son equivalentes:
+\begin{prop}[Módulo artiniano]
+  Dado un módulo \(\subscriptbefore{A}{M}\), son equivalentes:
   \begin{enumerate}
     \item Cada cadena descendente
       \(L_1\supseteq L_2\supseteq\ldots\supseteq L_n\supseteq\ldots\)
       de submódulos de \(M\)
-      se estabiliza, esto es, a partir de cierto natural \(m\)
-      se tiene \(L_n=L_m\) para todo \(n\ge m\).
-    \item Cada subconjunto de \(\mathcal{L}(M)\) tiene un elemento
+      se estabiliza; esto es, a partir de cierto \(m \in \N\)
+      se tiene \(L_n = L_m\) para todo \(n \ge m\).
+    \item Cada subconjunto no vacío de \(\mathcal{L}(M)\) tiene un elemento
       minimal.
   \end{enumerate}
   A un tal módulo lo llamaremos artiniano.
-\end{df}
+\end{prop}
+\begin{proof}
+  Se adapta la demostración de los módulos noetherianos. (Propsición \ref{prop:noether}).
+\end{proof}
 
-Ejercicio: Sea \(A\) un dominio de integridad conmutativo. Si el
-módulo regular es artiniano, entonces \(A\) es un cuerpo.
+\begin{ejercicio}
+  Sea \(A\) un dominio de integridad conmutativo. Si el
+  módulo regular es artiniano, entonces \(A\) es un cuerpo.
+\end{ejercicio}
 
 En particular \(\Z\) no es artiniano, aunque por ser un DIP, sí que
 es noetheriano.
 
-Ejercicio: \(K\) un cuerpo de característica 0. Tomo \(K[x]\) anillo
-de polinomios. Veo \(K[x]\) como \(K\)-espacio vectorial.
-Tomamos \(T\) la aplicación lineal \(T(f):=f'\), donde \(f'\) es el
-polinomio derivado. Esto nos da una estructura de \(K[x]\)-módulo
-sobre \(K[x]\) que no es la del módulo regular. Se pide demostrar
-que ese módulo es artiniano y no finitamente generado.
+\begin{ejercicio}
+  \(K\) un cuerpo de característica 0. Tomo \(K[x]\) anillo
+  de polinomios. Veo \(K[x]\) como \(K\)-espacio vectorial.
+  Tomamos \(T\) la aplicación lineal \(T(f):=f'\), donde \(f'\) es el
+  polinomio derivado. Esto nos da una estructura de \(K[x]\)-módulo
+  sobre \(K[x]\) que no es la del módulo regular. Se pide demostrar
+  que ese módulo es artiniano y no finitamente generado.
+\end{ejercicio}
 
 En consecuencia, la estructura que hemos definido no es la misma
 que la del módulo regular.
 
 \begin{prop}
-  Sea \[0\longrightarrow L\longrightarrow M\longrightarrow N\longrightarrow
-  0\]
+  Sea la sucesión exacta corta de módulos
+  \[
+    0\longrightarrow L\longrightarrow M\longrightarrow N\longrightarrow 0
+  \]
 
-  Entonces \(M\) es artiniano si y solo si \(L\) y \(N\) son artinianos.
+  Entonces \(M\) es artiniano si, y solo si, \(L\) y \(N\) son artinianos.
 \end{prop}
+\begin{proof}
+  Se adapta la demostración para módulos noetherianos (Proposición \ref{prop:suc_noether}).
+\end{proof}
 
-Ejercicio: sea \(p\) un número primo. Definimos:
-\[
-  C_{p^\infty}=\{z\in\C:z^{p^n}=1\textrm{ para algún } n\ge1\}
-\]
-Se pide comprobar que es un subgrupo \(\Sphere=\{z\in\C:\md{z}=1\}\) y demostrar
-que visto como \(\Z\)-módulo es artiniano pero no es finitamente generado.
+\begin{ejercicio}
+  Sea \(p\) un número primo. Definimos:
+  \[
+    C_{p^\infty}=\{z\in\C:z^{p^n}=1\textrm{ para algún } n\ge1\}
+  \]
+  Se pide comprobar que es un subgrupo \(\Sphere=\{z\in\C:\md{z}=1\}\) y, mediante que
+  \(C_{p^\infty}\) es conmutativo y visto como \(\Z\)-módulo, es artiniano, pero no es
+  finitamente generado.
+\end{ejercicio}
 

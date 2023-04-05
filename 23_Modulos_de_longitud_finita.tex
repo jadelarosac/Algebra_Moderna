@@ -1,31 +1,16 @@
-
-\[
-  M=M_1\dot{+}\cdots\dot{+} M_t
-\]
-donde
-\[
-  M_i=\{q_i m: m\in M\}=\{m\in M: p_i^{e_i} m=0\}=\{m\in M:
-  a_i q_i m = m\}
-\]
-con \(q_i=\frac{\mu}{p_i^{e_i}}\) y \(\sum_i a_i q_i=1\)
-y \(\langle \mu\rangle=\Ann_A(M)\). Se tiene que
-\(\Ann_A(M_i)=\langle p_i^{e_i}\rangle\).
-
 \begin{df}[Módulo p-primario]
-  \(\subscriptbefore{A}{M}\) se dice \(p\)-primario si
-  \(\Ann_A(M)=\langle p^e\rangle\), \(p\) un irreducible.
+  \(\subscriptbefore{A}{M}\) se dice \textbf{\(p\)-primario} si
+  \(\Ann_A(M)=\langle p^e\rangle\), \(p\) un irreducible con \(e \ge 1\).
 \end{df}
 
-Vamos a estudiar la estructura de módulos primarios de longitud finita.
-
 \begin{obs}
-  \(\subscriptbefore{A}{M}\) \(p\)-primario, \(\ell(M)<\infty\).
+  Sea \(\subscriptbefore{A}{M}\) un módulo \(p\)-primario con \(\ell(M) < \infty\).
   \[
     \Ann_A(M)=\langle p^t\rangle
   \]
 
-  Si \(0\neq m\in M\), \(\ann_A(m)\supseteq \Ann_A(M)=\langle p^t
-  \rangle\), tenemso que \(\ann_A(m)=\langle p^r\rangle \)
+  Si \(0\neq m\in M\), el ideal principal \(\ann_A(m)\supseteq \Ann_A(M)=\langle p^t
+  \rangle\) y tenemos que \(\ann_A(m)=\langle p^r\rangle \),
   con \(r\le t\).
 
   Si \(M=Am_1+\cdots+Am_m\), entonces \(\langle p^t\rangle
@@ -34,7 +19,7 @@ Vamos a estudiar la estructura de módulos primarios de longitud finita.
 \end{obs}
 
 \begin{cor}
-  Existe un \(x\i M\), \(\Ann_A(M)=\ann_A(x)\).
+  Existe un \(x \in M\) tal que \(\Ann_A(M)=\ann_A(x)\).
 \end{cor}
 
 \begin{lema}
@@ -79,23 +64,22 @@ Vamos a estudiar la estructura de módulos primarios de longitud finita.
 \end{proof}
 
 \begin{prop}
-  Suponemos que tenemos \(M\) \(p\)-primario y de longitud finita. Sea
+  Suponemos que tenemos \(M\) un módulo \(p\)-primario y de longitud finita. Sea
   \(x\in M\) tal que \(\Ann_A(M)=\ann_A(x)\). Entonces \(Ax\) es un
   sumando directo interno de \(M\).
 \end{prop}
 \begin{proof}
   Por inducción sobre la longitud \(\ell(M)<\infty\).
 
-  Si la longitud es 1, \(M\) es simple, entonces \(M=Ax\).
+  Si la longitud es 1, \(M\) es simple y entonces \(M=Ax\).
 
   Si \(\ell(M)>1\) y \(Ax=M\), no hay nada que demostrar.
 
   Veamos que pasa si \(Ax\neq M\). Veamos que existe un \(y \in M\)
   tal que \(y\neq Ax\) y \(\ann_A(y)=\langle p\rangle\).
-  \(
-    \ell(M/Ax)<\infty
-  \), debe contener algún simple \(S\subseteq M/Ax\). Tomamos \(s\in S\)
-  tal que \(S=As\).
+  \(\ell(M/Ax) < \ell(M) < \infty\), luego debe contener algún
+  submódulo simple \(S \subseteq M/Ax\).
+  Tomamos \(s\in S\) tal que \(S=As\).
   \[
     \langle p^t\rangle =\Ann_A(M)\subseteq\Ann_A(M/Ax)\subseteq\Ann_A(S)
     =\ann_A(s)

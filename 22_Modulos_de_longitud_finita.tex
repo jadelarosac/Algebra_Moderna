@@ -1,6 +1,5 @@
 Sea \(\subscriptbefore{A}{M}\) un módulo, \(\mathcal{L}(M)\)
 es el conjunto de todos los submódulos de \(M\).
-
 Dado \(\Gamma\subseteq\mathcal{L}(L)\) no vacío,
 tenemos \(\bigcap_{N\in\Gamma}
 N\in\mathcal{L}(M)\) (no tiene por qué ocurrir que estén en \(\Gamma\),
@@ -8,7 +7,7 @@ N\in\mathcal{L}(M)\) (no tiene por qué ocurrir que estén en \(\Gamma\),
 
 
 \begin{df}[Zócalo]
-  El zócalo de \(M\) es el menor submódulo de \(M\) que contiene a todos
+  \textbf{El zócalo de \(M\)} es el menor submódulo de \(M\) que contiene a todos
   los submódulos simples de \(M\).
 
   Si \(M\) no tiene ningún submodulo simple, definimos el zócalo como
@@ -17,10 +16,14 @@ N\in\mathcal{L}(M)\) (no tiene por qué ocurrir que estén en \(\Gamma\),
   En ambos casos usaremos la notación \(\Soc(M)\).
 \end{df}
 
-Ejemplo: si \(V\) es un \(K\)-espacio vectorial, \(\Soc(V)=V\).
+\begin{ejemplo}
+  Si \(V\) es un \(K\)-espacio vectorial, \(\Soc(V)=V\).
+\end{ejemplo}
 
-Ejemplo: \(\Soc(\Z)=\{0\}\), puesto que cada \(n\Z\) contiene
-un \(2n\Z\), luego no es simple.
+\begin{ejemplo}
+  \(\Soc(\Z)=\{0\}\), puesto que cada \(n\Z\) contiene
+  un \(2n\Z\), luego no es simple.
+\end{ejemplo}
 
 De hecho, si \(A\) es un dominio de
 integridad que no es un cuerpo, \(\Soc(A)=\{0\}\). Tienes que sus submódulos
@@ -28,12 +31,13 @@ son ideales. Para \(x\in I\), el ideal generado por \(x^2\) está dentro de
 \(I\), luego \(I\) no es simple.
 
 \begin{prop}
-  Sea \(M\) de longitud finita. Existen submódulos \(S_i\) simples de \(M\)
+  Sea \(M\) un \(A\)-módulo de longitud finita. Entonces existen submódulos
+  \(S_i\) simples de \(M\)
   tales que
   \[
-    \Soc(M)=S_1\dot{+}\cdots\dot{+} S_n
+    \Soc(M)=S_1\dot{+}\cdots\dot{+} S_n.
   \]
-  Además si \(T_i\) son simples tales que
+  Además, si existen otros submódulos \(T_i\) simples tales que
   \(
     \Soc(M)=T_1\dot{+}\cdots\dot{+} T_m
   \), entonces \(n=m\) y tras reordenación, \(S_i\cong T_i\).
@@ -48,7 +52,7 @@ son ideales. Para \(x\in I\), el ideal generado por \(x^2\) está dentro de
   Si \(M\neq\{0\}\), entonces \(\Gamma\neq\emptyset\), ya que \(M\)
   contiene algún submódulo simple.
 
-  Como \(M\) es Notheriano, existe un
+  Como \(M\) es noetheriano, existe un
   \(
     S_1\dot{+}\cdots\dot{+} S_n
   \) maximal.
@@ -102,30 +106,34 @@ son ideales. Para \(x\in I\), el ideal generado por \(x^2\) está dentro de
 \end{proof}
 
 \begin{df}[Módulo semisimple]
-  Sea \(M\) de longitud finita. Decimos que \(M\) es semisimple si es
-  \(\Soc(M)=M\).
+  Sea \(M\) un \(A\)-módulo de longitud finita. Decimos que \(M\) es \textbf{semisimple}
+  si es \(\Soc(M)=M\).
 \end{df}
 
-Ejercicio: Sea \(A\) un DIP que no sea un cuerpo,
-\(I\) ideal de \(A\). Se pide demostrar
-que \(A/I\) es de longitud finita si y solo si \(I\neq\langle 0\rangle\).
+\begin{ejercicio}
+  Sea \(A\) un DIP que no sea un cuerpo,
+  \(I\) ideal de \(A\). Se pide demostrar
+  que \(A/I\) es de longitud finita si, y solo si, \(I\neq\langle 0\rangle\).
+\end{ejercicio}
 
 ¿Se puede deducir cuál es la longitud de \(A/I\) de un generador de \(I\)?
 
 \subsubsection{Módulos de longitud finita sobre un DIP}
 
 Sea de ahora en adelante \(A\) un dominio de ideales principales que no
-sea un cuerpo.
+sea un cuerpo. El objetivo es describir la estructura de los \(A\)-módulos
+de longitud finita. Recordemos que \(A\) es un anillo conmutativo cualquiera.
 
-\begin{lema}
-  \(\subscriptbefore{A}{M}\) es de longitud finita si y solo si
-  \(\subscriptbefore{A}{M}\) finitamente generado y acotado.
-\end{lema}
+\begin{prop}
+  \(\subscriptbefore{A}{M}\) es un módulo de longitud finita si, y solo si,
+  \(\subscriptbefore{A}{M}\) es finitamente generado y acotado.
+\end{prop}
 \begin{proof}
-  \(M\) distinto del 0, porque si no es trivial.
+  Supongamos que \(M\) es distinto del 0, porque si no es trivial.
 
-  \(M\) de longitud finita, por tanto noetheriano, por tanto finitamente
-  generado: \(M=Am_1+\cdots+Am_n\), con \(m_i\in M\).
+  \(M\) es de longitud finita, por tanto noetheriano, lo que implica que también
+  es finitamente generado: \(M=Am_1+\cdots+Am_n\), con \(m_i\in M\) para cada
+  \(i \in \{1, \ldots, n\).
   \[
     \langle\mu\rangle=\Ann_A(M)=\bigcap_{i=1}^n\ann_A(m_i)
   \]
@@ -172,3 +180,16 @@ donde \(M_i\) es la componente \(p_i\) primaria que viene de
 (\(M_i=\{m\in M:m\cdot{p_i}^{e_i}=0\}\)).
 Además \(M_i\) es finitamente generado.
 ¿Se puede descomponer como suma directa de submódulos indescomponibles?
+
+
+\[
+  M=M_1\dot{+}\cdots\dot{+} M_t
+\]
+donde
+\[
+  M_i=\{q_i m: m\in M\}=\{m\in M: p_i^{e_i} m=0\}=\{m\in M:
+  a_i q_i m = m\}
+\]
+con \(q_i=\frac{\mu}{p_i^{e_i}}\) y \(\sum_i a_i q_i=1\)
+y \(\langle \mu\rangle=\Ann_A(M)\). Se tiene que
+\(\Ann_A(M_i)=\langle p_i^{e_i}\rangle\).
