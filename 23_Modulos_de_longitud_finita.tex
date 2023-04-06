@@ -84,10 +84,12 @@
     \langle p^t\rangle =\Ann_A(M)\subseteq\Ann_A(M/Ax)\subseteq\Ann_A(S)
     =\ann_A(s)
   \]
-  Y por tanto \(\ann_A(s)=\langle p\rangle\).
+  El \(\ann_A(s)\) es un ideal maximal generado por un irreducible, y como
+  \(\langle p^t\rangle \subset \ann_A(s)\), \(\ann_A(s)=\langle p\rangle\).
 
-  Tomamos \(z\in M\) tal que \(s=z+Ax\), es decir, \(p z\in Ax\). Es decir,
-  \(p z=ax\) para cierto \(a\in A\). Afirmamos que \(p|a\) (no es obvio
+  Tomamos \(z\in M\) tal que \(s = z + Ax\), es decir, \(pz \in Ax\) ya que
+  \(0 + Ax = ps = pz + Ax\). Equivalentemente,
+  existe un cierto \(a \in A\) tal que \(pz = ax\). Afirmamos que \(p|a\) (no es obvio
   porque es un módulo).
 
   Supongamos que no es así. Por Bezout, \(1=ua+vp\) para \(u,v\in A\)
@@ -100,12 +102,12 @@
   por \(p^t\), no puede anularlo \(p^{t'-1}\) ya que
   \(t'-1\le t-1<t\).
 
-  Cuenta alternativa: \(p^{t-1}ax=p^t z=0\) entonces \(p^{t-1} a
-  \in\ann_A(x)=\langle p^t\rangle\), tenemos que \(a=pa'\)
+  Una cuenta alternativa podrá haber sido que \(p^{t-1}ax=p^t z=0\), entonces \(p^{t-1} a
+  \in\ann_A(x)=\langle p^t\rangle\), y tenemos que \(a=pa'\).
 
-  Hemos obtenido un elemento \(s=z+Ax\in M/Ax\) y que \(pz=ax\) y hemos
+  Hemos obtenido un elemento \(s=z+Ax\in M/Ax\) tal que \(pz=ax\) y hemos
   visto que \(p|a\). Así tenemos que \(pz=pa'x\) y entonces
-  \(p(z-a'x)=0\). Llamo \(y=z-a'x\neq 0\) y \(py=0\) con lo que
+  \(p(z-a'x)=0\). Sea \(y = z - a'x \neq 0\) y \(py=0\), con lo que
   \(\ann_A(y)=\langle p\rangle\).
 
   Tenemos que \(Ay\) es simple y \(y\notin Ax\) asi que \(Ay\cap Ax=
@@ -113,7 +115,10 @@
   \[
     Ax\cong Ax/(Ay\cap Ax)\cong (Ax+Ay)/Ay\cong A(x+Ay)\subseteq M/Ay
   \]
+  La segunda isomorfía se verifica gracias al segundo o tercer Teorema de Isomorfía,
+  propuesto como ejercicio. 
 
+  Empleando la expresión anterior, 
   \[
     \langle p^t\rangle=\ann_A(x)=\ann_A(A(x+Ay))\supseteq
     \Ann_A(M/Ay)\supseteq\Ann_A(M)=\langle p^t\rangle
@@ -125,7 +130,8 @@
   con \(\ell(M/Ay)<\ell(M)\). Aplicando la hipótesis de inducción,
   tenemos que \(M/Ay=(Ax+Ay)/Ay \dot{+} N/Ay\) para cierto
   \(N\in\mathcal{L}(M)\) tal que \(N\supseteq Ay\). De aquí se deduce
-  que \(M=Ax+Ay+N=Ax+N\). Tomamos \(Ax\cap N\subseteq(Ax+Ay)\cap N=Ay\).
-  Entonces \(Ax\cap N = Ax\cap N\cap Ay= Ax\cap Ay=\{0\}\).
+  que \(M=Ax+Ay+N=Ax+N\).
 
+  Veamos ahora que es suma directa. Tomamos \(Ax\cap N\subseteq(Ax+Ay)\cap N=Ay\).
+  Entonces \(Ax\cap N = Ax\cap N\cap Ay= Ax\cap Ay=\{0\}\).
 \end{proof}
