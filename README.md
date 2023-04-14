@@ -1,5 +1,4 @@
 # Álgebra Moderna - Universidad de Granada
-## Curso 2021-2022 y 2022-2023
 
 En este repositorio se presentan los apuntes tomados durante las clases impartidas
 profesor José Gómez Torrecillas en la asignatura Álgebra Moderna del Grado de
@@ -22,12 +21,13 @@ Si se encuentra en un sistema basado en Linux, el documento se puede generar sim
 empleando el archivo `Makefile`. Para ello:
 
 `cd <carpeta del repositorio>`
+    
 `make`
 
 La siguiente forma sirve tanto para Linux como para Windows. Una vez abierta una
 terminal del sistema, se escribe
 
-`pdflatex Apuntes`.
+`pdflatex Apuntes`
 
 Tras la generación del documento, es posible que sea necesario volver a compilar
 el documento para que se generen correctamente las referencias internas del documento.
