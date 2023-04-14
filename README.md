@@ -1,11 +1,11 @@
 # Álgebra Moderna - Universidad de Granada
 
 En este repositorio se presentan los apuntes tomados durante las clases impartidas
-profesor José Gómez Torrecillas en la asignatura Álgebra Moderna del Grado de
+por el profesor José Gómez Torrecillas en la asignatura Álgebra Moderna del Grado de
 Matemáticas de la Universidad de Granada. Se han tomado en formato Latex y están
 pensados para que se genere un archivo PDF con los contenidos.
 
-Inicialmente, los apuntes fueron tomados durante el curso 2021-2023 por José Antonio
+Inicialmente, los apuntes fueron tomados durante el curso 2021-2022 por José Antonio
 de la Rosa Cubero. Estos apuntes incluían la mayor parte de los conceptos de la
 asignatura, ejemplos y ejercicios ligeramente explicados y desarrollados.
 
