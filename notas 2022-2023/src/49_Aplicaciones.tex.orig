@@ -1,0 +1,79 @@
+Sea \(V\) un \(\C G\)-módulo. Como \(\C\subseteq\C G\) por restricción de
+escalares, \(\subscriptbefore{\C}{V}\) es un espacio vectorial.
+\(\rho:\C G\longrightarrow\End_\C(V)\), \(\rho\) de anillos y \(\C\)-lineal.
+\[
+  \rho(\sum_{g\in G} r_g g)(v)=\sum_{g\in G} r_g g v
+\]
+¿Qué pasa si restringimos \(\rho\) a \(G\)? Como respeta el producto en \(G\),
+\(\rho|_G:G\longrightarrow GL_\C(V)\), donde \(\rho|_G\) es un homomorfismo
+de grupos.
+Es una represantación lineal de \(G\) con espacio de representación \(V\).
+
+Si \(W\subseteq V\), es un \(\C G\)-submódulo si y solo si es un
+\(\C\)-subespacio vectorial y \(W\) es \(G\) invariante:
+para todo \(w\in W\) y todo \(g\in G\) se tiene que \(gw\in W\).
+
+\(\mu(G)\) es el espacio de representación
+\(\rho:G\longrightarrow GL_\C(\mu(G))\) dado por:
+\[
+  \rho(g)(\varphi)(x)=\varphi(xg)=:g\varphi(x)
+\]
+donde \(g,x\in G\) y \(\varphi\in\mu(G)\).
+
+\begin{teo}
+  Si \(G\) es finito entonces \(\C G\) es semisimple.
+\end{teo}
+\begin{proof}
+  Supongamos que \(G\) es finito. Tomamos \(V\) un \(\C G\)-módulo de dimensión
+  finita. Tomamos \(\langle\cdot|\cdot\rangle\) un producto interno en \(V\).
+
+  Definimos \(\langle\cdot|\cdot\rangle_G\) producto interno sobre \(V\) así:
+  \[
+    \langle v|u\rangle_G=\sum_{g\in G} \langle gv| gu\rangle
+  \]
+  que cumple la siguiente propiedad para todo \(h\in G\):
+  \[
+    \langle hv|hu\rangle_G=\sum_{g\in G} \langle ghv| ghu\rangle
+    =\sum_{f\in G} \langle fv| fu\rangle=\langle v|u\rangle_G
+  \]
+  con lo que es un operador unitario (es un operador que conserva el producto
+  interno de un espacio de Hilbert) y una isometría.
+
+
+  Sea \(W\) un \(\C G\)-submódulo de \(V\). Se tiene:
+  \[
+    V=W\dot{+} W^\perp
+  \]
+  donde \(\perp\) se toma respecto al producto interno nuevo:
+  \[
+    W^\perp :=\{v\in V: \langle v|w\rangle_G=0\quad\forall w\in W\}
+  \]
+
+  O sea \(W^\perp\) es \(G\)-invariante. En otras palabras, hemos de ver que
+  si \(v\in W^\perp\), \(g\in G\) entonces \(gv\in\perp\), entonces para todo
+  \(w\in W\) tenemos que:
+  \[
+    \langle gv|w\rangle_G=\langle gv|gg^{-1}w\rangle_G=
+    \langle v|g^{-1} w\rangle=0
+  \]
+  ya que \(g^{-1}w\in W\) y \(v\in W^\perp\). Luego \(W^\perp\) es
+  \(G\)-invariante.
+
+  Como hemos demostrado que cualquier submódulo es sumando directo, tenemos
+  que es semisimple.
+
+\end{proof}
+
+\begin{cor}
+  Si \(G\) es finito, \(\mu(G)\) es un \(\C G\)-módulo semisimple.
+\end{cor}
+
+Dotamos de a \(\mu(G)\) del producto interno:
+\[
+  \langle \varphi|\psi\rangle:=
+  \frac{1}{|G|}\sum_{g\in G}\varphi(g)\overline{\psi(g)}
+\]
+
+
+
+

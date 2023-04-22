@@ -1,0 +1,111 @@
+
+Sea \(G\) un grupo, \(V\) un \(\C G\)-módulo, de dimensión finita
+como espacio vectorial complejo. Fijamos una vase de \(v_i\).
+Tomamos \(x\in G\):
+\[
+  xv_i=\sum_j t_{ij}(x)v_j
+\]
+
+A las funciones \(t_{ij}\in\mu(G)\) se les llama funciones
+matriciales de \(V\) en la base \(\{v_1,\ldots,v_n\}\).
+
+Definimos \(C(V)\) como el subespacio vectorial de \(\mu(G)\) generado por
+\(\{t_{ij}:1\le i,j\le n\}\).
+Veamos que \(C(V)\) no depende de la base fijada. Recordemos que todo
+cambio de bases puede interpretarse como un automorfismo.
+
+Supongamos \(V'\) otro \(\C G\)-módulo con otra base \(\{v_1',\ldots,v_m'\}\).
+Sea \(f:V\longrightarrow V'\) homomorfismo de \(\C G\)-módulos. Las funciones
+matriciales de \(V'\) fijaremos una base \(v_i'\) y denotamos las funciones
+matriciales \(t_{ij}'\).
+\[
+  f(v_i)=\sum_j a_{ij}v_j'
+\]
+y sea \(A\) la matriz con coeficientes \(a_{ij}\).
+
+Tenemos que \(xf(v_i)=\sum_j a_{ij}\sum_k t_{jk}'(x) v_k'\)
+y \(fx(v_i)=\sum_j t_{ij}(x)\sum_k a_{ij}v_j'\). Igualando lo anterior
+\(xf(v_i)=f(xv_i)\), tenemos que \(A(t_{ij}'(x))=(t_{ij}(x))A\) o
+si se quiere \(A(t_{ij}')=(t_{ij})A\).
+
+Si \(f\) es un isomorfismo, entonces \(A\) es invertible y
+se tiene que los \(t_{ij}'\) y \(t_{ij}\) son combinaciones lineales los
+unos de los otros, luego si \(V'=V\) y \(f=\id\) se tiene que \(C(V)\) no
+depende de la base elegida. Si \(V'\cong V\), tenemos \(C(V)=C(V')\).
+
+\begin{lema}
+  \(C(V)\) es un \(\C G\)-submódulo de \(\mu(G)\).
+\end{lema}
+\begin{proof}
+  Sean \(x,y\in G\).
+  \(
+    t_{ij}(xy)
+  \)
+  es la matriz de la aplicación lineal dada por hacer actuar
+  \(xy\) sobre cualquier vector:
+  \[
+    t_{ij}(xy)=\sum_k t_{ik}(y)t_{kj}(x)
+  \]
+  es decir, el producto de matrices (por filas, es decir, con el orden
+  al revés que en la composición).
+
+  \[
+    yt_{ij}(x)=t_{ij}(xy)=\sum_k t_{ik}(y)t_{kj}(x)=
+    (\sum_k t_{ik}(y)t_{kj})(x)
+  \]
+  con lo que:
+  \[
+    yt_{ij}=\sum_k t_{ik}(y)t_{kj}\in C(V)
+  \]
+
+  Luego \(C(V)\) es un submódulo.
+
+\end{proof}
+
+\begin{lema}
+  Sea \(f:V\longrightarrow\mu(G)\) un homomorfismo de \(\C G\)-módulos.
+  Entonces \(\Im f\subseteq C(V)\).
+\end{lema}
+\begin{proof}
+  Sea \(v_i\) un elemento de la base de \(V\).
+  \[
+    f(v_i)(x)=f(v_i)(e x)=xf(v_i)(e)=f(xv_i)(e)=\sum_j t_{ij}(x) f(v_j)(e)
+    =\left(\sum_j f(v_j)(e)t_{ij}\right)(x)
+  \]
+  \[
+    f(v_i)=\sum_j f(v_j)(e)t_{ij}\in C(V)
+  \]
+
+\end{proof}
+
+\begin{lema}
+  Sean \(G\) finito, \(U,W\) \(\C G\)-módulos (no necesariamente de dimensión
+  finita) y \(f:U\longrightarrow W\) lineal. La aplicación \(\tilde{f}:
+  U\longrightarrow W\) dada por:
+  \[
+    \tilde{f}(u)=\sum_{x\in G}x^{-1}f(xu), \quad u\in U
+  \]
+  es un homomorfismo de \(\C G\)-módulos.
+
+\end{lema}
+\begin{proof}
+  Hemos de ver que \(\tilde{f}(yu)=y\tilde{f}(u)\) para todo \(y\in G\)
+  y todo \(u\in U\).
+  \[
+    \tilde{f}(yu)=\sum_{x\in G} x^{-1}f(xyu)=\sum_{z\in G} yz^{-1}
+    f(zu)=y\tilde{f}(u)
+  \]
+  donde \(z=xy\).
+\end{proof}
+
+\begin{lema}
+  Sea \(G\) finito y \(V\) un \(\C G\)-módulo de dimensión finita.
+  Existe un producto interno \(\langle\cdot|\cdot\rangle\) en \(G\)
+  tal que \(\langle xv|xw\rangle =\langle v|w\rangle\) con \(v,w\in V\)
+  y \(x\in G\).
+
+  Es decir, que la representación \(G\longrightarrow U(V)\), donde
+  \(U(V)\) es el grupo unitario.
+\end{lema}
+
+

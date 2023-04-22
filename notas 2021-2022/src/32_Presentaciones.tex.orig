@@ -1,0 +1,85 @@
+Donde \(p:E_s\longrightarrow E_{s'}\)
+y \(q:F_t\longrightarrow F_{t'}\).
+
+Supongamos ahora que tenemos que existen \(p\) y \(q\)
+tales que \(q\psi=\psi' p\). Vamos
+a construir un \(h\) homomorfismo. Tomamos \(u\in F_t\)
+tal que \(\phi(u)=m\). Queremos definir \(h(m)\) como
+\(\phi'(q(u))\in N\). Hay que demostrar que está bien definida.
+
+Tomamos \(v\in F_t\), tal que \(\phi(v)=m\). Tenemos que:
+\[
+  \phi'(q(v)-q(u))=\phi'(q(u-v))
+\]
+tomando un \(x\in E_s\) tal que \(v-u=\psi(x)\), ya que
+\(0=\phi(v-u)\in\ker\phi=\Im\psi\).
+\[
+  \phi'(q(v)-q(u))=\phi'(q(u-v))=\phi'(q(\psi(x)))=
+  \phi'(\psi'(p(x)))=0
+\]
+y entonces \(h\) no depende del representante elegido.
+Es fácil ver que \(h\) es un homomorfismo de módulos y que
+\(\phi\circ h= q\circ\phi'\).
+
+Fijadas bases en \(E_s, F_t, E_{s'}, F_{t'}\), definir \(h\) se reduce a
+dar dos matrices \(A_q\) y \(A_p\) tales que
+\[
+  A_\psi A_q=A_p A_{\psi'}
+\]
+entonces \(A_\psi\), \(A_{\psi'}\) representan a los módulos \(M\) y \(N\)
+y \(A_q\), \(A_p\) representan al homormorfismo \(h\).
+
+Concretamente, si \(f=\{f_1,\ldots, f_t\}\) es una base de \(F_t\)
+y \(f'=\{f_1',\ldots, f_t'\}\) de \(F_{t'}\) y
+\(A_q=(q_{ij})\) y tomamos \(m_i=\phi(f_i)\) y \(n_j=\phi'(f_j')\),
+tenemos:
+\begin{enumerate}
+  \item \(\{m_1,\ldots, m_t\}\) genera \(M\).
+  \item \(\{n_1,\ldots, n_{t'}\}\) genera \(N\).
+  \item \(h(m_i)=\sum_{j=1}^{t'} q_{ij}n_j\).
+\end{enumerate}
+
+\begin{prop}[Teorema de Cayley-Hamilton]
+  Sea \(T:V\longrightarrow V\) un homomorfismo \(K\)-lineal, con
+  la dimensión de \(V\) finita. Sea \(d\in K[x]\) el polinomio característico
+  de \(T\). Entonces el polinomio mínimo de \(T\) divide a \(d(x)\).
+  En particular, \(d(T)=0\).
+\end{prop}
+\begin{proof}
+  Tomamos la presentación finita de \(\subscriptbefore{K[x]}{V}\) que
+  vimos anteriormente:
+  \[
+    F_n\overset{\psi}{\longrightarrow} F_n
+    \overset{\phi}{\longrightarrow} V\longrightarrow 0
+  \]
+  Tomamos \(A_\psi\) y \(P\) su matriz adjunta (o de cofactores), o sea,
+  la que hace que se cumpla la ecuación \(PA_\psi=d(x)I\).
+
+  Sea \(\delta:F_n\longrightarrow F_n\) el homomorfismo que fijada
+  bases \(f\) de \(F_n\) tiene como matriz \(d(x)I\), o sea,
+  \(\delta(f_i)=d(x)f_i\). Consideramos la proyección canónica
+  \(\pi:F_n\longrightarrow F_n/\Im\delta\) y nos queda:
+  \[
+    F_n\overset{\delta}{\longrightarrow} F_n
+    \overset{\pi}{\longrightarrow} F_n/\Im\delta\longrightarrow 0
+  \]
+
+  Tomando \(p\) la aplcación tal que \(A_p=P\) y \(q=\id\), de aquí
+  obtenemos que \(\psi_p=\id\circ\delta\), con lo que se induce \(h\),
+  un homomorfismo de módulos sobreyectivo (\(h\circ\pi=\phi\)).
+
+  \[
+    \Ann_{K[x]}(V)\supseteq\Ann_{K[x]}(F_n/\Im\delta)=\langle\delta(x)\rangle
+  \]
+  donde la última igualdad viene de que \(F_n/\Im\delta\cong
+  \bigoplus_{i=1}^n K[x]f_i/K[x]d(x)f_i\cong
+  \bigoplus_{i=1}^n K[x]/\langle d(x)\rangle\).
+
+  Por tanto, el polinomio mínimo de \(T\) (que es el anulador de \(V\)),
+  divide a \(d(x)\). Como al evaluar en \(T\) el polinomio mínimo se anula,
+  tenemos que el polinomio característico se anula también.
+
+\end{proof}
+
+
+

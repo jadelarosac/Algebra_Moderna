@@ -1,0 +1,65 @@
+\subsection{Módulos a derecha}
+\begin{df}[Anillo opuesto]
+Sea \(R\) un anillo. Mantengo su estructura de grupo aditivo, pero cambiamos
+el producto. El nuevo producto va a ser el producto opuesto dado por
+\(r*s:=sr\).
+
+  A \(R\) con este nuevo producto lo vamos a llamar \(R^{op}\), el anillo
+  opuesto.
+\end{df}
+
+Ejemplo: \[
+  R=
+  \begin{pmatrix}
+    \Z&\Q\\
+    0&\Q
+  \end{pmatrix}
+  \le \mathcal{M}_2(\Q)
+\]
+
+Tenemos que \(\subscriptbefore{R}{R}\) no es noetheriano, pero
+\(\subscriptbefore{R^{op}}{R^{op}}\) sí que lo es.
+Es decir, es noetheriano a derecha pero no a izquierda.
+
+\begin{df}[Anillo noetheriano a derecha]
+  Un anillo es noetheriano a derecha si el anillo opuesto es noetheriano
+  a izquierda.
+\end{df}
+\begin{df}[Módulo a derechas]
+  Definimos \(M\) módulo a derechas como \(M_R:=\subscriptbefore{R^{op}}{M}\).
+\end{df}
+
+\begin{df}[Ideal bilátero]
+  Un ideal bilátero es un ideal a izquierda que es ideal a derecha también.
+\end{df}
+
+\begin{df}[Dual de un módulo]
+  Sea \(\subscriptbefore{R}{M}\) un módulo. Tomamos
+  \[
+    \superscriptbefore{*}{M}:=\{f:M\longrightarrow R: f
+    \textrm{ es homomorfismo de \(R\)-módulos}\}
+  \]
+  que es un grupo aditivo y un módulo a derechas, es decir,
+  \(R^{op}\)-módulo, por la acción:
+  \[
+    (r\varphi)(m):=\varphi(m)r
+  \]
+  con \(r\in R\), \(m\in M\) y \(\varphi\in \superscriptbefore{*}{M}\).
+  Es decir, \(\superscriptbefore{*}{M}_R\).
+\end{df}
+
+\begin{lema}
+  \(\theta:{(\End_R(M))}^{op}
+  \longrightarrow\End_{R^{op}}(\superscriptbefore{*}{M})\)
+  tenemos que \(\theta(f)(\varphi):=\varphi\circ f\) es un homomorfismo
+  de anillos.
+  Nota: el producto en \({(\End_R(M))}^{op}\) es \(f*g=g\circ f\).
+\end{lema}
+
+Si \(M=\Z_n\) como \(Z\) módulos, \(\superscriptbefore{*}{M}=\{0\}\) así que
+nos olvidamos de cualquier idea de reflexividad o isomorfismo.
+
+\begin{df}[Módulos reflexivos]
+  Un módulo en el que la anterior \(\theta\) es un isomorfismo.
+\end{df}
+

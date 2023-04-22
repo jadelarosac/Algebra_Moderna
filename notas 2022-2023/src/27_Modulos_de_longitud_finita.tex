@@ -1,0 +1,155 @@
+\begin{ejemplo}
+  Sea \(V={\Cont^\infty(\R)}^n=\bigoplus_{i=1}^n\Cont^\infty(\R)\),
+  \(B\in\mathcal{M}_n(\R)\), \(y=(y_1,\ldots,y_n)\in V\).
+  Tenemos la ecuación diferencial \(y'=yB\).
+
+  Sea \(M=\{y\in{\Cont^\infty(\R)}^n: y'=yB\}\) es un subespacio vectorial
+  de \(V\). Entonces \(V\) es un \(\R[x]\)-módulo. Sabemos que \(M\)
+  es un submódulo (\(xy=y'=yB\in M\)). Por análisis, sabemos que
+  la dimensión es finita. Entonces \(M\) tiene una descomposición cíclica
+  primaria.
+
+  Si \(x\in\R^n\), tomamos \(y=xe^{tB}\) y \(y'=xe^{tB}B=yB\)
+  donde \(e^S=\sum_{m\ge 0}\frac{1}{m!}S^m\).
+
+  Tomamos la forma canónica de Jordan \(J\) de \(B\). Existe una matriz
+  \(P\in\mathcal{GL}_n(\C)\) tal que \(PBP^{-1}=J\) con lo que:
+  \[
+    e^{tB}=P^{-1}e^{tJ}P
+  \]
+
+  Se puede calcular \(e^{tJ}\).
+
+  Caso particular: Sea \(n=2\). Sea \(\mu\) el polinomio mínimo de \(B\)
+  sobre \(\C\). Tenemos tres casos.
+
+  La primera posibilidad es que \(\mu=(x-\lambda_1)(x-\lambda_2)\)
+  o \(\mu=x-\lambda\). En este segundo caso tomamos \(\lambda_1
+  =\lambda_2=\lambda\) y en cualquiera de las dos posibilidades
+  podemos escribir:
+  \[
+    J=\begin{pmatrix}
+        \lambda_1& 0\\
+        0&         \lambda_2
+      \end{pmatrix}
+  \]
+  y por tanto
+  \[
+      e^{tJ}=\begin{pmatrix}
+               e^{t\lambda_1}& 0\\
+               0&         e^{t\lambda_2}
+             \end{pmatrix}
+           \]
+
+           La otra posibilidad es que \(\mu={(x-\lambda)}^2\) con \(\lambda\in\R\).
+           entonces:
+           \[
+             J=\begin{pmatrix}
+                 \lambda& 1\\
+                 0&         \lambda
+               \end{pmatrix}
+             \]
+             y por tanto
+             \[
+               tJ=\begin{pmatrix}
+                    {t\lambda_1}& t\\
+                    0&         {t\lambda_2}
+                  \end{pmatrix}=
+                  \begin{pmatrix}
+                    {t\lambda_1}& 0\\
+                    0&         {t\lambda_2}
+                  \end{pmatrix}
+                  +
+                  \begin{pmatrix}
+                    0& t\\
+                    0& 0
+                  \end{pmatrix}
+                  =
+                  tA+tC
+                \]
+                que son dos matrices que conmutan, luego:
+                \[
+                  e^{tJ}=
+                  e^{tA+tC}=
+                  e^{tA}e^{tC}
+                  =
+                  \begin{pmatrix}
+                    e^{t\lambda_1}& te^{t\lambda_2}\\
+                    0&         e^{t\lambda_2}
+                  \end{pmatrix}
+                \]
+
+                Por último puede suceder que \(\mu=(x-z)(x-\bar{z})\) y tenemos
+                \[
+                  J=\begin{pmatrix}
+                      z & 0\\
+                      0&  \bar{z}
+                    \end{pmatrix}
+                  \]
+                  y por tanto
+                  \[
+                    e^{tJ}=\begin{pmatrix}
+                             e^{tz}& 0\\
+                             0&         e^{t\bar{z}}
+                           \end{pmatrix}
+                         \]
+
+                         Alternativamente \(\mu=x^2+bx+c\), tenemos que
+                         \(\alpha=\sqrt{\frac{c-b^2}{4}}\) y \(\beta=-\frac{b}{2}\).
+                         Tenemos que \(T:\R^2 \longrightarrow\R^2\) tal que \(T(v)=vB\).
+                         Tomamos \(v\in\R^2\setminus\{0\}\) y tomamos la base:
+                         \(\mathcal{B}=\{-\beta v,{(T-\alpha)}v\}\).
+                         Vamos a calcular la matriz de \(T\)
+                         respecto de esta nueva base:
+                         \[
+                           T(-\beta v)=-\beta{(T-\alpha)}v-\alpha\beta v
+                         \]
+                         \[
+                           T((T-\alpha v))=\cdots=\alpha{(T-v)}v-\beta^2 v
+                         \]
+
+                         Entonces
+                         \[
+                           C=M_T(\mathcal{B})=
+                           \begin{pmatrix}
+                             \alpha&-\beta\\
+                             \beta&\alpha\\
+                           \end{pmatrix}=
+                           \begin{pmatrix}
+                             \alpha&0\\
+                             0&\alpha\\
+                           \end{pmatrix}+
+                           \begin{pmatrix}
+                             0&-\beta\\
+                             \beta&0\\
+                           \end{pmatrix}
+                           =A+B
+                         \]
+                         que conmutan. Además
+                         existe \(Q\in\mathcal{GL}_2(\R)\) tal que \(C=Q^{-1}BQ\). Tenemos que:
+                         \[
+                           e^{tC}=e^{tA+tB}=e^{tA}e^{tB}=
+                           \begin{pmatrix}
+                             e^{t\alpha}&0\\
+                             0&e^{t\alpha}\\
+                           \end{pmatrix}
+                           \begin{pmatrix}
+                             \cos(\beta t)& -\sin(\beta t)\\
+                             \sin(\beta t)&\cos(\beta t) \\
+                           \end{pmatrix}=
+                           \begin{pmatrix}
+                             e^{t\alpha}\cos(\beta t)& -e^{t\alpha}\sin(\beta t)\\
+                             e^{t\alpha}\sin(\beta t)&e^{t\alpha}\cos(\beta t) \\
+                           \end{pmatrix}
+                         \]
+\end{ejemplo}
+
+\begin{ejercicio}
+  Tomamos la sucesión \(c_k=\cos(k\nu)\) con \(\nu\in\R\) fijo.
+  \[
+    c_k=\frac{e^{ik\nu}+e^{-ik\nu}}{2}
+  \]
+  usando este hecho, demostrar que \(\cos((k+2)\nu)=
+  2\cos((k+1)\nu)\cos\nu-\cos k\nu\) para \(k\ge0\). Se pide buscar
+  el polinomio mínimo de la sucesión en \(\C[x]\).
+\end{ejercicio}

@@ -5,7 +5,7 @@ all: *.pdf
 
 %.pdf: %.tex
 	$(CC) $(FLAGS) $^
-	rm *.aux *.fdb_latexmk *.fls *.log *.toc *.out
+	clean
 
 clean:
 	rm *.aux *.fdb_latexmk *.fls *.log *.toc *.out

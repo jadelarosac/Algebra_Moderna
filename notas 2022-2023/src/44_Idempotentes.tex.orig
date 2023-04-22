@@ -1,0 +1,120 @@
+\subsection{Descomposición de anillos en ideales indescomponibles}
+\begin{df}[El centro de un anillo]
+  Sea \(R\) un anillo. El conjunto
+  \[
+    Z(R)=\{r\in R:rs=sr\quad\forall s\in R\}
+  \]
+  es un subanillo conmutativo de \(R\) que se llama centro de \(R\).
+\end{df}
+
+\begin{df}[Idempotente central]
+  Si \(e\in Z(R)\) verifica \(e^2=e\) diremos que es un idempotente central
+  de \(R\).
+\end{df}
+
+Si \(e\) es un idempotente central, \(Re\) es ideal y de \(R\) y además
+es un anillo con la suma y el producto heredados de \(R\) cuyo 1 es \(e\).
+
+Ejemplo: dados \(R_1\) y \(R_2\) anillos, \(R=R_1\times R_2\), \(e=(1,0)\)
+que es idempotente central, entonces \(Re=R_1\times\{0\}\) es un anillo
+isomorfo a \(R_1\).
+
+\begin{obs}
+  Si \(e\) es idempotente central, \(1-e\) es idempotente central.
+\end{obs}
+
+Tenemos que \(\{e, 1-e\}\) CCIO centrales. De hecho:
+\[
+  R=Re\dot{+}R(1-e)\cong Re\times R(1-e)
+\]
+
+Al revés, si \(R=I\dot{+}J\) con \(I,J\) son ideales, \(1=e+(1-e)\),
+con \(e\in I\), \(1-e\in J\) con ambos centrales y \(I=Re\) y \(J=R(1-e)\).
+
+Contraejemplo: \(R=\mathcal{M}_{2\times 2}(K)\) con \(K\) un cuerpo.
+\[
+  e=
+  \begin{pmatrix}
+    1&0\\
+    0&0
+  \end{pmatrix}
+\]
+es idempotente no central.
+\[
+  Re=
+  \begin{pmatrix}
+    K&0\\
+    K&0
+  \end{pmatrix}
+\]
+pero
+\[
+  eR=
+  \begin{pmatrix}
+    K&K\\
+    0&0
+  \end{pmatrix}
+\]
+
+\begin{df}[Ideal indescomponibles]
+  Si \(I=I_1\dot{+}I_2\) con \(I_i\) ideales implica que al menos uno
+  de ellos es \(\{0\}\), entonces diremos que es indescomponible.
+\end{df}
+
+\begin{df}[Anillos indescomponibles]
+  Diremos que \(R\) anillo es indescomponible si lo es como ideal.
+\end{df}
+
+\begin{df}[Idempotentes indescomponibles]
+  Sea \(e\) un idempotente central de \(R\). \(e\) se dice
+  indescomponible si \(e=e'+e''\), \(e'\) y \(e''\) idempotentes centrales
+  ortogonales (\(e'e''=0\)), uno de ellos es cero.
+\end{df}
+
+\begin{obs}
+  Hay una equivalencia entre los ideales indescomponibles y los idempotentes
+  indescomponibles.
+\end{obs}
+
+Ejercicio: \(R\) es indescomponible si y solo si no es isomorfo a ningún
+anillo de la forma \(R_1\times R_2\) con \(R_1\), \(R_2\) anillos no
+triviales.
+
+\begin{obs}
+  Ningún dominio de integridad puede expresarse como producto de dos anillos.
+  Luego es indescomponible.
+\end{obs}
+
+\begin{prop}
+  Si un anillo tiene un CCIO centrales indescomponibles, entonces es único.
+  Además, si \(\ell(\subscriptbefore{R}{R})<\infty\), entonces \(R\) admite
+  un CCIO central indescomponibles.
+\end{prop}
+\begin{proof}
+  Supongamos que haya dos tales conjuntos \(\{e_1,\ldots, e_n\}\) y
+  \(\{f_1,\ldots, f_m\}\). Basta ver que uno está incluido en el otro.
+
+  \(e_i f_i\) es idempotente central. Tenemos que
+  \[
+    e_i=e_i f_j +e_i(1-f_j)
+  \]
+  es una descomposición de un idempotente indescomponible, así que o bien
+  \(e_i f_j\) o bien \(e_i (1-f_j)\) es cero. Si ocurriera que
+  \(e_i f_j\neq 0\),
+  \(e_i=e_i f_j\). Análogamente \(f_j=e_i f_j\), aplicando el razonamiento
+  a \(f_j\). Entonces \(e_i=f_j\).
+
+  Dado \(e_i\), \(0\neq e_i=e_i 1=e_i(f_1+\cdots+f_m)\) y al menos hay algún
+  \(j\) tal que \(e_i f_j\neq 0\) con lo que \(e_i = f_j\).
+
+  Para la segunda parte vamos a aplicar inducción sobre la longitud.
+  Si \(R\) es indescomponible no hay nada que demostrar. Si no, es porque
+  \(R=Re+R(1-e)\) para \(e\notin\{0,1\}\) indepontente central.
+  Tenemos que \(\ell(\subscriptbefore{Re}{Re})<\ell(R)\), y podemos aplicar
+  la hipótesis de inducción.
+
+\end{proof}
+
+
+
+

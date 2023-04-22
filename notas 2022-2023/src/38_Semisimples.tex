@@ -1,0 +1,105 @@
+\begin{teo}
+  Las siguientes condiciones son equivalentes para un módulo \(M\):
+  \begin{enumerate}
+    \item Todo submódulo de \(M\) es un sumando directo.
+    \item Todo monomorfismo \(L\longrightarrow M\) es escindido.
+    \item Todo epimorfismo  \(M\longrightarrow N\) es escindido.
+    \item \(\Soc(M)=M\).
+    \item \(M\) es suma de una familia de submódulos simples.
+    \item \(M\) es suma directa interna de una familia de submódulos simples.
+  \end{enumerate}
+  En cualquiera de los casos diremos que \(M\) es semisimple.
+\end{teo}
+
+\begin{proof}
+  Como todas las afirmaciones son triviales ciertas si \(M=\{0\}\),
+  suponemos que \(M\neq \{0\}\).
+
+  Vamos a ver que la primera afirmación implica la tercera.
+  Sea \(\phi: M\longrightarrow N\). Tomemos \(L=\ker\phi\).
+  Por hipótesis \(M=L\dot{+}X\) para cierto \(X\in\mathcal{L}(M)\).
+  Tenemos que, por los teoremas de isomorfía:
+  \[
+    N\cong M/L=(L\dot{+}X)/L\cong X/(L\cap X)\cong X/\{0\}\cong X
+  \]
+
+  Tenemos que para cada \(x\in X\) se va identificando con \(x+\{0\}\),
+  y \(x+L\), que se identifica con \(\phi(x)\) a través de los isomorfismos
+  anteriores.
+
+  Es decir, la aplicación anterior es \(\phi|_X:X\longrightarrow N\).
+
+  Definimos \(\varphi:N\longrightarrow M\) como \(\varphi:=\iota\circ
+  {(\phi)}^{-1}\), que cumple que \(\phi\circ\varphi=\id_N\).
+
+  Veamos que la tercera afirmación implica la segunda. Sea
+  \(\varphi:L\longrightarrow M\) un monomorfismo. Consideramos la sucesión
+  exacta corta dada por \(0\longrightarrow L\overset{\varphi}{\longrightarrow}
+  M\overset{\kappa}{\longrightarrow} C\longrightarrow 0\) donde
+  \(C=M/\Im\varphi\) y \(\kappa\) es la proyección canónica.
+
+  Existe un \(g:C\longrightarrow M\) tal que \(\kappa\circ g=\id_C\).
+  Defino \(h=\id_M-g\circ\kappa:M\longrightarrow M\).
+  \[
+    \kappa\circ h=\kappa -\kappa\circ g\circ\kappa =\kappa-\kappa =0
+  \]
+  con lo que \(\Im h\subseteq\ker\kappa\).
+
+  Tenemos \(f:M\longrightarrow L\) tal que \(\varphi\circ f=h\) (es
+  decir, \(h\) pero visto en \(L\)). Se dejan como ejercicio los detalles.
+  \[\varphi\circ(f\circ\varphi)=h\circ\varphi=
+  \varphi-g\circ\kappa\circ\varphi=\varphi\]
+  donde el segundo sumando se anula por exactitud.
+
+  Por la inyectividad de \(\varphi\), tenemos que podemos cancelar
+  a izquierda y por tanto \(f\circ\varphi=\id_L\).
+
+  Veamos que la segunda afirmación implica la primera, con lo que tendremos
+  ya que las tres primeras son equivalentes.
+
+  Tomamos \(X\in\mathcal{L}(M)\), tenemos que \(\iota:X\longrightarrow M\)
+  es un monomorfismo. Por hipótesis, existe un \(p:M\longrightarrow X\) tal
+  que \(p|_X=\id_X\). Entonces se tiene que:
+  \[
+    M=X\dot{+}\ker p
+  \]
+  que es un ejercicio sencillo.
+
+  Vamos a ver que de la cuarta afirmación se deduce la quinta.
+  La cuarta afirmación dice que \(M=\sum N_i\) donde \(N_i\) son los
+  submódulos simples de \(M\).
+
+  Veamos ahora que de la quinta se sigue la sexta. Por una proposición
+  anterior (la 23)
+  tomando \(N=0\), tenemos que es cierta.
+
+  Trivialmente, la última afirmación implica la primera, tomando \(N\)
+  cualquiera en la proposición 23.
+
+  Basta ver ahora que la primera afirmación implica la cuarta.
+  Por hipótesis \(M=\Soc(M)\dot{+}X\) para cierto \(X\). Veamos que
+  \(X=\{0\}\). Si no fuera así, tomamos \(m\in X\setminus\{0\}\).
+  El lema previo nos asegura que hay un epimorfismo
+  \(p:Rm\longrightarrow S\) para \(S\) simple.
+
+  De nuevo, \(Rm\) es un sumando directo de \(M\), existe un epimorfismo
+  \(\pi:M\longrightarrow Rm\). Hacemos la composición \(p\circ\pi:
+  M\longrightarrow S\).
+
+  Como la hipótesis primera equivale a la tercera, existe
+  \(\iota:S\longrightarrow M\) (por una vez no es inclusión) tal que
+  \(p\circ\pi\circ\iota=\id_S\).
+  \[
+    S\cong\Im(\pi\circ\iota)\subseteq Rm\subseteq X
+  \]
+  donde hemos usado el primer teorema de isomorfía a una aplicación
+  inyectiva.\@
+  luego \(X\) contiene a una copia de un simple y no es simple. Así que
+  \(X=0\) y \(M=\Soc(M)\).
+
+\end{proof}
+
+\begin{cor}
+  Si M es finitamente generado y no nulo, existe un \(N\le M\) tal que
+  \(M/N\) es simple.
+\end{cor}

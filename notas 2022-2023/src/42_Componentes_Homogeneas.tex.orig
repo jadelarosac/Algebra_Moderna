@@ -1,0 +1,44 @@
+
+\begin{lema}
+  Sea \(R\) un anillo. Existe un conjunto \(\Omega_R\) (y es un conjunto
+  y no una clase) de \(R\)-módulos simples no isomorfos entre sí tal que
+  cualquier \(R\)-módulo simple es isomorfo a uno de los \(\Omega_R\).
+\end{lema}
+\begin{proof}
+  Sea \(\subscriptbefore{R}{\Sigma}\) simple. Tomo
+  \(0\neq s\in\Sigma\) entonces \(\subscriptbefore{R}{\Sigma}\cong
+  R/\ann_R(s)\). Tomo \(\Omega_R\) un conjunto de representantes de los
+  \(R\)-módulos \(R/I\) para \(I\) ideal izquierda maximales bajo
+  la relación de equivalencia \(I\sim J\) si y solo si
+  \(R/I\cong R/D\).
+
+\end{proof}
+
+\begin{prop}
+  \(\subscriptbefore{R}{M}\) un módulo. Para \(\Sigma\in\Omega_R\), defino
+  \(\Soc_\Sigma(M)\) como la suma de todos los submódulos simples de \(M\)
+  isomorfos a \(\Sigma\). Entonces:
+  \[
+    \Soc(M)=\dot{+}_{\Sigma\in\Omega_R}\Soc_\Sigma(M)
+  \]
+\end{prop}
+\begin{proof}
+  \[
+    \Soc(M)=\sum_{\Sigma\in\Omega_R}\Soc_\Sigma(M)
+  \]
+  por la definición de \(\Omega_R\). Muchos de ellos serán cero.
+
+  Llamamos \(N=\Soc_{\Sigma'}(M)\cap\sum_{\Sigma\neq\Sigma'}\Soc_\Sigma(M)\).
+  Tomamos \(m\in N\setminus\{0\}\), suponiendo que \(N\neq \{0\}\). Tenemos
+  que \(Rm\) es semisimple y es finitamente generado y por tanto de longitud
+  finita. Entonces contiene un \(S\) \(R\)-submódulo simple de \(Rm\).
+
+  Tenemos que \(S\subseteq\Soc_{\Sigma'}(M)\). Existe entonces
+  \(g:\Soc_{\Sigma'}(M)\longrightarrow S\) epimorfismo (porque escinde).
+  Existe \(S'\in\Soc_{\Sigma'}(M)\) tal que \(S'\cong \Sigma'\) tal que
+  \(g|_{S'}\neq0\) entonces por Schur \(S'\cong S\). Análogamente,
+  se demuestra que \(S''\cong\Sigma\neq\Sigma'\) tal que \(S''\cong S\).
+  Resulta que \(\Sigma'\cong S\cong\Sigma\) y están relacionados, lo que
+  contradice la definición de \(\Omega_R\).
+
+\end{proof}

@@ -1,0 +1,104 @@
+
+\begin{obs}
+  Para anillos conmutativos denotamos
+  \[
+    \langle a\rangle=\{ba:b\in A\}
+  \]
+  el ideal generado por \(a\).
+\end{obs}
+
+Vamos a hacer un ejemplo, aplicando el teorema anterior.
+
+\subsubsection{Interpolación}         
+
+Tomamos \(A=K[x]\), un anillo de polinomios con coeficientes en un
+cuerpo \(K\).
+
+Sea \(A_i = K\) con \(i\in\{1,\ldots,t\}\).
+Tomamos \(\alpha_i\in K\) para cada \(i\) y definimos
+\(\xi_i:K[x]\longrightarrow K\), \(\xi_i(g)=g(\alpha_i)\),
+para cada \(g\in K[x]\) y es un homomorfismo de anillos.
+
+\(\Im \xi_i=K\) y \(\xi:K[x]\longrightarrow K\times
+\cdots \times K=K^t\).
+
+\(\ker \xi_i=\langle x-\alpha_i\rangle\) que es ideal de un anillo de
+polinomios, luego principal. Está generado por el polinomio de grado menor,
+como las constantes no pueden anular a \(\xi_i\), tiene que estar generado
+por ese, que es de grado uno.
+
+\[
+  I=\bigcap_{i=1}^t\langle x-\alpha_i\rangle =\langle p(x)\rangle
+\]
+donde \(p(x)=\mcm\{x-\alpha_i: i\in\{1,\ldots, t\}\}\).
+
+
+El teorema chino del resto nos asegura que \(\tilde{\xi}:
+K[x]/\langle p(x)\rangle\longrightarrow K^t\) es un isomorfismo si y solo si
+\(\mcd\{x-\alpha_i, x-\alpha_j\} = 1\) para todo \(j\neq i\), es decir,
+si \(\alpha_i\neq \alpha_j\).
+
+Lo que estamos viendo es que para cualquier tupla
+\((y_1,\ldots, y_t)\in K^t\), existe un \(g\in K[x]\) tal que
+\(g(\alpha_i)=y_i\), si y solo si \(\alpha_i\neq\alpha_j\). En tal
+caso, \(p(x)=\prod_{i=1}^t(x-\alpha_i)\).
+
+Existe un único representante \(g\in K[x]\) tal que \(g(\alpha_i)=y_i\)
+de grado menor que \(t\), siempre que
+\(p(x)=\prod_{i=1}^t(x-\alpha_i)\).
+
+\(\alpha_1,\ldots,\alpha_t\in K\) distintos dos a dos
+\[
+  \tilde{\xi}:K[x]/\langle p(x)\rangle\longrightarrow K^t
+\]
+es un isomorfismo de anillos.
+
+\(K[x]/\langle p(x)\rangle\) es un espacio vectorial cociente.
+
+\(\tilde{\xi}\) es también un isomorfismo entre espacios vectoriales.
+
+\[
+  \tilde{\xi}(\alpha(g+p))=\tilde{\xi}(\alpha g+p)=\tilde{\xi}((\alpha
+  + p)(g +p))=\]\[\tilde{\xi}(\alpha + p)\tilde{\xi}(g+p)=
+  (\alpha,\ldots, \alpha)(g(\alpha_1),\ldots g(\alpha_t))=
+  \alpha\tilde{\xi}(g+p)
+\]
+
+Sea \(\{1+p, x+p, x^2+p,\ldots, x^{t-1} +p\}\)
+\(K\)-base de \(K[x]/\langle p(x)\rangle\).
+Notamos:
+\[ 1 = 1+p\]
+\[ x = x+p\]
+
+Sea \(\{e_1,\ldots, e_n\}\) es la base canónica de \(K^t\).
+Nuestro objetivo es calcular sus preimágenes por \(\xi\), en concreto
+un polinomio de grado menor que \(t\).
+
+\[
+  g_i(x)=\prod_{j\neq i}(x-\alpha_j)
+\]
+
+\[
+  L_i(x)=\frac{g_i(x)}{g(\alpha_i)}=\prod_{j\neq i}\frac{x-x_j}{x_i-x_j}
+\]
+
+que vale 0 en \(\alpha_j\) para cualquier \(j\)
+salvo en \(\alpha_i\) que vale 1.
+
+Tenemos que
+\[
+  g(x)=\sum_{i=1}^t y_i L_i(x)
+\]
+satisface que \(g(\alpha_i)=y_i\).
+
+
+Finalmente vamos a ver que la matriz de \(\tilde{\xi}\) en las bases
+consideradas es:
+\[
+  \begin{pmatrix}
+    1&\cdots& 1\\
+    \alpha_1 &\cdots&\alpha_t\\
+    \cdots&\cdots&\cdots\\
+    \alpha_1^t&\cdots&\alpha_t^t
+  \end{pmatrix}
+\]

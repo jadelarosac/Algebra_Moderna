@@ -1,0 +1,137 @@
+\begin{df}[Módulo p-primario]
+  \(\subscriptbefore{A}{M}\) se dice \textbf{\(p\)-primario} si
+  \(\Ann_A(M)=\langle p^e\rangle\), \(p\) un irreducible con \(e \ge 1\).
+\end{df}
+
+\begin{obs}
+  Sea \(\subscriptbefore{A}{M}\) un módulo \(p\)-primario con \(\ell(M) < \infty\).
+  \[
+    \Ann_A(M)=\langle p^t\rangle
+  \]
+
+  Si \(0\neq m\in M\), el ideal principal \(\ann_A(m)\supseteq \Ann_A(M)=\langle p^t
+  \rangle\) y tenemos que \(\ann_A(m)=\langle p^r\rangle \),
+  con \(r\le t\).
+
+  Si \(M=Am_1+\cdots+Am_m\), entonces \(\langle p^t\rangle
+  =\ann_A(m_1)\cap\ldots\cap\ann_A(m_m)\). Luego
+  \(\langle p^t\rangle =\ann_A(m_i)\) para algún \(i\).
+\end{obs}
+
+\begin{cor}
+  Existe un \(x \in M\) tal que \(\Ann_A(M)=\ann_A(x)\).
+\end{cor}
+
+\begin{lema}
+  \(\ell(M)<\infty\), \(M\) \(p\)-primario. Para \(0\neq m\in M\),
+  entonces:
+  \[
+    Am\textrm{ es simple} \iff \ann_A(m)=\langle p\rangle
+  \]
+  y como consecuencia
+  \[
+    \Soc(M)=\{m\in M: pm=0\}
+  \]
+\end{lema}
+\begin{proof}
+  Dado \(m\), tenemos \(Am\cong A/\ann_a(m)\). Si \(Am\) es simple,
+  entonces \(\ann_A(m)\) es ideal maximal (generado por irreducible o ideal
+  primo) y
+  \(\ann_A(m)\supseteq\Ann_A(M)=\langle p^t\rangle\).
+  Entonces \(\ann_A(m)=\langle p\rangle\).
+
+  Recíprocamente, si \(\ann_A(m)=\langle p\rangle\) entonces
+  \(Am\cong A/\langle p\rangle\) es simple.
+
+  \(\Soc(M)=S_1\dot{+}\cdots\dot{+}S_n\) con \(S_i\) simple.
+  Sea \(m\) en el zócalo, \(\ann_A(m)
+  \supseteq\Ann_A(S_1\dot{+}\cdots\dot{+}S_n)=
+  \bigcap_{k=1}^{n} \Ann_A(S_k)\). Tomamos \(s_i\) tal que
+  \(\Ann_A(S_i)=\ann_A(s_i)\), tenemos que \(S_i=As_i\), luego
+  \(As_i\cong A/\ann_A(s_i)\) y es simple, luego
+  \(\ann_A(s_i)=\langle p\rangle\),
+  tenemos que \(\ann_A(m)\supseteq\langle p\rangle\) y finalmente
+  \(pm=0\).
+
+  Tomamos ahora \(m\in M\) tal que \(pm=0\). \(\langle p\rangle
+  \subseteq\ann_A(m)\) pero es maximal, luego se da la igualdad.
+  \[
+    Am\cong A/\ann_A(m)= A/\langle p\rangle
+  \]
+  luego es simple, y \(Am\subseteq\Soc(M)\) y en particular
+  \(m\in\Soc(M)\).
+
+\end{proof}
+
+\begin{prop}
+  Suponemos que tenemos \(M\) un módulo \(p\)-primario y de longitud finita. Sea
+  \(x\in M\) tal que \(\Ann_A(M)=\ann_A(x)\). Entonces \(Ax\) es un
+  sumando directo interno de \(M\).
+\end{prop}
+\begin{proof}
+  Por inducción sobre la longitud \(\ell(M)<\infty\).
+
+  Si la longitud es 1, \(M\) es simple y entonces \(M=Ax\).
+
+  Si \(\ell(M)>1\) y \(Ax=M\), no hay nada que demostrar.
+
+  Veamos que pasa si \(Ax\neq M\). Veamos que existe un \(y \in M\)
+  tal que \(y\neq Ax\) y \(\ann_A(y)=\langle p\rangle\).
+  \(\ell(M/Ax) < \ell(M) < \infty\), luego debe contener algún
+  submódulo simple \(S \subseteq M/Ax\).
+  Tomamos \(s\in S\) tal que \(S=As\).
+  \[
+    \langle p^t\rangle =\Ann_A(M)\subseteq\Ann_A(M/Ax)\subseteq\Ann_A(S)
+    =\ann_A(s)
+  \]
+  El \(\ann_A(s)\) es un ideal maximal generado por un irreducible, y como
+  \(\langle p^t\rangle \subset \ann_A(s)\), \(\ann_A(s)=\langle p\rangle\).
+
+  Tomamos \(z\in M\) tal que \(s = z + Ax\), es decir, \(pz \in Ax\) ya que
+  \(0 + Ax = ps = pz + Ax\). Equivalentemente,
+  existe un cierto \(a \in A\) tal que \(pz = ax\). Afirmamos que \(p|a\) (no es obvio
+  porque es un módulo).
+
+  Supongamos que no es así. Por Bezout, \(1=ua+vp\) para \(u,v\in A\)
+  adecuados. En dicho caso, \(x=uax+vpx=upz+vpx=p(uz+vx)\).
+  \[
+    \ann_A(uz+vx)=\langle p^{t'}\rangle
+  \]
+  para \(t'\le t\). Se deduce que \(p^{t'-1} x=0\). \(p^{t-1}x=0\), y
+  entonces como el anulador de \(x\) es el de \(M\) y está generado
+  por \(p^t\), no puede anularlo \(p^{t'-1}\) ya que
+  \(t'-1\le t-1<t\).
+
+  Una cuenta alternativa podrá haber sido que \(p^{t-1}ax=p^t z=0\), entonces \(p^{t-1} a
+  \in\ann_A(x)=\langle p^t\rangle\), y tenemos que \(a=pa'\).
+
+  Hemos obtenido un elemento \(s=z+Ax\in M/Ax\) tal que \(pz=ax\) y hemos
+  visto que \(p|a\). Así tenemos que \(pz=pa'x\) y entonces
+  \(p(z-a'x)=0\). Sea \(y = z - a'x \neq 0\) y \(py=0\), con lo que
+  \(\ann_A(y)=\langle p\rangle\).
+
+  Tenemos que \(Ay\) es simple y \(y\notin Ax\) asi que \(Ay\cap Ax=
+  \{0\}\).
+  \[
+    Ax\cong Ax/(Ay\cap Ax)\cong (Ax+Ay)/Ay\cong A(x+Ay)\subseteq M/Ay
+  \]
+  La segunda isomorfía se verifica gracias al segundo o tercer Teorema de Isomorfía,
+  propuesto como ejercicio. 
+
+  Empleando la expresión anterior, 
+  \[
+    \langle p^t\rangle=\ann_A(x)=\ann_A(A(x+Ay))\supseteq
+    \Ann_A(M/Ay)\supseteq\Ann_A(M)=\langle p^t\rangle
+  \]
+  con lo cual todas las inclusiones son igualdades.
+
+  Tenemos que \(\Ann_A(M/Ay)=\langle p^t\rangle=\ann_A(x+Ay)\), que
+  están en las mismas condiciones de la hipótesis pero
+  con \(\ell(M/Ay)<\ell(M)\). Aplicando la hipótesis de inducción,
+  tenemos que \(M/Ay=(Ax+Ay)/Ay \dot{+} N/Ay\) para cierto
+  \(N\in\mathcal{L}(M)\) tal que \(N\supseteq Ay\). De aquí se deduce
+  que \(M=Ax+Ay+N=Ax+N\).
+
+  Veamos ahora que es suma directa. Tomamos \(Ax\cap N\subseteq(Ax+Ay)\cap N=Ay\).
+  Entonces \(Ax\cap N = Ax\cap N\cap Ay= Ax\cap Ay=\{0\}\).
+\end{proof}

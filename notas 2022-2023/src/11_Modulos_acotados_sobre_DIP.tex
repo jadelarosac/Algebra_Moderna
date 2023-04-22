@@ -1,0 +1,141 @@
+\section{Descomposición primaria sobre un DIP}
+
+\begin{df}[Módulo acotado sobre un DIP]
+  Sea \(A\) un dominio de ideales principales, \(\subscriptbefore{A}{M}\)
+  un módulo. Recordemos que \(\Ann_A(M)=\langle\mu\rangle\) para cierto \(\mu\in A\).
+
+  Si \(\mu\neq 0\), \(M\) se dice \textbf{acotado}.
+\end{df}
+
+Supongamos que \(\subscriptbefore{A}{M}\) es acotado y \(\mu\not\in
+\mathcal{U}(A)\) (unidad de \(A\)). Supongamos \(\mu\) lo fuese. Sea \(m \in M\). Entonces
+\(m = 1 \cdots m = \mu \mu^{-1}m = 0\). Esto implicaría que \(M = \{0\}\).
+
+Así \(\mu= p_1^{e_1}\cdots p_t^{e_t}\), con \(p_i\in A\) irreducible y \(e_i \in \N\backslash
+\{0\}\) para todo \(i = 1, \ldots, t\), porque todo DIP es un dominio de factorización
+única (DFU).
+
+
+\begin{df}[Componentes primarias]
+  Sean \(A\) un DIP, \({}_AM\) un módulo y \(M_1, \ldots, M_t\) submódulos de \({}_AM\).
+  Si \(M = M_1 \dotplus \ldots \dotplus M_t\), esta expresión es la \textbf{descomposición
+    primaria} de \(M\).
+\end{df}
+
+\begin{prop}[Descomposición primaria del módulo]
+  Sean \(A\) un DIP, \({}_AM\) un módulo donde \(\Ann_A(M) = \langle\mu\rangle\), con
+  \(\mu = p_1^{e_1}\cdots p_t^{e_t}\) y \(M_i = \{q_im \ : \ m \in M\}\), donde
+  \(q_i = \frac{\mu}{p_i^{e_i}} \in A\) y \(p_1^{e_1}\cdots p_t^{e_t}\), con \(p_i\in A\)
+  irreducible y \(e_i \in \N\backslash\{0\}\) para todo \(i = 1, \ldots, t\).
+  Entonces
+  \(M = M_1 \dotplus \ldots \dotplus M_t\) es la descomposición primaria de \(M\). A los
+  \(M_i\) se le llama \textbf{componente \(p_i\)-primaria de \(M\)}.
+\end{prop}
+\begin{proof}
+  Veamos que \(M_i\in\mathcal{L}(\subscriptbefore{A}{M})=\{\textrm{submódulos
+    de } \subscriptbefore{A}{M}\}\).
+
+  Queremos que \(M=M_1\dot{+}\cdots \dot{+}M_t\), con \(t>1\) para
+  evitar trivialidades. En ese caso, \(\mcd\{q_1,\ldots,q_t\} = 1\),
+  donde se ha usado que estamos en un DFU.
+
+  Por la identidad de Bezout, que es válida porque estamos en un DIP,
+  tenemos que \(1=\sum_{i=1}^t q_i a_i\). Dado cualquier \(m \in M\),
+  \(m = 1 \cdot m = \sum_i q_i a_i m\), luego \(M = M_1+ \cdots + M_t\).
+
+  Vamos a ver que la suma es directa.
+  Sean \(m_1, \ldots, m_t \in M\) tales que \(0 = m_1 + \ldots + m_t\). Observamos que
+  \(q_im_j = 0\) si \(i \neq j\), ya que \(m_j = q_jm\), con \(m \in M\) y
+  \(q_iq_j \in \langle \mu \rangle = \Ann_A(M)\). Entonces obtenemos que
+  \[
+    0 = m_1 + \ldots + m_t = q_j(m_1 + \ldots + m_t) = q_jm_j
+  \]
+  para todo \(j = 1, \ldots, t\). Ahora bien, como cualquier \(m_j \in M\), entonces
+  \[
+    m_j = \sum_{i=1}^{t}a_iq_im_j = a_jq_jm_j = a_j0 = 0
+  \]
+  
+  Por tanto, por la proposición \ref{prop:suma-interna}, \(M=M_1\dotplus \cdots \dotplus
+  M_t\).
+
+  De hecho, \(M_i = \{m \in M \ | \ m = a_iq_im\} = \{m \in M \ | \ p_i^{e_i}m = 0\}\). La
+  inclusión hacia la izquierda se prueba con Bezout.
+  Además, \(\langle \mu \rangle = \Ann_A(M) = \bigcap_{i=1}^{t}\Ann_A(M_i)
+  \supseteq \bigcap_{i=1}^{t} \langle p_i^{e_i}\rangle = \langle \mu \rangle\),
+  luego \(\Ann_A(M_i) = \langle p_i^{e_i} \rangle\) para todo \(i=1, \ldots, t\).
+\end{proof}
+
+\begin{ejemplo}
+  Sean \( M = \Z_{60}\) y \(A = \Z\). Entonces \(\Ann_{\Z}(\Z_{60}) = 60\Z\),
+  luego \(\nu = 2^2 \cdot 3 \cdot 5\) y \(Z_{60} = \mu_2 \dotplus
+  \mu_3 \dotplus \mu_5\).
+  \begin{itemize}
+  \item \(\mu_2, \ q_2 = 15 \implies \mu_2 = \{15m \ | \ m \in \Z_{60}\} =
+    \{0, 15, 30, 45\}\).
+  \item \(\mu_3, \ q_3 = 20 \implies \mu_3 = \{20m \ | \ m \in \Z_{60}\} = \{0, 20, 40\}\).
+  \item \(\mu_5, \ q_5 = 12 \implies \mu_5 = \{12m \ | \ m \in \Z_{60}\} = \{0, 12, 24, 36,
+    48\}\).
+  \end{itemize}
+\end{ejemplo}
+
+\begin{ejemplo}
+  Sea \(M = \Z_2 \times \Z_2\). Su anulador es \(\Ann_{\Z}(M) = 2\Z\). \(M\) es 2-primario
+  pero \(M = (\Z_2 \times \{0\}) \dotplus (\{0\} \times \Z_2)\).
+\end{ejemplo}
+
+\begin{ejercicio}
+  Obtener la descomposición primaria de \(\Z_{8000}\).
+\end{ejercicio}
+
+\begin{ejemplo}
+  Sea \(T\) endomorfismo \(K\)-lineal de un espacio vectorial \(V\) de dimensión finita.
+
+  Un \(W\) es un submódulo de \(V\) es un subespacio vectorial tal que
+  \(T(W)\subseteq W\), es decir, \(W\) es \(T\) invariante.
+
+  Por el ejercicio \ref{ejer:anuladorV}, \(\Ann_{K[x]}(V)\neq\{0\}\),
+  tomo \(\mu(x)\in K[x]\), el polinomio
+  mínimo de \(T\). Es decir, \(\Ann_{K[x]}(V)=\langle\mu(x)\rangle\). Como \(K[x]\) es
+  un DIP, podemos expresar el polinomio \(\mu\) como producto de potencias de polinomios
+  irreducibles:
+
+  \[
+    \mu=p_1^{e_1}\cdots p_t^{e_t}
+  \]
+
+  Entonces la descomposición primaria de \(V\) es \(V=V_1\dot{+}
+  \cdots\dot{+}V_t\), con
+  \[
+    V_i=\{v\in V:p_i(x)v=0\}
+  \]
+
+  Estudemos el siguiente caso particular: \(\dim(V)<\infty\) y que
+  \(\mu(x)=(x-\alpha_1) \cdots (x-\alpha_t)\) con \(\alpha_i\neq\alpha_j\).
+  \[
+    V_i=\{v\in V:(x-\alpha_i)v=\{v\in V:T(v)=\alpha_i v\}
+  \]
+  es decir, el subespacio propio asociado al valor propio \(\alpha_i\).
+
+  Si el polinomio factoriza como producto de polinomios de grado 1 distintos,
+  \(T\) es diagonalizable.
+  Veremos en el futuro que el polinomio mínimo divide siempre al polinomio
+  característico mediante el Teorema de Cayley-Hamilton.
+\end{ejemplo}
+
+Después de ver varios ejemplos de espacios vectoriales y sus anuladores, es natural
+pensar en la siguiente pregunta: ¿cómo se calcula el polinomio mínimo de un
+endomorfismo lineal entre espacios vectoriales? Precisamente, el Teorema de
+Cayley-Hamilton nos ayudará a responder a dicha pregunta.
+
+\begin{ejercicio}
+  Sea \(V\) un espacio vectorial real euclídeo con producto
+  escalar \(\langle -, - \rangle\). Sea \(T: V \longrightarrow V\) una isometría.
+  Se pide demostrar que si \(W\) es un subespacio \(T\) invariante de \(V\),
+  entonces su ortogonal \(W^\perp\) es también \(T\)-invariante.
+  Entonces \(V=W\dot{+}W^\perp\). Se usa inducción. Como consecuencia, usando
+  el teorema fundamental del álgebra, deducir que \(V\) admite una base
+  ortonormal con respecto de la cual la matriz de \(T\) es diagonal por
+  bloques, con bloques de dimensión 1 o 2. ¿Qué aspecto tienen dichos
+  bloques? Hay que ver que uno de los dos subespacios invariantes tienen
+  dimensión 1 o 2.
+\end{ejercicio}

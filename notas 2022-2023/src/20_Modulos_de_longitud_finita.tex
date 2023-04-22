@@ -1,0 +1,237 @@
+\section{Módulos de longitud finita}
+
+\begin{df}[Serie de composición]
+  Sea \(M\) un módulo. Una \textbf{serie de composición de \(M\)}
+  es una cadena de submódulos
+  \[
+    M=M_n\supsetneq M_{n-1}\supsetneq\ldots\supsetneq M_1
+    \supsetneq M_0=\{0\}
+  \]
+  tal que si \(M_i\supseteq N\supseteq M_{i-1}\), con \(N\) submódulo de \(M\),
+  entonces \(N=M_i\) o \(N=M_{i-1}\). Es decir, cada submódulo es maximal
+  en el anterior.
+
+  A \(n\) se le llama la \textbf{longitud de la serie} y se denota por \(\ell(M)\).
+\end{df}
+
+\begin{ejemplo}
+  Sea una serie de composición de \(\Z_{12}\). Tiene como subgrupos
+  a \(\Z_m\) con \(m\) divisor de 12.
+  \[
+    M_3=\Z_{12}
+  \]
+  Tiene como subgrupo maximal (argumentando por Lagrange):
+  \[
+    M_2=\langle 2 \rangle
+  \]
+  que a su vez tiene como subgrupo maximal
+  \[
+    M_1=\langle 4\rangle
+  \]
+  y ya solo tiene
+  \[
+    M_0=\{0\}
+  \]
+\end{ejemplo}
+
+\begin{ejemplo}
+  Sea \(T: \R^3 \longrightarrow \R^3\) un giro de ángulo \(\frac{\pi}{3}\) respecto al eje
+  vertical. Sabemos que \(\R^3, T\) es un \(\R[x]\)-módulo. Los submódulos serán el vacío,
+  el eje de giro, \(E\), el plano vectorial, \(\Pi\), perpendicular a \(E\) y \(\R^3\).
+  Entonces
+  \[\{0\} \subset E \subset E + \Pi = \R^3\]
+  \[\{0\} \subset \Pi \subset \Pi + E = \R^3\]
+  son series de composición. 
+\end{ejemplo}
+
+\begin{df}[Módulo simple]
+  \(M\) se dice \textbf{simple} si \(M\supset\{0\}\) (estrictamente) es una serie de
+  composición.
+  Es decir, si no tiene submódulos propios y no es el módulo 0.
+\end{df}
+
+\begin{prop}
+  La condición de que cada submódulo sea maximal en el anterior es equivalente
+  a que los factores \(M_i/M_{i-1}\) sean simples.
+\end{prop}
+
+\begin{teo}
+  Toda serie de composición del mismo módulo tiene la misma longitud
+  y los mismos factores, salvo isomorfismos y reordenaciones.
+\end{teo}
+
+\(\Z_{12}\) tiene como factores \(\Z_2\), \(\Z_2\) y \(\Z_3\).
+
+\begin{prop}
+  Un módulo no nulo admite una serie de composición si, y solo si, es
+  noetheriano y artiniano.
+\end{prop}
+\begin{proof}
+  Sea \(M_i\) una serie de composición. Inducción sobre \(n\).
+  Si \(n=1\), tenemos que \(M\) es simple y en particular noetheriano
+  y artiniano.
+
+  Si \(n>1\), entonces \(M_{n-1}\) admite una serie de composición de
+  longitud \(n-1\), luego es noetheriano y artiniano. Tomamos
+  la sucesión exacta corta \[0\longrightarrow M_{n-1}
+  \longrightarrow M_n\longrightarrow M_n/M_{n-1}\longrightarrow 0\]
+  El primer elemento es noetheriano y artiniano, el último es simple (luego
+  noetheriano y artiniano), con lo que \(M_n\) es noetheriano y artiniano.
+
+  Para el recíproco, como \(M\) es artiniano, contiene un submódulo
+  simple \(M_1\). Entonces hay un \(M_2\supsetneq M_1\) donde
+  \(M_2/M_1\) es simple. Reiterando el proceso, tenemos
+  \(0\subsetneq M_1\subsetneq M_2\subsetneq \ldots\) y como es
+  noetheriano, habrá un \(M_n\) que termine la cadena.
+\end{proof}
+
+\begin{cor}
+  Dada una sucesión exacta corta, \(0\longrightarrow L
+  \longrightarrow M\longrightarrow N\longrightarrow 0\),
+  \(L\) y \(N\) admiten una serie de composición si, y solo si,
+  \(M\) admite serie de composición.
+\end{cor}
+
+\begin{cor}
+  Los \(A\)-módulos \(M_1\) y \(M_2\) admiten series de composición si, y solo si,
+  \(M_1\oplus M_2\) admite una serie de composición.
+\end{cor}
+
+
+\begin{teo}[Jordan-Hölder]
+  Sea \({}_AM\) un módulo y supongamos que \(M\) admite series de composición:
+  \[
+    \{0\}=M_0\subsetneq M_1\subsetneq M_2\subsetneq\ldots\subsetneq M_n=M
+  \]
+  \[
+    \{0\}=N_0\subsetneq N_1\subsetneq N_2\subsetneq\ldots\subsetneq N_m=M
+  \]
+  Entonces \(n=m\) y existe una permutación \(\sigma\) tal que
+  \[
+    M_i/M_{i-1}\cong N_{\sigma(i)}/N_{\sigma(i)-1}
+  \]
+\end{teo}
+\begin{proof}
+  Si \(n=1\), entonces \(M\) es simple y \(m=1\) y el el único factor posible
+  es el \(M/\{0\}=M\).
+
+  Si \(n>1\), como \(M\) no es simple, \(m>1\).
+
+  Vamos a observar un caso particular. Supongamos que \(N_{m-1}
+  =M_{n-1}\). Por hipótesis de inducción aplicado a \(N_{m-1}\),
+  tenemos que  \(n-1=m-1\), luego \(n=m\) y se da el enunciado
+  (tomando la permutación \(\sigma\) para los \(n-1\) primeros elementos
+  y extendiendola a una permutación de \(n\) elementos \(\sigma'\) tal
+  que \(\sigma'(n):=n\), \(\sigma'(k):=\sigma(k)\)).
+
+  Vamos ahora al caso general. Como hemos visto
+  en el caso particular anterior, podemos suponer
+  \(M_{n-1}\neq N_{m-1}\), por lo que
+  \(M_{n-1}+M_{m-1}=M\) (ya que \(M_{n-1}\subsetneq M_{n-1}+
+  N_{m-1}\subseteq M\) y \(M_{n-1}\) es maximal).
+
+  Tomamos \(N_{m-1}\cap M_{n-1}\) que admite una serie de composición:
+  \[
+    \{0\}=L_0\subsetneq L_1\subsetneq\ldots\subsetneq L_k
+    =N_{m-1}\cap M_{n-1}
+  \]
+  y tenemos que, por el teorema de isomorfía:
+  \[
+    N_m/N_{m-1}=
+    M/N_{m-1}=
+    (M_{n-1}+N_{m-1})/N_{m-1}\cong M_{n-1}/(M_{n-1}\cap N_{m-1})
+  \]
+  que al ser un factor es simple.
+
+  Aplicando la inducción, \(n-1=k+1\) y existe una permutación
+  \(\tau\) de \(n-1\) elementos tal que
+  \[
+    L_i/L_{i-1}\cong M_{\tau(i)}/M_{\tau(i)-1}
+  \]
+  donde \(i=1,\ldots, n-2\)
+  y
+  \[
+    M_{n-1}/L_{n-2}=M_{n-1}/(M_{n-1}\cap N_{m-1})\cong
+    M_{\tau(n-1)}/M_{\tau(n-1)-1}
+  \]
+
+  Tenemos que, por el teorema de isomorfía:
+  \[
+    M_n/M_{n-1}=
+    M/M_{n-1}=
+    (N_{m-1}+M_{n-1})/M_{n-1}\cong N_{m-1}/(N_{m-1}\cap M_{n-1})
+  \]
+  que al ser un factor es simple.
+
+  Aplicando la inducción, \(m-1=k+1\) y existe una permutación
+  \(\rho\) de \(m-1\) elementos tal que
+  \[
+    L_i/L_{i-1}\cong N_{\rho(i)}/N_{\rho(i)-1}
+  \]
+  donde \(i=1,\ldots, n-2\)
+  y
+  \[
+    N_{n-1}/L_{n-2}=N_{n-1}/(M_{n-1}\cap N_{m-1})\cong
+    N_{\rho(n-1)}/N_{\rho(n-1)-1}
+  \]
+
+  Tenemos ya que \(n=k+2=m\), y si definimos \(\sigma\) la permutación
+  de \(n\) elementos:
+  \[
+    \sigma(i)=\left\{
+      \begin{matrix}
+        \rho\circ\tau^{-1}(i),
+        &i\in\{1,\ldots n-1\}, &\tau^{-1}(i)\in\{1,\ldots, n-2\}\\
+        n,
+        &i\in\{1,\ldots n-1\}, &\tau^{-1}(i)=n-1\\
+        \rho(n-1),
+        &i=n &
+      \end{matrix}
+      \right.
+  \]
+\end{proof}
+
+\begin{df}[Módulo de longitud finita]
+  Un módulo se dice de longitud finita si tiene una serie de composición
+  finita o es \(\{0\}\). La longitud es la de cualquiera
+  de sus series de composición, o cero si \(M=\{0\}\).
+\end{df}
+
+\begin{ejercicio} sea \(M\) un módulo de longitud finita. Se pide demostrar
+que si \(0\longrightarrow L\longrightarrow M\longrightarrow N\longrightarrow
+0\) es una sucesión exacta corta, entonces:
+\[
+  \ell(M)=\ell(N)+\ell(M)
+\]
+Si \(U,V\in\mathcal{L}(M)\), entonces:
+\[
+  \ell(U+V)=\ell(U)+\ell(V)-\ell(U\cap V)
+\]
+\end{ejercicio}
+Este último resultado se aplica a que si \(\{0\} \longrightarrow N \subset
+M \longrightarrow \frac{M}{N} \longrightarrow \{0\}\) implica que
+\(\ell(M) = \ell(N) + \ell(\frac{M}{N})\). También se obtiene que
+\(\ell(\frac{M}{N}) < \ell(M)\) si \(N \neq \{0\}\). 
+
+\begin{ejercicio}
+  Si \(V\) es un \(K\)-espacio vectorial, \(\ell(V)=\dim(V)\).
+\end{ejercicio}
+
+\begin{ejemplo}
+  \(\ell(\Z_{12})=3\), ya que calculamos antes una serie de
+  composición.
+\end{ejemplo}
+
+\begin{ejemplo}
+  \(\ell(\Z_p)=1\) si \(p\) es primo.
+\end{ejemplo}
+
+\begin{ejercicio}
+  \(\ell(\Z_n)\) es la suma de los exponentes de su descomposición
+  en primos.
+\end{ejercicio}
+
+\begin{ejemplo}
+  Si \(n=\prod {p_i}^{e_i}\) entonces\(\Z_n\cong
+  \Z_{{p_t}^{e_t}}\oplus\cdots \oplus\Z_{{p_t}^{e_t}}\)
+\end{ejemplo}

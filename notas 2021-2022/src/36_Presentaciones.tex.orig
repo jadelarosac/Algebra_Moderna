@@ -1,0 +1,185 @@
+La descomposición cíclica primaria se consigue mediante el siguiente
+procedimiento.
+Sea \(u_1=(x-\alpha)v_3=(T-\alpha)v_3\).
+\(\ann_{\R[x]} u_1=\langle x^2-2\Re(z)x+|z|^2\rangle\) y
+sea \(u_2=(x^2-2\Re(z)x+|z|^2)v_3=(T^2-2\Re(z)T+|z|^2)v_3\).
+\(\ann_{\R[x]} u_1=\langle(x-\alpha) \rangle\).
+
+La descomposición cíclica primaria queda:
+\[
+  \subscriptbefore{\R[x]}{V}=\R[x]u_1\dot{+}\R[x]u_2
+\]
+Tomamos la base de \(V\) dada por \(\{u_1, T(u_1), u_2\}\).
+La matriz de \(T\) con respecto de esa base por filas es:
+\[
+  \begin{pmatrix}
+    0 & 1 & 0\\
+    -|z|^2 & 2\Re(z) & 0\\
+    0 & 0 & \alpha\\
+  \end{pmatrix}
+\]
+donde hemos usado que \(T^2(u_1)=2\Re(z)T(u_1)-|z|^2 u_1\)
+y que \(T(u_2)=\alpha u_2\). Como vemos es diagonal por bloques.
+
+Caso particular, \(K=\C\). Al ser algebraicamente cerrado,
+\(\mu=(x-\alpha)(x-z)(x-\bar{z})\) donde \(x\in\R\) y
+\(z\in\C\setminus\R\).
+
+\[
+  \subscriptbefore{\C[x]}{V}=\C[x]u_1\dot{+}\C[x]u_2
+\]
+Pero podemos dividir \(\R[x]u_1\) aún más. Llamamos \(x_1=(x-z)u_1\),
+\(\ann_{\C[x]}(x_1)=\langle x-\bar{z}\rangle\) y
+\(\ann_{\C[x]}(x_2)=\langle x-{z}\rangle\), con lo que queda
+\[
+  \subscriptbefore{\C[x]}{V}=\C[x]x_1\dot{+}\C[x]x_2\dot{+}\C[x]u_2
+\]
+
+En la base \(\{x_1,x_2,u_2\}\) la matriz de \(T\) es:
+\[
+  \begin{pmatrix}
+    \bar{z} & 0 & 0\\
+    0 & z & 0\\
+    0 & 0 & \alpha\\
+  \end{pmatrix}
+\]
+
+Caso particular, \(K\) con característica 2:
+\[
+  B=
+  \begin{pmatrix}
+    1 & 1 & 1\\
+    1 & 1 & 1\\
+    1 & 1 & 1\\
+  \end{pmatrix}
+\]
+
+Tenemos que
+\[
+  X-B=
+  \begin{pmatrix}
+    x+1 & 1 & 1\\
+    1 & x+1 & 1\\
+    1 & 1 & x+1\\
+  \end{pmatrix}\sim
+  \begin{pmatrix}
+    1 & 1 & x+1\\
+    1 & x+1 & 1\\
+    x+1 & 1 & 1\\
+  \end{pmatrix}\sim
+\]\[
+  \begin{pmatrix}
+    1 & 1 & x+1\\
+    0 & x & x\\
+    0 & x & x^2\\
+  \end{pmatrix}\sim
+  \begin{pmatrix}
+    1 & 1 & x+1\\
+    0 & x & x\\
+    0 & 0 & x^2+x\\
+  \end{pmatrix}
+\]
+
+Y ahora por columnas
+\[
+  \begin{pmatrix}
+    1 & 1 & x+1\\
+    0 & x & x\\
+    0 & 0 & x^2+x\\
+  \end{pmatrix}
+  \overset{c_2+c_1}\sim
+  \begin{pmatrix}
+    1 & 0 & x+1\\
+    0 & x & x\\
+    0 & 0 & x^2+x\\
+  \end{pmatrix}
+  \overset{c_3+(x+1)c_1}\sim
+\]\[
+  \begin{pmatrix}
+    1 & 0 & 0\\
+    0 & x & x\\
+    0 & 0 & x^2+x\\
+  \end{pmatrix}
+  \overset{c_3+c_2}\sim
+  \begin{pmatrix}
+    1 & 0 & 0\\
+    0 & x & 0\\
+    0 & 0 & x^2+x\\
+  \end{pmatrix}
+  =D
+\]
+
+\[
+  Q =
+  \begin{pmatrix}
+    1&1&x+1\\
+    0&1&1\\
+    0&0&1\\
+  \end{pmatrix}
+\]
+
+Tenemos que:
+\[
+  \subscriptbefore{K[x]}{V}=K[x]x_2\dot{+}K[x]x_3
+\]
+donde \(\ann_{K[x]}(x_2)=\langle x\rangle\) y
+\(\ann_{K[x]}(x_3)=\langle x^2+x\rangle\), con lo que
+\(x_2=v_2+v_3\) y \(x_3=v_3\) (como el anulador de \(x_1\) es \(K[x]\),
+\(x_1=0\) y no nos interesa).
+
+Como \(x^2+x=x(x+1)\), tomamos \(y_1=(x+1)x_3=(T+1)x_3\)
+y \(\ann_{K[x]}(y_1)=\langle x\rangle\).
+Como \(x^2+x=x(x+1)\), tomamos \(y_2=x x_3=Tx_3\)
+y \(\ann_{K[x]}(y_2)=\langle x+1\rangle\).
+La descomposición cíclica primaria queda:
+\[
+  \subscriptbefore{K[x]}{V}=K[x]x_2\dot{+}K[x]y_1\dot{+}K[x]y_2
+\]
+
+Y la matriz de \(T\) en la base \(\{x_2, y_1,y_2\}\) es:
+\[
+  \begin{pmatrix}
+    0&0&0\\
+    0&0&0\\
+    0&0&1\\
+  \end{pmatrix}
+\]
+
+\begin{teo}
+  Si \(A\) es un dominio euclídeo con función euclídea \(\nu\) y \(B\)
+  es una matriz con coeficientes en \(A\), existen \(P,Q\) inversibles
+  de tamaño adecuado y \(D\) quasidiagonal tal que:
+  \[
+    PB=DQ
+  \]
+\end{teo}
+\begin{proof}
+  Necesitamos demostrar que \(PBQ^{-1}=D\).
+  Suponemos que \(B\neq 0\). Vamos a demostrar que mediante operaciones
+  elementales sobre filas y columnas, podemos reducir \(B\) a una
+  del tipo
+  \[
+    \begin{pmatrix}
+      b &O\\
+      O &B'\\
+    \end{pmatrix}
+  \]
+
+  Llamemos \(\nu(B)=\min\{\nu(b_{ij}):b_{ij}\neq 0\}\).
+  Intercambiando filas y columnas en \(B\) podemos conseguir
+  \(\nu(B)=\nu(b_{11})\).
+
+  Caso \(a\): Si \(b_{11}|b_{i1}\) y \(b_{11}|b_{1j}\) para todos \(i,j\),
+  entonces reduzco haciendo ceros en las filas y columnas.
+
+  Caso \(b\): Si \(b_{11}|b_{i1}\) o \(b_{11}|b_{1j}\) para algún \(i\)
+  o \(j\) (supongamos \(i\)),
+  entonces
+  \[ b_{i1}=qb_{11}+r\]
+  y tenemos que \(\nu(r)<\nu(b_{11})\). Basta restar a la fila
+  \(i\) la primera multiplicada por \(q\) e intercambiarlas.
+
+  Hacemos finalmente inducción sobre \(\nu(B)\).
+
+\end{proof}
+

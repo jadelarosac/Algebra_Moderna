@@ -1,0 +1,124 @@
+\begin{df}[Producto de ideales]
+  Sea \(A\) un anillo e \(I,\,J\) ideales de \(A\). Definimos su producto por:
+  \[
+    IJ=\{\sum_i x_i y_i: x_i\in I, y_i\in J\}\subseteq I\cap J
+  \]
+\end{df}
+
+
+\noindent Recordemos que tanto la suma como el producto de dos ideales de un anillo es un ideal del mismo anillo.
+
+\begin{df}[Ideales coprimos]
+  Sea \(A\) un anillo. Dos ideales de \(A\) \(I,\,J\subset A\) se dirán primos entre sí
+  o coprimos si \(I+J=A\). Equivalentemente, existen \(x\in I\) e \(y\in J\) tales que
+  \(1=x+y\).
+\end{df}
+
+\noindent La motivación de la definición anterior reside en la identidad
+de Bezout, que estamos generalizando.
+
+\begin{lema}
+  Sea \(A\) un anillo e \(I,\,J,\,K\) ideales de \(A\).
+  Entonces \(I+J=I+K=A\) si, y solo si, \(I+(J\cap K)=I+J\cap K=A\).
+
+  Es decir, son coprimos entre sí si, y solo si, uno es coprimo
+  con la intersección de los otros dos.
+\end{lema}
+\begin{proof}
+  Supongamos que \(I+J=I+K=A\). Dados \(x,\,x'\in I\), \(y\in J\) y \(z\in K\),
+  se verifica que \[1=x+y=x'+z.\] Desarrollando la expresión anterior se obtiene que
+  \[1=x+y=x+y1=x+y(x'+z)=x+yx'+yz,\]
+  donde \(x+yx'\in I\), e \(yz\in J\cap K\).
+
+  Para el recíproco, \(A\supseteq I+J\supseteq I+J\cap K=A\),
+  luego \(A=I+J\).
+\end{proof}
+
+\begin{lema}
+  Sea \(A\) un anillo e \(I_1,\,\ldots,\,I_t\) ideales de \(A\), donde
+  \(t \ge 2\).
+  Entonces \(I_1\cap I_i=A\) si, y solo si, \(I_1+\bigcap_{i=2}^t I_i=A\).
+\end{lema}
+\begin{proof}
+  Se va a probar por inducción sobre el parámetro \(t \ge 2\).
+  Para \(t=2\), el caso base, es trivial.
+
+  Supongamos cierto que \(I_1\cap I_i=A\) implica que
+  \(I_1+\bigcap_{i=2}^t I_i=A\) para \(t \ge 2\). Veamos que se sigue cumpliendo
+  para \(t+1\).
+
+  Llamo \(I=I_1\), \(J=\bigcap_{i=2}^t I_i\), \(K=I_{t+1}\).
+  Por hipótesis de inducción, \(I+J=A\) e \(I+K=A\) por ser coprimos
+  (hipótesis del lema). Por el lema anterior tenemos:
+  \[
+    I+J\cap K=I_1+I_{t+1}\cap \bigcap_{i=2}^{t}
+    I_i =I_1 + \bigcap_{i=2}^{t+1} I_i
+  \]
+
+  La otra implicación es muy sencilla.
+\end{proof}
+
+A continuación, se va a enunciar y demostrar el Teorema Chino del Resto, pero antes
+debemos establecer las hipótesis necesarias:
+  \begin{enumerate}
+    \item \(A\) un anillo.
+    \item \(A_1,\ldots,A_t\) anillos, con \(t \ge 2\).
+    \item \(f_i:A\longrightarrow A_i\) un homomorfismo de anillos
+      para cada \(i\in\{1,\ldots,t\}\).
+    \item \(\Im f_i\subseteq A_i\) es un subanillo.
+    \item A \(\Im f_1\times\cdots\times\Im f_t\) se le llama el anillo
+      producto.
+    \item Definimos \(f:A\longrightarrow\Im f_1\times\cdots\times\Im f_t\),
+      \(f(x)=(f_1(x),\ldots,f_t(x))\) para cada \(x\in A\).
+    \item Tenemos que \(f\) es un homomorfismo de anillos, cuyo núcleo es la
+      intersección de todos los núcleos.
+      En efecto, dado \(x\in A\), \(x\in\ker f\) si, y solo si, \(f_i(x)=0\) para todo \(i\),
+      es decir, \(x\in\bigcap_{i=0}^t \ker f_i\). Llamaremos \(I=\ker f\).
+    \item  Además, por el primer teorema de isomorfía, existe un homomorfismo
+    \(\tilde{f}:A/I \longrightarrow\Im f_1\times\cdots\times\Im f_t\),
+      con \(x+I\mapsto f(x)\). Por construcción, \(\tilde{f}\) es inyectiva, 
+      pero no sobreyectiva. El Teorema Chino del Resto se basa en demostrar
+      que \(\tilde{f}\) es sobreyectiva bajo ciertas condiciones.
+    \item Cada \(\ker f_i\) es coprimo con cualquier \(\ker f_j\)
+      para \(j\neq i\).
+    \item Llamamos \(I_i=\ker f_i\).
+  \end{enumerate}
+
+\begin{teo}[Teorema Chino del Resto]
+  \(\tilde{f}\) es isomorfismo si y solo si
+  \(I_i+I_j=A\) para todo \(i\neq j\).
+\end{teo}
+\begin{proof}
+  Probemos primero la implicación a la derecha. Vamos a suponer \(\tilde{f}\) sobreyectiva, es decir, que \(f\) lo es, 
+  pues \(\tilde{f}(a + \ker{f}) = f(a)\).
+  
+  Veamos que todos los \(I_i\) son coprimos entre sí.
+
+  Dado \(i\), tomamos \(x\in A\) tal que \(f_i(x)=1\) y
+  \(f_j(x)=0\) para todo \(j\neq i\).
+
+  Observemos que \(1-x\in I_i\), ya que \(f_i(1-x) = f_i(1) - f_i(x) = 
+  1 - 1 = 0\), y que \(x\in\bigcap_{j\neq i} I_j\).
+  \[
+    1=1-x+x \in I_i+\bigcap_{j\neq i} I_j
+  \]
+
+  Por tanto, \(I_i+\bigcap I_j =A\) y entonces por el lema anterior
+  \(I_i+I_j=A\).
+  
+  Veamos el recíproco.
+  Suponemos que \(I_i+I_j=A\) para cualquier \(i\neq j\). Por el lema
+  anterior, \(\forall i \in \{1, \cdots, t\} \ I_i + \bigcap_{i \neq j} I_j = A\).
+
+  Tomamos \((f(b_1),\ldots,f(b_t))\in I_1\times\cdots\times I_t\).
+
+  Para cada \(i\), tomamos \(a_i\in I_i\) y \(p_i\in\bigcap I_j\) tales que
+  \(1=a_i+p_i\) y sea \(x=\sum_{i=1}^t b_i p_i\). Entonces
+
+  \[
+    f_j(x)=\sum_{k=1}^t f_j(b_k) f_j(p_k)=f_j(b_j)f_j(p_j)=f_j(b_j(1-a_j))
+    =f_j(b_j)-f_j(b_j)f_j(a_j)=f_j(b_j)
+  \]
+  porque \(f_j(p_k)=0\) si \(k\neq j\) y \(a_j\in\ker f_j\).
+
+\end{proof}

@@ -1,0 +1,65 @@
+\subsection{\(K[x]\)-módulos con \(K\) cuerpo}
+
+Sea \(K\) un cuerpo y se considera el \(K[x]\)-módulo \(M\), es decir,
+\(M\) es un grupo aditivo
+y \(\rho: K[x] \longrightarrow \End(M)\) es un homomorfismo de anillos.
+El cuerpo \(K\) se puede ver como subanillo de \(K[x]\), aplicando la
+restricción de escalares aplicada a la aplicación inclusión y, por tanto,
+\(M\) es un \(K\)-espacio vectorial.
+
+Veamos \(\rho(x) \in \End(M)\) que es un endomorfismo de espacios vectoriales.
+\[
+  \rho(x)(km)=x\cdot (km)=x\cdot(k\cdot m)=(xk)\cdot m
+  =kx\cdot m=k(xm)=k\rho(x)(m)
+\]
+
+\noindent Así que \(\rho(x)\) es \(K\)-lineal.
+
+Si \(p=\sum_i p_i x^i\in K[x]\), tenemos que
+\[
+  pm = \rho(p)(m)= \rho(\sum_ip_ix^i)(m) = \sum_i p_i {\rho(x)}^i(m)
+\]
+
+\begin{prop}
+  Sea \(K\) un cuerpo y \(V\) un grupo aditivo. Entonces existe una correspondencia
+  biyectiva entre:
+
+  \begin{enumerate}
+  \item \(V\) tiene estructura de \(K[x]\)-módulo.
+  \item \(V\) tiene estructura de \(K\)-espacio vectorial junto con un endomorfismo
+    de espacios vectoriales \(T: V \longrightarrow V\).
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  Veamos primero que 2 implica 1. Se define la aplicación \(\rho: K[x] \longrightarrow
+  End(V)\) definida por \(\rho(f(x))(v) = f(T)(v)\) para todo \(f(x) \in K[x]\) y
+  \(v \in V\). Recordemos que la expresión de un polinomio en \(K[x]\) puede ser
+  \(f = f_0 + \cdots + f_nx^n\), luego \(f(T) = id_V + f_1T \cdots + f_nT^n\). A
+  continuación,
+  se comprueba que \(\rho\) es un homomorfismo de anillos y acabaría la demostración.
+\end{proof}
+
+\begin{ejemplo}
+  El espacio de las funciones infinitamente diferenciables sobre \(\R\),
+  \(\Cont^\infty(\R)\), es un \(\R\)-espacio vectorial y la aplicación \(T = \frac{d}{dt}\)
+  es una aplicación lineal. Por la proposición anterior, \((\Cont^\infty(\R), \frac{d}{dt}\)
+  es un \(\R[x]\)-módulo. Tomemos \(\sin \in \Cont^\infty(\R)\). Entonces
+  \[x\sin t=T(\sin t)=\cos t \implies x^2\sin t= -\sin t \implies (x^2+1)\sin t=0,\]
+  \noindent es decir, en un \(A\)-módulo \(M\) puede pasar que \(a m=0\) aunque \(a\neq 0\)
+  y \(m\neq 0\), a diferencia de lo que ocurre en un espacio vectorial.
+\end{ejemplo}
+
+\begin{ejemplo}
+  En el \(\Z\)-módulo \(\Z_4\) tenemos que \(2\cdot \bar{2}=\bar{0}\).
+\end{ejemplo}
+
+\begin{obs}
+  En la notación de operación externa \(\cdot\), \(x \cdot v = T(v)\) se
+  convierte a la notación de \(K[x]\)-módulo.
+\end{obs}
+
+\begin{nt}
+  Cuando se esté en presenca de un \(A\)-módulo \(M\), se escribirá simplmente que
+  \({}_AM\) es un módulo.
+\end{nt}
+

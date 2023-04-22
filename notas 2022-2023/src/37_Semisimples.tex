@@ -1,0 +1,129 @@
+\subsection{Módulos semisimples}
+
+\begin{prop}
+  Sea \(M\) un módulo.
+  Sea \(\{M_i:i\in I\}\) una familia no vacía de submódulos simples
+  (no cero y que sus únicos submódulos son el 0 y el total).
+
+  Ponemos \(M'=\sum_{i\in I} M_i\), es decir, el menor submódulo que los
+  contiene a todos. Tomamos  \(N\subsetneq M'\). Entonces existe un
+  \(J\subseteq I\) tal que \(\{M_i:i\in J\}\) es independiente,
+  \(N\cap\left(\dot{+}_{i\in J} M_i\right)=\{0\}\) y
+  \(M'=N\dot{+}\left(\dot{+}_{j\in J} M_i\right)\).
+\end{prop}
+\begin{proof}
+  La demostración pasa por utilizar el lema de Zorn.
+  Sea \(\Gamma\) el conjunto de los subconjuntos \(J\) de \(I\) tales que
+  \(\{M_i:i\in J\}\) es independiente y
+  \(N\cap\left(\dot{+}_{i\in J} M_i\right)=\{0\}\).
+
+  Veamos que \(\Gamma\neq\emptyset\). Si \(N=\{0\}\), tomamos \(i\in I\)
+  y tenemos que \(\{i\}\in\Gamma\}\), que cumple trivialmente ambas
+  propiedades. Si \(N\neq\{0\}\), pero \(N\cap M_i=\{0\}\), tomamos
+  de nuevo \(\{i\}\in\Gamma\) que es otro caso trivial.
+
+  Supongamos que \(N\neq\{0\}\) y \(N\cap M_i=\{0\}\) para todo \(i\in I\).
+  Como cada \(M_i\) es simple, \(N\cap M_i=M_i\) para todo \(i\in I\),
+  con lo que \(N=M'\), caso que hemos excluído.
+
+  El orden que definimos en \(\Gamma\) es la inclusión. Tenemos que ver
+  que cualquier cadena (subconjunto totalmente ordenado) tiene un elemento
+  maximal. Sea \(\chi\subseteq\Gamma\). Definimos \(J=\bigcup_{C\in\chi} C\).
+  Lo que tenemos que demostrar es que \(J\in \Gamma\).
+
+  Veamos que \(\{M_i:i\in J\}\) es independiente. Por una proposición anterior,
+  basta ver que cualquier \(\{M_i:i\in F\}\) es independiente para cualquier
+  \(F\subseteq J\) finito. Por ser \(\chi\) una cadena, existe un \(C\in\chi\)
+  tal que \(F\subseteq C\). Pero \(C\in\Gamma\), luego \(\{M_i:i\in C\}\)
+  es idependiente, y en particular, \(\{M_i:i \in F\}\) es independiente.
+
+  Tomamos \(m\in N\cap\left(\dot{+}_{j\in J} M_j\right)\). Entonces existe
+  un \(F\subseteq J\) finito tal que \(m\in N\cap\left(\dot{+}_{j\in F}
+  M_j\right)\), entonces existe un \(C\in\chi\) tal que \(F\subseteq C\)
+  y por consiguiente \(m\in N\cap\left(\dot{+}_{j\in C} M_j\right)=\{0\}\).
+
+  Por tanto \(\Gamma\) es inductivo y el lema de Zorn nos asegura que
+  existe un \(J\in\Gamma\) maximal.
+
+  Solo basta ver que \(M'=N\dot{+}\left(\dot{+}_{j\in J}M_j\right)\) y
+  basta ver que es la suma (ya sabemos que es directa). Para \(i\notin J\),
+  \(M_i\cap\left(N+\left(\dot{+}_{j\in J} M_j\right)\right)\neq \{0\}\).
+  De lo contrario, \(J\cup\{i\}\in\Gamma\) y \(J\) no sería maximal.
+  Como \(M_i\) es simple, \(M_i\subseteq\left(N+\left(\dot{+}_{j\in J}
+  M_j\right)\right)\). Al final tenemos que
+  \(M_i\subseteq\left(N+\left(\dot{+}_{j\in J}
+  M_j\right)\right)\) para todo \(i\in I\), con lo que
+  \(M'=N\dot{+}\left(\dot{+}_{j\in J}M_j\right)\).
+
+\end{proof}
+
+\begin{df}[Anillo de división]
+  Un anillo \(D\) se dice que es un anillo de división si
+  para todo \(d\in D\setminus\{0\}\) existe un \(d^{-1}\) tal que
+  \[
+    dd^{-1}=d^{-1}d=1
+  \]
+  Si \(D\) es además conmutativo, es entonces un cuerpo.
+\end{df}
+
+\begin{cor}
+  Sea \(D\) un anillo de división y \(\subscriptbefore{D}{V}\) un
+  \(D\)-espacio vectorial no nulo. Si \(\{v_i:i\in I\}\) es un conjunto
+  de generadores no nulos de \(V\), existe \(J\subseteq I\) tal que
+  \(\{v_j:j\in J\}\) es una base de \(\subscriptbefore{D}{V}\).
+\end{cor}
+\begin{proof}
+  Tomo la familia \(\{Dv_i:i\in I\}\). Cada \(Dv_i\cong D/\ann_D (v_i)
+  \cong \subscriptbefore{D}{D}\) ya que el anulador de cualquier elemento
+  en un anillo de división es cero.
+
+  \(\subscriptbefore{D}{D}\) es un módulo simple.
+  \[
+    V=\sum_{i\in I} Dv_i
+  \]
+  Tomando \(N=\{0\}\) en la proposición, existe un \(J\in I\) tal que
+  \[
+    V=\dot{+}_{j\in J} Dv_j
+  \]
+  o equivalentemente \(\{v_j: j\in J\}\) es base de \(V\).
+
+\end{proof}
+
+\begin{obs}
+  En la proposición anterior se ve que \(V\cong D^{(J)}\).
+\end{obs}
+
+\begin{df}[Homomorfismo escindido]
+  Dado homomorfismos de módulos \(N\overset{g}{\longrightarrow} M
+  \overset{f}{\longrightarrow} N\) tales que \(f\circ g=\id_N\), diremos
+  que \(f\) es un epimorfismo escindido (o roto o partido)
+  y que \(g\) es un monomorfismo escindido (o roto o partido).
+\end{df}
+
+\begin{lema}
+  Todo módulo finitamente generado no nulo contiene un submódulo propio
+  maximal.
+\end{lema}
+\begin{proof}
+  Sea \(M\) el módulo y \(\Gamma\) el conjunto de los submódulos propios
+  de \(M\), o sea,
+  \[
+    \Gamma = \{ N:N\in\mathcal{L}(M), N\neq M\}
+  \]
+
+  Tenemos que \(\{0\}\in\Gamma\), luego es no vacío. Tomamos \(\chi\)
+  cadena en \(\Gamma\) y \(N=\bigcup_{C\in\chi} C\). Veamos que
+  \(N\in \Gamma\).
+
+  Tomamos \(m_1,\ldots, m_t\) generadores de \(M\). Si \(N=M\), tendríamos
+  que \(m_1,\ldots, m_t\in N\) y existiría en ese caso un \(C\in\chi\)
+  tal que \(m_1,\ldots, m_t\in C\), con lo que
+  \(M\subseteq C\subseteq M\) con lo que \(C=M\) y en particular
+  \(C\notin \Gamma\), lo cuál es una contradicción.
+
+  Aplicando el lema de Zorn a \(\Gamma\), tenemos que tiene elementos
+  maximales.
+
+\end{proof}
+
+

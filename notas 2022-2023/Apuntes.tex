@@ -1,0 +1,137 @@
+
+% ------------------------------------------------------------------------------
+% CONFIGURACIÓN BÁSICA DEL DOCUMENTO
+% ------------------------------------------------------------------------------
+
+\documentclass[12pt, a4paper, oneside]{book}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue
+  }
+\usepackage{fancyhdr,fancybox}  %para las cabeceras y pie de página
+\usepackage[Sonny]{fncychap}  % Encabezado de capítulos
+
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{prop}[teo]{Proposición}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corolario}
+
+\theoremstyle{definition}
+\newtheorem{nt}[teo]{Notación}%[chapter]
+\newtheorem{df}[teo]{Definición}%[chapter]
+\newtheorem{ejemplo}[teo]{Ejemplo}%[chapter]
+\newtheorem{ejemplos}[teo]{Ejemplos}
+\newtheorem{ejercicio}[teo]{Ejercicio}
+\newtheorem{estrategia}[teo]{Estrategia}
+\newtheorem{obs}[teo]{Observación}
+\newtheorem{observaciones}[teo]{Observaciones}  
+
+\newcommand{\Sphere}{\mathbb{S}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Cont}{\mathcal{C}}
+
+\newcommand{\md}[1]{\left|#1\right|}
+
+\newcommand{\superscriptbefore}[2]{\prescript{#1}{}{#2}}
+\newcommand{\subscriptbefore}[2]{\prescript{}{#1}{#2}}
+
+\DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\car}{car}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\Biad}{Biad}
+\DeclareMathOperator{\Ring}{Ring}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\ann}{ann}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Soc}{Soc}
+\DeclareMathOperator{\minpol}{minpol}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\ima}{Im}
+
+% ------------------------------------------------------------------------------
+% DISEÑO DE PÁGINA
+% ------------------------------------------------------------------------------
+
+% Párrafos
+\linespread{1.1}
+\setlength{\parindent}{12pt}
+\setlength{\parskip}{0pt}
+
+\reversemarginpar % notas al margen a la izquierda
+
+\hoffset 0mm %para disminuir el margen a la izquierda
+\voffset -2mm % para subir 2mm la cabecera
+
+% Cabecera de capítulos - Redefino el estilo tipográfico del título
+
+\makeatletter%
+\ChNameVar{\fontsize{18}{20}\usefont{OT1}{phv}{m}{n}\selectfont}
+\ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}%
+\ChTitleVar{\fontsize{18}{20}\usefont{OT1}{phv}{m}{n}\selectfont}
+\ChRuleWidth{1pt}
+\makeatother
+
+\renewcommand{\MakeUppercase}{}     % Para que los títulos no salgan en mayúscula
+
+% Cabecera y pie de páginas
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+\fancyhead[OL]{{\bfseries\rightmark}}%
+\fancyhead[ER]{{\bf \leftmark}} %
+\fancyhead[OR, EL]{{\bf\thepage}}%
+
+\title{\rule{\textwidth}{3pt}\\
+  \vspace{3mm} \Huge{\textsc{Álgebra Moderna}}\\
+  \rule{\textwidth}{3pt}}
+
+\author{José Gómez Torrecillas\\{}\\ Doble Grado en Ingeniería Informática y Matemáticas
+  \\Universidad de Granada\\{}
+  \\{}\\\small \textit{Apuntes tomados durante el curso 2021-2022 por José Antonio de la
+  Rosa Cubero}
+\\\small \textit{Correciones, notas y aportaciones durante el curso 2022-2023
+  por Carlos Romero Cruz}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+    % ---------------------------------------------------------------------------
+    % ÍNDICE
+    % ---------------------------------------------------------------------------
+    
+    \thispagestyle{empty}
+    {\hypersetup{linkcolor=black}\tableofcontents}
+    \newpage
+    
+    % ---------------------------------------------------------------------------
+    % CONTENIDO
+    % ---------------------------------------------------------------------------
+
+    \input{src/capitulo1.tex}
+´   \input{src/capitulo2.tex}
+    \input{src/capitulo3.tex}
+    \input{src/capitulo4.tex}
+    \input{src/capitulo5.tex}
+\end{document}

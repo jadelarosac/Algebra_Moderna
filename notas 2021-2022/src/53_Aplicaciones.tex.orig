@@ -1,0 +1,131 @@
+Además \(t^{\Sigma_j}t^{\Sigma_k}=t^{\Sigma_j+\Sigma_k}\).
+
+Si llamamos \(\hat{\varphi}(j)=\langle\varphi|t^{\Sigma_j}\rangle
+=\frac{1}{n}\sum_{k=0}^{n-1} \varphi(k)\omega^{-kj}\) tenemos que
+\[
+  \varphi\psi=\sum_{j,k}\hat{\varphi}(j)\hat{\psi}(k)t^{\Sigma_j}t^{\Sigma_k}
+  =\sum_{l=0}^{n-1}\left(\sum_{j=0}^{n-1}\hat{\varphi}(j)\hat{\psi}(e-j)\right)
+  t^{\Sigma_e}
+\]
+
+Ejercicio: Para \(G=\Z_n\times\Z_m\), calcular \(\Omega_{\C G}\) y deducir la
+correspondiente base ortonormal de \(\mu(\Z_n\times\Z_m)\).
+
+Ejemplo: \(D_n=\langle r,s | r^n = s^2 = 1, sr=r^{-1}s\rangle\).
+\(D_n=\{s^a r^j:a \in\{0,1\}, j\in\{0,\ldots,n-1\}\}\).
+Veamos qué hacer con \(\mu(D_n)\). Como el grupo no es conmutativo debe haber
+al menos una representación de un subgrupo simple de dimensión mayor que 1.
+
+\(\alpha\in\C\), \(\alpha^n=1\), \(V_\alpha\) un \(\C\)-espacio vectorial
+hermítico con base ortonormal \(\{v_1, v_2\}\).
+Tenemos que buscar una representación: \(D_n\longrightarrow U(V_\alpha)\)
+donde
+\[
+  r\mapsto
+  \begin{pmatrix}
+    \alpha&0\\
+    0&\overline{\alpha}\\
+  \end{pmatrix}
+\quad\quad\quad
+  s\mapsto
+  \begin{pmatrix}
+    0&1\\
+    1&0\\
+  \end{pmatrix}
+\]
+Comprobamos que (recordando que el producto por matrices se hace en el orden
+inverso porque trabajamos por filas):
+\[
+  \begin{pmatrix}
+    \alpha&0\\
+    0&\overline{\alpha}\\
+  \end{pmatrix}
+  \begin{pmatrix}
+    0&1\\
+    1&0\\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    0&\alpha\\
+    \overline{\alpha}&0\\
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \overline{\alpha}&0\\
+    0&\alpha\\
+  \end{pmatrix}
+  \begin{pmatrix}
+    0&1\\
+    1&0\\
+  \end{pmatrix}
+\]
+
+¿Cuando \(V_\alpha\) irreducible? (o sea, simple). No será simple si y solo
+si existe \(v\in V_\alpha\) tal que \(\C v\) es un submódulo. Esto equivale
+a que \(rv, sv\in \C v\).
+
+Trabajando con coordenadas \(v=(x,y)\in\C^2\).
+\[
+  (x\quad y)
+  \begin{pmatrix}
+    \alpha&0\\
+    0&\overline{\alpha}\\
+  \end{pmatrix}
+  =\beta(x\quad y)
+\]
+\[
+  (x\quad y)
+  \begin{pmatrix}
+    0&1\\
+    1&0\\
+  \end{pmatrix}
+  =\gamma(x\quad y)
+\]
+y resolviendo las ecuaciones obtenemos que \(\alpha^2=1\).
+
+Luego si \(\alpha\neq\pm 1\) tenemos una representación irreducible.
+
+Supongamos que bajo las mismas condiciones \(V_\alpha\cong V_{\alpha'}\).
+Tomando trazas, tenemos que \(\alpha+\overline{\alpha}=
+\alpha'+\overline{\alpha'}\). Es decir, si \(\alpha+\overline{\alpha}\neq
+\alpha'+\overline{\alpha'}\) y entonces \(V_\alpha\not\cong V_{\alpha'}\).
+
+Funciones matriciales de \(V_\alpha\):
+\[
+  \begin{pmatrix}
+    t_{11}  & t_{12}\\
+    t_{21}  & t_{22}\\
+  \end{pmatrix}
+\]
+tenemos que
+\[
+  s^a r^j\mapsto
+  \begin{pmatrix}
+    \alpha  & 0\\
+    0       & \overline{\alpha}\\
+  \end{pmatrix}^j
+  \begin{pmatrix}
+    0 & 1\\
+    1 & 0\\
+  \end{pmatrix}^a
+\]
+si \(a=0\) tenemos:
+\[
+  \begin{pmatrix}
+    \alpha^j  & 0\\
+    0       & \overline{\alpha}^j\\
+  \end{pmatrix}
+\]
+si \(a=1\) tenemos:
+\[
+  \begin{pmatrix}
+    0&\alpha^j\\
+    \overline{\alpha}^j& 0\\
+  \end{pmatrix}
+\]
+
+Tenemos entonces que \(t_{11}(s^a r^j)=\chi_{0}(a)\alpha^j\),
+\(t_{12}(s^a r^j)=\chi_{1}(a)\alpha^j\),
+\(t_{21}(s^a r^j)=\chi_{1}(a)\overline{\alpha}^j\),
+\(t_{22}(s^a r^j)=\chi_{1}(a)\overline{\alpha}^j\)
+

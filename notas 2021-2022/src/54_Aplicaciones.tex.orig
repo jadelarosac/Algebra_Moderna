@@ -1,0 +1,71 @@
+Tomamos \(\omega =e^{2\pi i/n}\in\C\).
+\({(\omega^2)}^j=\omega^{2j}=1\) si y solo si \(2j\frac{2\pi}{n}\)
+es un múltiplo entero de \(2\pi\), es decir, que \(2j\) es múltiplo
+entero de \(n\).
+
+Luego si \(2j\) no es múltiplo entero de \(n\), \(V_{\omega^j}\) es
+simple.
+
+Caso A:\@ si \(n\) es impar, entonces \(n=2\nu+1\). Para
+\(j\in\{1,\ldots,\nu\} \) se tiene que \(V_{\omega^j}\) es simple.
+Si \(j'\in\{1,\ldots,\nu\} \), tenemos que:
+\[
+  \omega^j+\omega^{-j}
+  =
+  \omega^{j'}+\omega^{-j'}
+\]
+que significa que \(\cos\frac{2\pi j}{n}=\cos\frac{2\pi j'}{n}\), y como
+entre 0 y \(\pi\) el coseno es biyectivo, \(j=j'\).
+
+Luego \(V_{\omega^j}\) son simples y todos no isomorfos entre sí.
+\[
+  \Sigma_1,\ldots,\Sigma_\nu\in\Omega_{\C D_n}
+\]
+
+Como \(2n=\md{G}=d_1^2+\cdots+d_t^2\), luego \(2n-4\nu\) es el número
+de elementos que nos quedan. \(2n-4\nu=4\nu+2-4\nu=2\), solo nos quedan por
+considerar dos módulos de dimensión 1.
+
+Tenemos que considerar el módulo trivial \(\Sigma_0\),
+\(\C D_n\)-módulo cuya representación es la trivial, es decir,
+cada \(s^a r^k\mapsto 1\in\C^\times\).
+
+Por otro lado tenemos que \(\Sigma_{-1}\) definido por
+\(s^a r^k\mapsto \sgn(1-2a)\in\C^\times\).
+
+\[
+  \Omega_{\C D_n}=
+  \{\Sigma_{-1},\Sigma_0,\Sigma_1,\ldots,\Sigma_\nu\}
+\]
+y la siguiente base es ortonormal:
+\[
+  \{
+    t^{\Sigma_{-1}},t^{\Sigma_0}\}\cup\{\sqrt{2}t^{\Sigma_j}_{bc}:
+  j\in\{1,\ldots,\nu\}, b,c\in\{1,2\}\}
+  \}
+\]
+
+Donde:
+\[
+  t^{\Sigma_0}(s^a r^k)=1
+\]
+\[
+  t^{\Sigma_{-1}}(s^a r^k)=\sgn(1-2a)
+\]
+\[
+  t^{\Sigma_j}_{11}
+  = \chi_0(a)e^{2\pi i kj/n}
+\]
+\[
+  t^{\Sigma_j}_{12}
+  = \chi_1(a)e^{2\pi i kj/n}
+\]
+\[
+  t^{\Sigma_j}_{21}
+  = \chi_0(a)e^{-2\pi i kj/n}
+\]
+\[
+  t^{\Sigma_j}_{22}
+  = \chi_1(a)e^{-2\pi i kj/n}
+\]
+

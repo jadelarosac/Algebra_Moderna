@@ -1,0 +1,130 @@
+\begin{obs}
+  Si \(A=\Z\), \(M\) grupo abeliano, \(x\in M\),
+  \(\ann_\Z(x)=n\Z\), \(n\) recibe el nombre de el orden.
+\end{obs}
+
+\begin{obs}
+  Si \(A=K[x]\), \(T:V\longrightarrow V\), \(n=\dim_K V<\infty\),
+  \(v\in V\), \(\ann_{K[x]}(v)=\langle f(x)\rangle\).
+  Tenemos que \(f\) tiene grado \(n\). \(\{v, Tv,\ldots, T^{n-1}v\}\)
+  es una base de \(V\).
+\end{obs}
+
+\begin{ejemplo}
+  \(\mathcal{U}(\Z_8)=\{1,3,5,7\}\).
+  Viendo los ordenes de los elementos:
+  \[\mathcal{U}(\Z_8)=\langle 3\rangle\dot{+}\langle 5\rangle\]
+  donde \(\langle \cdot\rangle\) es la generación como subgrupo.
+\end{ejemplo}
+
+\begin{ejemplo}
+  Suponemos un espacio vectorial \(V\) de dimensión 3 y un
+  endomorfismo \(T\) cuyo polinomio mínimo es de la forma
+  \({(x-\lambda)}^2\) con \(\lambda\in K\).
+  Sabemos que existen dos vectores \(v_1,v_2 \in V\) tales que
+  \[
+    V=K[x]v_1\dot{+} K[x]v_2
+  \]
+  con \(\ann_{K[x]} v = \langle {(x-\lambda)}^2\rangle
+  \subsetneq\langle {x-\lambda}\rangle = \ann_{K[x]} v_2\).
+\end{ejemplo}
+
+\begin{cor}
+  Si \(\subscriptbefore{A}{M}\) es un módulo \(p\)-primario, entonces existen
+  \(C_1, \ldots, C_n\) módulos cíclicos tales que
+  \[
+    M\cong C_1\oplus\cdots\oplus C_n.
+  \]
+
+  Si existen otros \(D_1, \ldots, D_m\) módulos cíclicos tales que \(M\cong D_1\oplus
+  \cdots\oplus D_m\), entonces
+  \(n=m\) y tras reordenación, \(D_i\cong C_i\) para todo \(i \in \{1, \ldots, n\).
+\end{cor}
+\begin{proof}
+  De \(M\cong C_1\oplus\cdots\oplus C_n\), se puede exigir que
+  \(x_1,\ldots,x_n\in M\) tales que
+  \[
+    M=Ax_1\dot{+}\cdots\dot{+}Ax_n
+  \]
+  con \(\ann_A(x_1)\subseteq\ann_A(x_2)\subseteq\ldots\subseteq\ann_A(x_n)\)
+
+  Con \(D_1\oplus\cdots\oplus D_m\) hago lo mismo.
+  \[
+    M=Ay_1\dot{+}\cdots\dot{+}Ay_n
+  \]
+  ordenados bajo el mismo criterio.
+
+  El enunciado se sigue de aplicar el teorema anterior. De
+  \(\ann(x_i)=\ann(y_i)\) se deduce
+  \[
+    C_i\cong Ax_i\cong A/\ann(x_i)=A/\ann(y_i)\cong Ay_i\cong D_i
+  \]
+\end{proof}
+
+\begin{ejercicio}
+  Decimos que un módulo \(M\) es indescomponible si \(M\cong
+  L\oplus N\) implica que \(L=\{0\}\) (o \(N=\{0\}\)).
+  Razonar que en el corolario cada uno de los \(C_i\) es indescomponible.
+\end{ejercicio}
+
+\begin{ejemplo}
+  \(M\) grupo abeliano de longitud finita y \(p\)-primario.
+  Aplicando el corolario, \(M\cong C_1\oplus\cdots\oplus C_n\) con
+  \(C_i\) cíclico y de longitud finita \(p\)-primarios.
+  Tenemos que \(M\cong \Z_{p^{m_1}}\oplus\cdots\oplus\Z_{p^{m_n}}\),
+  \(M\) es finito de cardinal \(p^{m_1+\cdots+m_n}\).
+\end{ejemplo}
+
+\begin{teo}[Estructura de módulos sobre un DIP]
+  Sea \(A\) un dominio de integridad primaria, \(M\) un grupo aditivo y el módulo
+  \(\subscriptbefore{A}{M}\neq\{0\}\) de longitud finita. Entonces existen
+  irreducibles distintos \(p_1,\ldots,p_r\in A\) y 
+  \(n_1,\ldots, n_r \in \N\) tales que \(e_{i1}\ge\ldots\ge e_{in_i}\) con
+  \(i\in\{1,\ldots,r\}\) que determinan \(M\):
+  \[
+    M=\dotplus_{i=1}^r\left(\dotplus_{j=1}^{n_i} Ax_{ij}\right),
+  \]
+  donde los \(x_{ij}\in M\) verifican:
+  \[
+    \ann_A(x_{ij})=\langle p_i^{e_{ij}}\rangle
+  \]
+  con \(i\in\{1,\ldots,r\}\) y \(j\in\{1,\ldots, n_i\}\).
+  A esta expresión
+  se le llama la \textbf{descomposición cíclica-primaria de \(M\)} (la
+  primaria sería la primera suma y luego cada factor primario se
+  descompone en factores cíclicos).
+  A los \(x_{ij}\) se les llama
+  \textbf{divisores elementales de \(M\)} y determinan \(M\) salvo isomorfismos.
+\end{teo}
+
+\begin{proof}
+  Sea \(\mu \in A\) tal que \(\langle \mu \rangle = \Ann_A(M)\). Tomamos
+  \(\mu = p_1^{e_1} \cdots p_r^{e_r}\), con \(p_1, \ldots, p_r \in A\) irreducibles.
+  Entonces \(M = M_1 \dotplus \cdots \dotplus M_r\) (descomposición primaria) para
+  \(M_i\) un submódulo \(p_i\)-primario. Para cada \(i \in \{1, \ldots, r\}\),
+  \(M_i = \dotplus^{m_i}_{j=1} Ax_{ij}\)(descomposición cíclica de un primario),
+  con \(\Ann_A(M_i) = \ann_A(x_{i1}) \subset \cdots \subset \ann_A(x_{in_i})\)
+  para ciertos \(x_{ij} \in M_i\) y \(j \in \{1, \ldots, n_i\}\).
+
+  De hecho, \(\Ann_A(M_i) = \langle p_i^{e_i} \rangle = \ann_A(x_{i1}) \subset \ldots
+  \subset \ann_A(x_{in_i}) = \langle p_i^{e_{n_i}} \rangle\).
+  Así, se toma la sucesión \(\{e_{ij} \ : \ j \in \{1, \ldots, n_i\}\}\) que viene dada
+  por \(\ann_A(x_{ij}) = \langle p_i^{e_{ij}} \rangle \), con \(j = 1, \ldots, n_i\).
+  
+  Supongamos otra descomposición:
+  \[
+    M=N_1\dotplus \cdots \dotplus N_t
+  \]
+  con \(N_i\) \(s_i\)-primario para \(s_1,\ldots,s_t\in A\) irreducibles.
+  Entonces
+  \[
+    \left\langle \mu\right\rangle =\Ann_A(M)=\bigcap_{i=1}^t \Ann_A(N_i)
+    =\bigcap_{i=1}^t\left\langle s_i^{t_i}\right\rangle
+    = \left\langle\mcm\{s_i^{t_i}\}\right\rangle=\left\langle\prod s_i^{t_i}\right\rangle
+  \]
+  y \(\mu\) es asociado con \(s_1^{t_1}\cdots s_t^{t_t}\).
+  Tras reordenación, por ser \(A\) un DFU, \(t=r\) y \(s_i=p_i\).
+
+  \(N_i\subseteq\{m\in M:p_i^{e_i} m=0\}=M_i\), entonces
+  \(N_i=M_i\), argumentando sobre las longitudes.
+\end{proof}
