@@ -1,16 +1,17 @@
 \section{Teoría de módulos}
 
-Sea \(R\) un anillo, \(\subscriptbefore{R}{M}\) un módulo. Sea la
+Sea \(R\) un anillo, \(\subscriptbefore{R}{M}\) un módulo y la
 familia no vacía de submódulos
-\(\Gamma\subseteq\mathcal{L}(M)\) entonces
+\(\Gamma\subseteq\mathcal{L}(M)\). Recordemos que entonces
 \(\bigcap_{N\in\Gamma} N\in\mathcal{L}(M)\).
 
 \begin{df}[Submódulo generado por un conjunto \(X\)]
   Si \(X\) es un subconjunto de \(M\), el menor submódulo de \(M\) que contiene
-  a \(X\) se llama submódulo generado por \(X\). Lo denotaremos por \(RX\).
+  a \(X\) se llama \textbf{submódulo generado por \(X\)}. Se denotará por \(RX\).
 \end{df}
 
 \begin{lema}
+  Sea \(X \subset M\) cualquiera. Entonces
   \[
     RX=\left\{\sum_{x\in F}v_x x:F\subseteq X \textrm{ finito}, v_x\in
     R\right\}
@@ -18,7 +19,6 @@ familia no vacía de submódulos
 \end{lema}
 \begin{proof}
   \(X\subseteq RX\) por ser el menor submódulo que contiene a \(X\).
-
   \[
     C=\left\{\sum_{x\in F}v_x x:F\subseteq X \textrm{ finito}, v_x\in
     R\right\}
@@ -31,53 +31,83 @@ familia no vacía de submódulos
 
 Si \(X=\{x_1,\ldots, x_n\}\), tenemos que \(RX=Rx_1+\cdots Rx_n\).
 
-\begin{df}[Módulo producto]
-  Tomamos \(I\neq\emptyset\) un conjunto de índices, tal que
-  \(i\in I\), tomamos un módulo \(M_i\).
-  \[
-    \prod_{i\in I} M_i=\{{(m_i)}_{i\in I}:m_i\in M_i\}
-  \]
+\begin{obs}
+  El módulo \(M\) está finitamente generado si existe \(X \subset M\) finito
+  tal que \(M = RX\).
+\end{obs}
 
-  Son tuplas, pero no ordenadas.
+\begin{df}[Módulo producto]
+  Sean \(M_i\) \(R\)-módulos, donde \(I\) un conjunto de índices no vacío.
+  Se define el \textbf{módulo producto} como
+  \[
+    \prod_{i\in I} M_i=\{{(m_i)}_{i\in I}:m_i\in M_i.\}
+  \]
+  Si \(M_i = M\) para cada \(i \in I\), entonces al módulo producto se le
+  denota por \(M^I\).
 \end{df}
 
 \begin{prop}
-  El producto de módulos es un módulo, con la suma término a término y el
+  El módulo producto es un módulo, con la suma término a término y el
   producto por escalares también término a término.
 \end{prop}
 
 \begin{df}[Proyecciones e inclusiones canónicas]
-  Vamos a tomar \(M_i\)y \( \prod_{i\in I} M_i\). Definimos
+  Sea \(\prod_{i\in I} M_i\) un módulo producto. Definimos
   la inclusión canónica \(\iota_i\)  mediante la
   aplicación que asigna \(m_i\mapsto {(a_j)}_{j\in I}\) dado por
-  \(a_j=\delta_i^j m_i\).
+  \(a_j=\delta_i^j m_i\), donde \(\delta_i^j = 1\) si \(i = j\) y
+  \(\delta_i^j = 0\) si \(i \neq j\) para cada \(i \in I\).
   Del mismo modo, definimos la proyección canónica \(\pi_i\) como
-  la aplicación que asigna \({(a_j)}_{j\in I}\mapsto a_i\).
+  la aplicación que asigna \({(a_j)}_{j\in I}\mapsto a_i\) para cada
+  \(i \in I\).
 
-  Evidentemente \(\pi_i\circ\iota_i=\id\).
+  Evidentemente, \(\pi_i\circ\iota_i=\id\).
 \end{df}
 
-\begin{df}[Suma directa externa]
+\begin{df}[Soporte]
+  Sea \(I\) un conjunto de índices y \(M_i\) un \(R\)-módulo para cada
+  \(i \in I\). El \textbf{soporte de} \((m_i)_{i \in I} \in \prod_{i \in I}M_i\)
+  es el conjunto de índices
+  en los que la componente de \((m_i)_{i \in I}\) es no nula, es decir,
   \[
-    \bigoplus_{i\in I} M_i:=\{{(m_i)}_{i\in I}: \textrm{ tiene soporte
-    finito}\}
+    sop(m) = \{i \in I \ : \ m_i \neq 0\} \subset I
   \]
+  para cada \(m = (m_i)_{i \in I}\).
 \end{df}
 
+\begin{lema}[Suma directa externa]
+  Sea \(I\) un conjunto de índices y \(M_i\) un \(R\)-módulo para cada
+  \(i \in I\). Entonces el conjunto
+  \[
+    \bigoplus_{i\in I} M_i:=\{{(m_i)}_{i\in I}: \ \textrm{tiene soporte
+      finito}\} \subset \prod_{i \in I} M_i
+  \]
+  es un submódulo de \(\prod_{i \in I} M_i\), que se llama \textbf{suma directa
+    externa} de \(\{M_i\}_{i \in I}\).
+\end{lema}
 
-En el caso de \(I\) finito \(\bigoplus_{i\in I} M_i=\prod_{i\in I} M_i\),
-y en el caso general \(\bigoplus_{i\in I} M_i\subseteq\prod_{i\in I} M_i\)
+
+En el caso de \(I\) finito, \(\bigoplus_{i\in I} M_i=\prod_{i\in I} M_i\).
 
 \begin{df}[Suma de módulos]
-  Definimos \(\sum_{i\in I} M_i\) como el menor submódulo que contiene
-  a cualquier \(M_i\) o equivalentemente:
+  Sea \(M\) un \(R\)-módulo, \(I\) un conjunto de índices y\(\{N_i\}{i \in I}
+  \subset \mathcal{L}(M)\).
+  Definimos \(\sum_{i\in I} N_i\) como el \textbf{menor submódulo que contiene
+  a cualquier} \(N_i\) o, equivalentemente:
   \[
-    \sum_{i\in I} M_i=\left\{\sum_{i\in F} m_i: F\subseteq I \textrm{ finito}\right\}
+    \sum_{i\in I} N_i=\left\{\sum_{i\in F} n_i: F \subseteq I \ \textrm{finito}\right\}
   \]
 \end{df}
 
-\begin{prop}[Relación entre sumas]
-  Tomamos \(\theta:\bigoplus M_i\longrightarrow \sum M_i\) tal que
+\begin{ejemplo}
+  Cuando \(M_i = R\) para cada \(i \in I\), entonces
+  \[
+    R^{(I)} = \bigoplus_{i \in I} M_i \subset \prod_{i \in I} M_i = R^I.
+  \]
+\end{ejemplo}
+
+\begin{lema}[Relación entre sumas]
+  Sea \(\theta:\bigoplus M_i\longrightarrow \sum M_i\) tal que
   \(\theta({(m_i)}_{i\in I})=\sum_{i\in I} m_i\) es un homomorfismo
   sobreyectivo de \(R\)-módulos.
 
@@ -88,6 +118,8 @@ y en el caso general \(\bigoplus_{i\in I} M_i\subseteq\prod_{i\in I} M_i\)
     \item Para todo \(F\subseteq I\) finito, y para todo \(j\in F\),
       \(N_j\cap\sum_{i\in F\setminus\{j\}} N_i
       =\{0\}\).
+    \item La expresión de cada \(m \in \sum_{i \in I} N_i\) como \(m =
+      \sum_{i \in I}M_i\) es única.
     \item Si \(0=\sum_{i\in I} m_i\) con \(m_i\in M_i\) para todo
       \(i\in I\), entonces \(m_i=0\) para todo \(i\in I\).
     \item \(\theta\) es inyectivo y por tanto un isomorfismo.
@@ -96,7 +128,11 @@ y en el caso general \(\bigoplus_{i\in I} M_i\subseteq\prod_{i\in I} M_i\)
       \(\left(\sum_{i\in J_1} N_i\right)\cap
       \left(\sum_{i\in J_2} N_i\right)=\{0\}\)
   \end{enumerate}
-\end{prop}
+\end{lema}
+\begin{proof}
+  La demostración se inspira en el caso finito (Ejercicio \ref{ejer:rel_sumas_finito}
+  y Proposición \ref{prop:suma-interna}).
+\end{proof}
 
 \begin{df}
   En caso de satisfacerse cualquiera de las condiciones anteriores
@@ -116,9 +152,104 @@ y en el caso general \(\bigoplus_{i\in I} M_i\subseteq\prod_{i\in I} M_i\)
   diremos que dicha familia es independiente.
 \end{df}
 
-Caso particular: El módulo regular \(M_i=R\), llamamos:
-\[
-  R^{(I)}=\bigoplus_{i\in I} M_i=\{
-    {(r_i)}_{i\in I}\in R^I:\textrm{ con soporte finito}\}
-\]
+\begin{cor}
+  Sea \(A\) es un DIP, \(\subscriptbefore{A}{M}\) módulo (no necesariamente de longitud
+  finita).
+  \[
+    t(M)=\{m\in M:\ann_A(m)\neq\langle 0\rangle\}
+  \]
+  es un submódulo de \(M\), que se llama \textbf{submódulo de torsión de} \(M\).
+  Tan solo sería necesario que \(A\) sea un dominio de integridad.
+\end{cor}
+
+\begin{ejemplo}
+  Sea \(A\) un DIP, \(\subscriptbefore{A}{M}\) un módulo y consideramos
+  su submódulo de torsión y supongamos que \(t(M)\neq\{0\}\).
+  Definimos \(P\) como el conjunto de representantes de las clases de
+  equivalencia, bajo la relación ser asociados, de los irreducibles de \(A\).
+
+  Sea \(p\in P\), tomamos \(M_p=\{m\in M: p^e m=0\textrm{ para algÃºn }
+  e\ge 1\}\). Tenemos que \(M_p\subseteq t(M)\), \(M_p\) es un submÃ³dulo.
+  Entonces:
+  \[
+    t(M)=\dot{+}_{p\in P} M_p
+  \]
+  Demostremos esto.
+
+  Tomemos un \(m\in t(M)\), \(Am\) es un módulo de longitud finita.
+  \[
+    Am=N_1\dot{+}\cdots\dot{+}N_r
+  \] donde \(N_i\) es una componente \(p_i\)-primaria.
+
+  En particular, \(m=m_1+\cdots+ m_r\) de manera que \(m_i\in N_i\subseteq
+  M_{p_i}\).
+
+  Luego \(t(M) = \sum_{p\in P} M_p\). La unicidad es sencilla de deducir:
+  cada \(m\) estaría en una componente primaria.
+\end{ejemplo}
+
+\begin{ejemplo}
+  Veamos un caso particular del ejemplo anterior.
+  Tomamos \(M=\Cont^\infty(\R)\), \(M\) es un
+  \(\R[x]\)-módulo si \(xf=f'\). Entonces \(t(M)\) es el conjunto
+  de las funciones que satisfacen una EDO con coeficientes constantes.
+
+  \(P=\{\textrm{ Polinomios mónicos o bien lineales o bien
+    cuadráticos irreducibles}\}\). Es decir, cualquier función que se puede
+  definir mediante una EDO lineal con coeficientes constantes se puede
+  escribir como suma de funciones que resuelven
+  \({(\alpha\frac{\textrm{d}^2}{\textrm{d}x^2}+
+    \beta\frac{\textrm{d}}{\textrm{d}x}+\gamma)}^e f=0\) con \(e\in\N\).
+\end{ejemplo}
+
+\begin{lema}
+  Consideremos \(I\) un conjunto infinito y \(R^{(I)}\) tal y como lo hemos
+  definido antes.
+  Si \(M\) es un \(R\) módulo, existe una sucesión exacta de la forma
+  \[
+    0\longrightarrow L\longrightarrow R^{(I)}\longrightarrow M
+    \longrightarrow 0.
+  \]
+\end{lema}
+\begin{proof}
+  Tomo \(\{m_i:i\in I\}\) tal que \(M=\sum_{i\in I}Rm_i\).
+  Definimos \(\varphi:R^{(I)}\longrightarrow M\) dada por
+  \(\varphi({(r_i)}_{i\in I})=\sum_{i\in I}r_i m_i\).
+
+  \(L=\ker\varphi\overset{\iota}{\longrightarrow} M\).
+\end{proof}
+
+\begin{lema}[Existencia de bases]
+  Para \(\{m_i:i\in I\}\subseteq M\), son equivalentes:
+  \begin{enumerate}
+    \item \(\sum_{i\in I} r_i m_i=0\) implica que \(r_i=0\) para todo índice.
+    \item El homomorfismo \(\varphi:R^{(I)}\longrightarrow M\) con
+      \(\varphi({(r_i)}_{i\in I})=\sum_i r_i m_i\) es inyectiva.
+  \end{enumerate}
+  Si se satisface 1, diremos que el conjunto \(\{m_i:i\in I\}\) es linealmente
+  independiente. Si además estos elementos son además un conjunto de
+  generadores, diremos que forman una base.
+\end{lema}
+
+La demostración es trivial.
+
+\begin{obs}
+  \(M\) tiene una base si, y solo si, \(M\cong R^I\) para algún \(I\).
+\end{obs}
+
+\begin{df}[Módulo libre]
+  Un módulo se llama libre si admite una base.
+\end{df}
+
+\begin{obs}
+  Hay muchos módulos que no son libres.
+\end{obs}
+
+Ejemplos de módulos no libres:
+\begin{enumerate}
+  \item Ningún grupo abeliano finito es libre como \(\Z\) módulo.
+  \item \(t(M)\), \(\subscriptbefore{A}{M}\) con \(A\) un DIP, nunca es libre.
+    En otras palabras \(A^{(I)}\) no es nunca un módulo de torsión (por
+    ser un dominio de integridad).
+\end{enumerate}
 
