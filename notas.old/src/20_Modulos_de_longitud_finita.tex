@@ -1,0 +1,73 @@
+\subsection{Módulos de longitud finita}
+
+\begin{df}[Serie de composición]
+  Sea \(M\) un módulo. Una serie de composición de \(M\)
+  es una cadena de submódulos
+  \[
+    M=M_n\supsetneq M_{n-1}\supsetneq\ldots\supsetneq M_1
+    \supsetneq M_0=\{0\}
+  \]
+  tal que si \(M_i\supseteq N\supseteq M_{i-1}\) para \(N\) submódulo,
+  entonces \(N=M_i\) o \(N=M_{i-1}\). Es decir, cada submódulo es maximal
+  en el anterior.
+
+  A \(n\) le llamamos la longitud de la serie.
+\end{df}
+
+Ejemplo: serie de composición de \(\Z_{12}\). Tiene como subgrupos
+a \(\Z_m\) con \(m\) divisor de 12.
+\[
+  M_3=\Z_{12}
+\]
+tiene como subgrupo maximal (argumentando por Lagrange):
+\[
+  M_2=\langle 2 \rangle
+\]
+que a su vez tiene como subgrupo maximal
+\[
+  M_1=\langle 4\rangle
+\]
+y ya solo tiene
+\[
+  M_0=\{0\}
+\]
+
+\begin{df}[Módulo simple]
+  \(M\) se dice simple si \(M\supset\{0\}\) es una serie de composición.
+  Es decir, si no tiene submódulos propios y no es el módulo 0.
+\end{df}
+
+\begin{prop}
+  La condición de que cada submódulo sea maximal en el anterior es equivalente
+  a que los factores \(M_i/M_{i-1}\) sean simples.
+\end{prop}
+
+\begin{teo}
+  Toda serie de composición del mismo módulo tiene la misma longitud
+  y los mismos factores salvo isomorfismo y reordenación.
+\end{teo}
+
+\(\Z_{12}\) tiene como factores \(\Z_2\), \(\Z_2\) y \(\Z_3\).
+
+\begin{prop}
+  Un módulo no nulo admite una serie de composición si y solo si es
+  noetheriano y artiniano.
+\end{prop}
+\begin{proof}
+  Sea \(M_i\) una serie de composición. Inducción sobre \(n\).
+  Si \(n=1\), tenemos que \(M\) es simple y en particular noetheriano
+  y artiniano.
+
+  Si \(n>1\), entonces \(M_{n-1}\) admite una serie de composición de
+  longitud \(n-1\), luego es noetheriano y artiniano. Tomamos
+  la sucesión exacta corta \[0\longrightarrow M_{n-1}
+  \longrightarrow M_n\longrightarrow M_n/M_{n-1}\longrightarrow 0\]
+  El primer elemento es noetheriano y artiniano, el último es simple (luego
+  noetheriano y artiniano), con lo que \(M_n\) es noetheriano y artiniano.
+
+  Para el recíproco, como \(M\) es artiniano, contiene un submódulo
+  simple \(M_1\). Entonces hay un \(M_2\supsetneq M_1\) donde
+  \(M_2/M_1\) es simple. Reiterando el proceso, tenemos
+  \(0\subsetneq M_1\subsetneq M_2\subsetneq \ldots\) y como es
+  noetheriano, habrá un \(M_n\) que termine la cadena.
+\end{proof}

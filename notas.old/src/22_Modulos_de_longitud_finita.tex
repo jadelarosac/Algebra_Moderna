@@ -1,0 +1,174 @@
+Sea \(\subscriptbefore{A}{M}\) un módulo, \(\mathcal{L}(M)\)
+es el conjunto de todos los submódulos de \(M\).
+
+Dado \(\Gamma\subseteq\mathcal{L}(L)\) no vacío,
+tenemos \(\bigcap_{N\in\Gamma}
+N\in\mathcal{L}(M)\) (no tiene por qué ocurrir que estén en \(\Gamma\),
+\(\bigcap_{n\ge 1} n\Z=\{0\}\notin m\Z\) para ningún \(m\ge 1\)).
+
+
+\begin{df}[Zócalo]
+  El zócalo de \(M\) es el menor submódulo de \(M\) que contiene a todos
+  los submódulos simples de \(M\).
+
+  Si \(M\) no tiene ningún submodulo simple, definimos el zócalo como
+  \(\{0\}\).
+
+  En ambos casos usaremos la notación \(\Soc(M)\).
+\end{df}
+
+Ejemplo: si \(V\) es un \(K\)-espacio vectorial, \(\Soc(V)=V\).
+
+Ejemplo: \(\Soc(\Z)=\{0\}\), puesto que cada \(n\Z\) contiene
+un \(2n\Z\), luego no es simple.
+
+De hecho, si \(A\) es un dominio de
+integridad que no es un cuerpo, \(\Soc(A)=\{0\}\). Tienes que sus submódulos
+son ideales. Para \(x\in I\), el ideal generado por \(x^2\) está dentro de
+\(I\), luego \(I\) no es simple.
+
+\begin{prop}
+  Sea \(M\) de longitud finita. Existen submódulos \(S_i\) simples de \(M\)
+  tales que
+  \[
+    \Soc(M)=S_1\dot{+}\cdots\dot{+} S_n
+  \]
+  Además si \(T_i\) son simples tales que
+  \(
+    \Soc(M)=T_1\dot{+}\cdots\dot{+} T_m
+  \), entonces \(n=m\) y tras reordenación, \(S_i\cong T_i\).
+\end{prop}
+
+\begin{proof}
+  Si \(\Gamma\) es el conjunto de todos los submódulos de la forma
+  \(
+    S_1\dot{+}\cdots\dot{+} S_n
+  \)
+
+  Si \(M\neq\{0\}\), entonces \(\Gamma\neq\emptyset\), ya que \(M\)
+  contiene algún submódulo simple.
+
+  Como \(M\) es Notheriano, existe un
+  \(
+    S_1\dot{+}\cdots\dot{+} S_n
+  \) maximal.
+
+  \(
+    S_1\dot{+}\cdots\dot{+} S_n\subseteq\Soc(M)
+  \). Sea \(S\in\mathcal{L}(M)\) simple.
+  \[
+    S\cap(
+    S_1\dot{+}\cdots\dot{+} S_n
+    )
+  \]
+  puesto que \(S\) es simple y la intersección es submódulo, se tiene
+  que dicha intersección o es \(\{0\}\) o es \(S\).
+
+  Consideramos
+  \[
+    S\cap(
+    S_1\dot{+}\cdots\dot{+} S_n
+    ) = \{0\}
+  \]
+  luego
+  \[
+    S\dot{+}S_1\dot{+}\cdots\dot{+} S_n\in\Gamma
+  \]
+  con lo que no sería maximal.
+
+  Luego se tiene:
+  \[
+    S\subseteq
+    S_1\dot{+}\cdots\dot{+} S_n\in\Gamma
+  \]
+  luego, como \(S\) era un modulo simple arbitrario, tenemos que
+  \(\Soc(M)=
+    S_1\dot{+}\cdots\dot{+} S_n
+  \).
+
+  Resulta que
+  \[
+    \{0\}\subsetneq S_1\subsetneq S_1\dot{+} S_2\subsetneq\ldots
+    \subsetneq
+    S_1\dot{+}\cdots\dot{+} S_n=\Soc(M)
+  \]
+  es una serie de composición, ya que:
+  \[
+    (S_1\dot{+}\cdots\dot{+} S_i)/
+    (S_1\dot{+}\cdots\dot{+} S_{i-1})\cong
+    S_i
+  \]
+  Aplicando Jordan-Hölder se obtiene el resultado.
+\end{proof}
+
+\begin{df}[Módulo semisimple]
+  Sea \(M\) de longitud finita. Decimos que \(M\) es semisimple si es
+  \(\Soc(M)=M\).
+\end{df}
+
+Ejercicio: Sea \(A\) un DIP que no sea un cuerpo,
+\(I\) ideal de \(A\). Se pide demostrar
+que \(A/I\) es de longitud finita si y solo si \(I\neq\langle 0\rangle\).
+
+¿Se puede deducir cuál es la longitud de \(A/I\) de un generador de \(I\)?
+
+\subsubsection{Módulos de longitud finita sobre un DIP}
+
+Sea de ahora en adelante \(A\) un dominio de ideales principales que no
+sea un cuerpo.
+
+\begin{lema}
+  \(\subscriptbefore{A}{M}\) es de longitud finita si y solo si
+  \(\subscriptbefore{A}{M}\) finitamente generado y acotado.
+\end{lema}
+\begin{proof}
+  \(M\) distinto del 0, porque si no es trivial.
+
+  \(M\) de longitud finita, por tanto noetheriano, por tanto finitamente
+  generado: \(M=Am_1+\cdots+Am_n\), con \(m_i\in M\).
+  \[
+    \langle\mu\rangle=\Ann_A(M)=\bigcap_{i=1}^n\ann_A(m_i)
+  \]
+  porque el anillo \(A\) es conmutativo, donde ademas cada anulador
+  de cada elemento es un ideal (a izquierdas en un conmutativo, luego ideal).
+
+  Sea \(\langle f_i\rangle=\ann_A(m_i)\), entonces
+  \[
+    \langle\mu\rangle=\bigcap_{i=1}^n\langle f_i\rangle
+  \]
+  donde \(\mu=\mcm\{f_i:1\le i\le n\}\).
+
+  Veamos que \(f_i\neq 0\) para cada \(i\).
+  \[
+    M\subseteq Am_i\cong A/\langle f_i\rangle
+  \]
+  luego \(\ell(Am_i)<\infty\), como \(A\) no es un cuerpo y por
+  tanto \(M\) no es artiniano, entonces
+  \(\langle f_i\rangle\neq0\).
+
+  Luego \(\langle\mu\rangle\neq 0\) y por tanto \(M\) es acotado.
+
+  Veamos el recíproco: \(M\) acotado y finitamente generado.
+  \[
+    M=Am_1+\cdots+Am_n
+  \]
+
+  Vemos que cada \(Am_i\) es de longitud finita (\(\mu\neq 0\) por ser
+  acotado, luego cada \(\langle f_i\rangle\neq 0\)).
+  Tenmos que \(Am_i\cong A/\langle f_i\rangle\) es de longitud finita.
+
+  Existe un epimorfismo entre \(Am_1\oplus\cdots\oplus Am_n\) (que es
+  de longitud finita) y \(Am_1\oplus\cdots\oplus Am_n\), con lo que
+  el segundo tiene longitud finita.
+\end{proof}
+
+\(\ell_A(M)<\infty\), entonces es acotado, o sea
+\(\langle\mu\rangle=\Ann_A(M)=\langle 0\rangle\). Entonces
+\[
+  M=M_1\dot{+}\cdots\dot{+} M_t
+\]
+donde \(M_i\) es la componente \(p_i\) primaria que viene de
+\(\mu={p_1}^{e_1}\cdots{p_t}^{e_t}\)
+(\(M_i=\{m\in M:m\cdot{p_i}^{e_i}=0\}\)).
+Además \(M_i\) es finitamente generado.
+¿Se puede descomponer como suma directa de submódulos indescomponibles?

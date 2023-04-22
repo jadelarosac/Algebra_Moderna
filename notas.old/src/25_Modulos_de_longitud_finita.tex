@@ -1,0 +1,88 @@
+\begin{obs}
+  Si \(A=\Z\), \(M\) grupo abeliano, \(x\in M\),
+  \(\ann_\Z(x)=n\Z\), \(n\) recibe el nombre de el orden.
+\end{obs}
+
+\begin{obs}
+  Si \(A=K[x]\), \(T:V\longrightarrow V\), \(n=\dim_K V<\infty\),
+  \(v\in V\), \(\ann_{K[x]}(v)=\langle f(x)\rangle\).
+  Tenemos que \(f\) tiene grado \(n\). \(\{v, Tv,\ldots, T^{n-1}v\}\)
+  es una base de \(V\).
+\end{obs}
+
+Ejemplo: \(\mathcal{U}(\Z_8)=\{1,3,5,7\}\).
+Viendo los ordenes de los elementos:
+\[\mathcal{U}(\Z_8)=\langle 3\rangle\dot{+}\langle 5\rangle\]
+donde \(\langle \cdot\rangle\) es la generación como subgrupo.
+
+Ejemplo: Suponemos un espacio vectorial \(V\) de dimensión 3 y un
+endomorfismo \(T\) cuyo polinomio mínimo es de la forma
+\({(x-\lambda)}^2\) con \(\lambda\in K\).
+Sabemos que existen dos vectores \(v_1,v_2\) tales que
+\[
+  V=K[x]v_1\dot{+} K[x]v_2
+\]
+con \(\ann_{K[x]} v=\langle {(x-\lambda)}^2\rangle
+\subsetneq\langle {x-\lambda}\rangle=\ann_{K[x]} v_2\).
+
+\begin{cor}
+  Si \(\subscriptbefore{A}{M}\) es un módulo \(p\)-primario, entonces
+  \[
+    M\cong C_1\oplus\cdots\oplus C_n
+  \]
+  con \(C_i\) cíclico.
+
+  Si \(M\cong D_1\oplus\cdots\oplus D_m\), con \(D_i\) cíclico, entonces
+  \(n=m\) y tras reordenación, \(D_i\cong C_i\) para todo \(i\).
+\end{cor}
+\begin{proof}
+  De \(M\cong C_1\oplus\cdots\oplus C_n\), se puede exigir que
+  \(x_1,\ldots,x_n\in M\) tales que
+  \[
+    M=Ax_1\dot{+}\cdots\dot{+}Ax_n
+  \]
+  con \(\ann_A(x_1)\subseteq\ann_A(x_2)\subseteq\ldots\subseteq\ann_A(x_n)\)
+
+  Con \(D_1\oplus\cdots\oplus D_m\) hago lo mismo.
+  \[
+    M=Ay_1\dot{+}\cdots\dot{+}Ay_n
+  \]
+  ordenados bajo el mismo criterio.
+
+  El enunciado se sigue de aplicar el teorema anterior. De
+  \(\ann(x_i)=\ann(y_i)\) se deduce
+  \[
+    C_i\cong Ax_i\cong A/\ann(x_i)=A/\ann(y_i)\cong Ay_i\cong D_i
+  \]
+\end{proof}
+
+Ejercicio: Decimos que un módulo \(M\) es indescomponible si \(M\cong
+L\oplus N\) implica que \(L=\{0\}\) (o \(N=\{0\}\)).
+Razonar que en el corolario cada uno de los \(C_i\) es indescomponible.
+
+Ejemplo: \(M\) grupo abeliano de longitud finita y \(p\)-primario.
+Aplicando el corolario, \(M\cong C_1\oplus\cdots\oplus C_n\) con
+\(C_i\) cíclico y de longitud finita \(p\)-primarios.
+Tenemos que \(M\cong \Z_{p^{m_1}}\oplus\cdots\oplus\Z_{p^{m_n}}\),
+\(M\) es finito de cardinal \(p^{m_1+\cdots+m_n}\).
+
+\begin{teo}[Estructura de módulos sobre un DIP]
+  \(\subscriptbefore{A}{M}\neq\{0\}\) de longitud finita. Existen
+  irreducibles distintos \(p_1,\ldots,p_r\in A\) y enteros positivos
+  \(n_1,\ldots, n_r\), tales que \(e_{i1}\ge\ldots\ge e_{in_i}\) con
+  \(i\in\{1,\ldots,r\}\) determinados por M:\@
+  \[
+    M=\dot{+}_{i=1}^r\left(\dot{+}_{j=1}^{n_i} Ax_{ij}\right)
+  \]
+  A esa expresión
+  se le llama la descomposición cíclica-primaria de \(M\) (la
+  primaria sería la primera suma y luego cada factor primario se
+  descompone en factores cíclicos).
+  Los \(x_{ij}\in M\) son tales que verifican:
+  \[
+    \ann_A(x_{ij})=\langle p_i^{e_{ij}}\rangle
+  \]
+  con \(i\in\{1,\ldots,r\}, j\in\{1,\ldots, n_i\}\). Se le llaman
+  divisores elementales de \(M\) y
+  determinan \(M\) salvo isomorfismos.
+\end{teo}
